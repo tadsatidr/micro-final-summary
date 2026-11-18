@@ -27,15 +27,6 @@ Math is rendered with KaTeX from a CDN, so a network connection is needed for ty
 
 ## GitHub Pages
 
-The site is plain HTML, CSS, and JS at the repository root. `.github/workflows/pages.yml` deploys that root to GitHub Pages on every push to `main`.
+The site is plain HTML, CSS, and JS at the repository root. GitHub Pages publishes that root from the `main` branch (Deploy from a branch, folder `/`).
 
-Live URL, once Pages is enabled: https://tadsatidr.github.io/micro-final-summary/
-
-If that URL 404s, the files are already on `main` and GitHub still needs a source selected:
-
-1. Open the repository **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-
-The workflow `.github/workflows/pages.yml` deploys the site on each push to `main`. You can also run it from the **Actions** tab.
-
-Alternatively, set **Source** to **Deploy from a branch**, branch `main`, folder **/ (root)**.
+Live URL: https://tadsatidr.github.io/micro-final-summary/
