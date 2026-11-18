@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch 17 · Asymmetric information</title>
+<meta name="description" content="Adverse selection versus moral hazard, the lemons market, signaling, and efficiency wages, focused on the 2025 health-insurance question.">
+<script>
+try {
+  var q = new URLSearchParams(location.search).get("lang");
+  var l = (q === "th" || q === "en") ? q : localStorage.getItem("micro-lang");
+  if (l === "th" || l === "en") {
+    document.documentElement.setAttribute("data-lang", l);
+    if (q) localStorage.setItem("micro-lang", q);
+  }
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content"><span class="en">Skip to content</span><span class="th">ข้ามไปเนื้อหา</span></a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">μ</span><span><span class="en">Micro final</span><span class="th">ไมโคร ไฟนอล</span><small><span class="en">Chapter 17</span><span class="th">บทที่ 17</span></small></span></a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="th">ไทย</button></div>
+</header>
+<nav id="site-nav" aria-label="Chapters"></nav>
+<main id="content">
+  <p class="kicker"><span class="en">Chapter 17</span><span class="th">บทที่ 17</span></p>
+  <h1><span class="en">Markets with asymmetric information</span><span class="th">ตลาดที่มีข้อมูลอสมมาตร</span></h1>
+  <p class="lede">
+    <span class="en">One side of the market knows something the other side does not. If the hidden thing is a characteristic that already exists, the problem is adverse selection. If it is an action taken after the contract, the problem is moral hazard. The 2025 paper asks for that distinction in health insurance, worth 4 points. Warranties and the lemons market are the version that showed up in 2022 and 2024.</span>
+    <span class="th">ฝั่งหนึ่งของตลาดรู้บางอย่างที่อีกฝั่งไม่รู้. ถ้าสิ่งที่ซ่อนอยู่เป็นคุณลักษณะที่มีอยู่แล้ว ปัญหาคือ adverse selection. ถ้าเป็นพฤติกรรมที่เกิดหลังทำสัญญา ปัญหาคือ moral hazard. ข้อสอบปี 2025 ถามความต่างนี้ในประกันสุขภาพ 4 คะแนน. การรับประกันและตลาดมะนาวเป็นฉบับที่ออกในปี 2022 และ 2024.</span>
+  </p>
+  <p>
+    <span class="badge exam">2025 Q3 · 4 pts</span>
+    <span class="badge past"><span class="en">Lemons and warranties: 2022, 2024. Efficiency wage: 2023. Moral-hazard policy design: 2020</span><span class="th">ตลาดมะนาวและการรับประกัน: 2022, 2024. Efficiency wage: 2023. การออกแบบกรมธรรม์: 2020</span></span>
+  </p>
+
+  <h2><span class="en">The timing is the whole answer</span><span class="th">จังหวะเวลาคือคำตอบทั้งหมด</span></h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3><span class="en">Adverse selection</span><span class="th">การคัดเลือกที่ขัดผลประโยชน์ (Adverse selection)</span></h3>
+      <p class="en"><strong>Hidden information, before the contract.</strong> The people who buy are not a random sample. In health insurance, people who know they are sick are more eager to buy full cover. The insurer cannot see health type, prices the policy for the average buyer, and the healthy then drop out. The pool gets sicker, the premium rises, and the market can unravel. This is the lemons logic applied to people instead of used cars.</p>
+      <p class="th"><strong>ข้อมูลที่ซ่อนอยู่ ก่อนทำสัญญา.</strong> คนที่ซื้อไม่ใช่ตัวอย่างสุ่ม. ในประกันสุขภาพ คนที่รู้ว่าตัวเองป่วยอยากซื้อความคุ้มครองเต็มรูปแบบมากกว่า. ผู้รับประกันมองไม่เห็นประเภทสุขภาพ จึงตั้งเบี้ยตามผู้ซื้อเฉลี่ย แล้วคนสุขภาพดีออกจากตลาด. กลุ่มที่เหลือป่วยขึ้น เบี้ยสูงขึ้น และตลาดอาจพังลง. นี่คือตรรกะตลาดมะนาวที่ใช้กับคนแทนรถมือสอง.</p>
+    </div>
+    <div class="card">
+      <h3><span class="en">Moral hazard</span><span class="th">ภัยจริยธรรม (Moral hazard)</span></h3>
+      <p class="en"><strong>Hidden action, after the contract.</strong> Once insured, a person does not pay the full cost of a doctor visit or of a risky habit, so she uses more care or takes less care of herself than she would if she paid the full price. The insurer cannot watch every action. Deductibles, copayments, and partial coverage exist to put some of the marginal cost back on the insured person.</p>
+      <p class="th"><strong>การกระทำที่ซ่อนอยู่ หลังทำสัญญา.</strong> เมื่อมีประกันแล้ว คนไม่ได้จ่ายต้นทุนเต็มของการไปหาหมอหรือของพฤติกรรมเสี่ยง จึงใช้บริการมากกว่าหรือดูแลตัวเองน้อยกว่าที่เธอจะทำถ้าต้องจ่ายเต็มราคา. ผู้รับประกันดูทุกการกระทำไม่ได้. ค่าเสียหายส่วนแรก, copayment, และความคุ้มครองไม่เต็มจำนวน มีไว้เพื่อคืนต้นทุนส่วนเพิ่มบางส่วนให้คนที่ทำประกัน.</p>
+    </div>
+  </div>
+
+  <h3><span class="en">2025 question 3, as a four-point paragraph</span><span class="th">ข้อ 3 ปี 2025 ในรูปย่อหน้าสี่คะแนน</span></h3>
+  <div class="callout ok">
+    <p class="en">Adverse selection in health insurance is a problem of hidden type. Buyers know more about their own health than the insurer does, so the people who purchase generous cover tend to be the ones who expect high medical bills. Premiums that reflect this selected pool drive healthier people out. Moral hazard is a problem of hidden action after the policy is in force: coverage lowers the price of medical care and of risky behavior, so the insured person consumes more care, or takes less preventive care, than is efficient. Selection is about who signs; hazard is about what they do once they are signed.</p>
+    <p class="th">Adverse selection ในประกันสุขภาพเป็นปัญหาของประเภทที่ซ่อนอยู่. ผู้ซื้อรู้สุขภาพของตัวเองมากกว่าผู้รับประกัน ดังนั้นคนที่ซื้อความคุ้มครองมากมักเป็นคนที่คาดว่าจะมีค่ารักษาสูง. เบี้ยที่สะท้อนกลุ่มที่ถูกคัดนี้ผลักคนสุขภาพดีออกไป. Moral hazard เป็นปัญหาของการกระทำที่ซ่อนอยู่หลังจากกรมธรรม์มีผล: ความคุ้มครองลดราคาของบริการรักษาและของพฤติกรรมเสี่ยง ดังนั้นผู้เอาประกันใช้บริการมากกว่า หรือป้องกันน้อยกว่า ระดับที่มีประสิทธิภาพ. การคัดเลือกเป็นเรื่องว่าใครเซ็น ภัยจริยธรรมเป็นเรื่องว่าเขาทำอะไรหลังจากเซ็นแล้ว.</p>
+  </div>
+
+  <h2><span class="en">Lemons</span><span class="th">ตลาดมะนาว (Lemons)</span></h2>
+  <figure class="fig">
+    <svg viewBox="0 0 680 340" role="img">
+      <title>Asymmetric information shifts the demand for used cars down</title>
+      <line x1="60" y1="20" x2="60" y2="290" stroke="#1b1814"/>
+      <line x1="60" y1="290" x2="640" y2="290" stroke="#1b1814"/>
+      <line x1="80" y1="60" x2="560" y2="250" stroke="#0e3b2e" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <line x1="80" y1="130" x2="560" y2="270" stroke="#0e3b2e" stroke-width="2.6"/>
+      <line x1="80" y1="230" x2="520" y2="80" stroke="#1e4d7b" stroke-width="2.4"/>
+      <circle cx="250" cy="175" r="5" fill="#9d341f"/>
+      <circle cx="360" cy="130" r="5" fill="#8a8174"/>
+      <text x="66" y="16" font-size="14" font-family="sans-serif">P</text>
+      <text x="620" y="308" font-size="14" font-family="sans-serif">Q of used cars</text>
+      <text x="430" y="70" fill="#1e4d7b" font-size="14" font-family="sans-serif">S (more sellers as P rises)</text>
+      <text x="400" y="230" fill="#0e3b2e" font-size="14" font-family="sans-serif">D if quality were known</text>
+      <text x="400" y="280" fill="#0e3b2e" font-size="14" font-family="sans-serif">D when buyers expect lemons</text>
+      <text x="200" y="165" font-size="13" font-family="sans-serif">thin market</text>
+    </svg>
+    <figcaption>
+      <span class="en">Owners of good cars will not sell at a price that reflects the average quality, so the cars actually offered are worse than the average car on the road. Buyers know this and their willingness to pay falls as the price falls, because a lower price signals a worse mix. The market can shrink to a few low-quality trades, or disappear. A warranty is a credible signal that the seller’s car is not a lemon: it is expensive for the owner of a bad car to offer.</span>
+      <span class="th">เจ้าของรถดีจะไม่ขายที่ราคาซึ่งสะท้อนคุณภาพเฉลี่ย ดังนั้นรถที่ถูกนำออกขายจริง ๆ แย่กว่ารถเฉลี่ยบนถนน. ผู้ซื้อรู้เรื่องนี้และความเต็มใจจ่ายลดลงเมื่อราคาลด เพราะราคาต่ำส่งสัญญาณว่าส่วนผสมแย่ลง. ตลาดอาจเหลือการซื้อขายคุณภาพต่ำไม่กี่คัน หรือหายไป. การรับประกันคือสัญญาณที่เชื่อได้ว่ารถของผู้ขายไม่ใช่มะนาว: เจ้าของรถแย่จะเสนอการรับประกันได้แพงมาก.</span>
+    </figcaption>
+  </figure>
+
+  <div class="callout">
+    <p class="en"><strong>2022 and 2024 warranty question.</strong> A long warranty on a car with a bad repair reputation is reasonable in a lemons market because it is a signal: only a maker who expects few repairs can cheaply promise to pay for them, so buyers revise quality upward. The same warranty creates moral hazard. Once repairs are free, the owner has a weaker incentive to maintain the car, drive gently, or avoid claims. Signaling fixes hidden information; it can worsen hidden action.</p>
+    <p class="th"><strong>ข้อการรับประกันปี 2022 และ 2024.</strong> การรับประกันยาวสำหรับรถที่มีชื่อเสียงเรื่องซ่อมบ่อย สมเหตุสมผลในตลาดมะนาวเพราะมันเป็นสัญญาณ: มีแต่ผู้ผลิตที่คาดว่าจะซ่อมไม่บ่อยเท่านั้นที่สัญญาจะจ่ายค่าซ่อมได้ในราคาถูก ดังนั้นผู้ซื้อปรับคุณภาพที่คาดไว้สูงขึ้น. การรับประกันเดียวกันสร้าง moral hazard. เมื่อซ่อมฟรี เจ้าของมีแรงจูงใจน้อยลงที่จะดูแลรถ ขับอย่างระมัดระวัง หรือไม่เคลม. สัญญาณแก้ข้อมูลที่ซ่อนอยู่ แต่มันอาจทำให้อาการของการกระทำที่ซ่อนอยู่หนักขึ้น.</p>
+  </div>
+
+  <h2><span class="en">Moral hazard on a diagram</span><span class="th">Moral hazard บนรูป</span></h2>
+  <figure class="fig">
+    <svg viewBox="0 0 640 340" role="img">
+      <title>Insurance makes the driver perceive a lower marginal cost of risky miles</title>
+      <line x1="60" y1="20" x2="60" y2="290" stroke="#1b1814"/>
+      <line x1="60" y1="290" x2="600" y2="290" stroke="#1b1814"/>
+      <line x1="80" y1="50" x2="520" y2="270" stroke="#0e3b2e" stroke-width="2.6"/>
+      <line x1="70" y1="150" x2="540" y2="150" stroke="#1e4d7b" stroke-width="2.4"/>
+      <line x1="70" y1="220" x2="540" y2="220" stroke="#9d341f" stroke-width="2.4" stroke-dasharray="6 4"/>
+      <line x1="250" y1="150" x2="250" y2="290" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="400" y1="220" x2="400" y2="290" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <polygon points="250,150 400,150 400,220" fill="rgba(157,52,31,.28)"/>
+      <text x="64" y="16" font-size="14" font-family="sans-serif">MB, MC</text>
+      <text x="500" y="310" font-size="14" font-family="sans-serif">risky miles</text>
+      <text x="430" y="250" fill="#0e3b2e" font-size="14" font-family="sans-serif">MB of driving</text>
+      <text x="430" y="142" fill="#1e4d7b" font-size="14" font-family="sans-serif">true MC</text>
+      <text x="360" y="212" fill="#9d341f" font-size="14" font-family="sans-serif">MC the driver feels</text>
+      <text x="230" y="310" font-size="13" font-family="sans-serif">Q*</text>
+      <text x="385" y="310" font-size="13" font-family="sans-serif">Q insured</text>
+    </svg>
+    <figcaption>
+      <span class="en">Without insurance the driver faces the true marginal cost of a risky mile and chooses Q*. Full insurance makes her perceive a lower private marginal cost, so she drives until MB equals that lower cost. The shaded gap is the waste: miles whose true cost exceeds their benefit. A deductible rotates the perceived MC back up toward the true MC.</span>
+      <span class="th">ถ้าไม่มีประกัน คนขับเผชิญต้นทุนส่วนเพิ่มที่แท้จริงของไมล์ที่เสี่ยงและเลือก Q*. ประกันเต็มจำนวนทำให้เธอรู้สึกว่าต้นทุนส่วนเพิ่มส่วนตัวต่ำลง จึงขับจน MB เท่ากับต้นทุนที่ต่ำกว่านั้น. ช่องที่แรเงาคือความสูญเสีย: ไมล์ที่ต้นทุนแท้จริงสูงกว่าประโยชน์. ค่าเสียหายส่วนแรกหมุน MC ที่รับรู้กลับขึ้นไปทาง MC ที่แท้จริง.</span>
+    </figcaption>
+  </figure>
+  <p class="en">A 2020 question compares three policies: complete coverage, coverage above a 2,000 deductible, and 90 percent coverage. Complete coverage creates the most moral hazard, because the person pays none of the marginal loss. The deductible and the 10 percent coinsurance both leave some marginal cost on the insured person.</p>
+  <p class="th">ข้อปี 2020 เทียบสามกรมธรรม์: คุ้มครองทั้งหมด, คุ้มครองส่วนที่เกินค่าเสียหายส่วนแรก 2,000, และคุ้มครอง 90 เปอร์เซ็นต์. ความคุ้มครองทั้งหมดสร้าง moral hazard มากที่สุด เพราะคนไม่ได้จ่ายส่วนเพิ่มของการสูญเสียเลย. ทั้งค่าเสียหายส่วนแรกและ coinsurance 10 เปอร์เซ็นต์ทิ้งต้นทุนส่วนเพิ่มบางส่วนไว้ที่ผู้เอาประกัน.</p>
+
+  <h2><span class="en">Efficiency wages</span><span class="th">ค่าจ้างประสิทธิภาพ (Efficiency wage)</span></h2>
+  <figure class="fig">
+    <svg viewBox="0 0 640 320" role="img">
+      <title>Efficiency wage above the market-clearing wage</title>
+      <line x1="60" y1="20" x2="60" y2="270" stroke="#1b1814"/>
+      <line x1="60" y1="270" x2="600" y2="270" stroke="#1b1814"/>
+      <line x1="80" y1="230" x2="520" y2="50" stroke="#0e3b2e" stroke-width="2.4"/>
+      <line x1="80" y1="60" x2="540" y2="250" stroke="#1e4d7b" stroke-width="2.4"/>
+      <line x1="70" y1="110" x2="560" y2="110" stroke="#9d341f" stroke-width="2.2"/>
+      <line x1="250" y1="110" x2="250" y2="270" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="390" y1="110" x2="390" y2="270" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <text x="66" y="16" font-size="14" font-family="sans-serif">w</text>
+      <text x="560" y="290" font-size="14" font-family="sans-serif">labor</text>
+      <text x="480" y="70" fill="#0e3b2e" font-size="14" font-family="sans-serif">S</text>
+      <text x="500" y="230" fill="#1e4d7b" font-size="14" font-family="sans-serif">D</text>
+      <text x="20" y="114" font-size="13" font-family="sans-serif">we</text>
+      <text x="230" y="290" font-size="13" font-family="sans-serif">hired</text>
+      <text x="360" y="290" font-size="13" font-family="sans-serif">willing</text>
+      <text x="280" y="100" font-size="13" font-family="sans-serif">unemployment</text>
+    </svg>
+    <figcaption>
+      <span class="en">The firm pays \(w_e\) above the wage that would clear the market. More people want the job than the firm hires. The gap is the discipline: a worker who shirks can be fired into unemployment, which is painful precisely because the wage is above what she could get elsewhere. This is profitable when the firm cannot observe effort directly — workers know their own productivity better than the firm does (2023).</span>
+      <span class="th">กิจการจ่าย \(w_e\) สูงกว่าค่าจ้างที่จะเคลียร์ตลาด. คนอยากได้งานมากกว่าที่กิจการจ้าง. ช่องว่างนั้นคือเครื่องควบคุม: คนที่อู้แล้วถูกไล่ออกจะตกไปอยู่ในภาวะว่างงาน ซึ่งเจ็บเพราะค่าจ้างสูงกว่าที่เธอจะได้จากที่อื่น. มันคุ้มเมื่อกิจการสังเกตความพยายามโดยตรงไม่ได้ — คนงานรู้ผลิตภาพของตัวเองดีกว่ากิจการ (ปี 2023).</span>
+    </figcaption>
+  </figure>
+
+  <h2><span class="en">Other signals, in one line each</span><span class="th">สัญญาณอื่น บรรทัดละหนึ่ง</span></h2>
+  <ul>
+    <li><span class="en"><strong>Education as a signal.</strong> A degree can raise pay even if it does not raise productivity, if it is cheaper for high-productivity workers to finish.</span><span class="th"><strong>การศึกษาในฐานะสัญญาณ.</strong> ปริญญาอาจเพิ่มค่าจ้างแม้ไม่เพิ่มผลิตภาพ ถ้าคนผลิตภาพสูงเรียนจบได้ถูกกว่า.</span></li>
+    <li><span class="en"><strong>Reputation and standardization</strong> (a chain restaurant, a brand) tell a buyer who cannot inspect quality on the spot. A one-off seller of old stamps has to use a warranty, a return policy, or a third-party rating instead.</span><span class="th"><strong>ชื่อเสียงและการทำให้เป็นมาตรฐาน</strong> (ร้านอาหารเชน, แบรนด์) บอกผู้ซื้อที่ตรวจคุณภาพตรงนั้นไม่ได้. คนขายแสตมป์เก่าครั้งเดียวต้องใช้การรับประกัน นโยบายคืนสินค้า หรือเรตติ้งจากบุคคลที่สามแทน.</span></li>
+    <li><span class="en"><strong>Market signaling</strong> works only if the signal is cheaper for the high-quality type. If both types can buy the signal at the same cost, it stops separating them.</span><span class="th"><strong>การส่งสัญญาณของตลาด</strong> ใช้ได้ก็ต่อเมื่อสัญญาณถูกกว่าสำหรับประเภทคุณภาพสูง. ถ้าทั้งสองประเภทซื้อสัญญาณได้ในต้นทุนเท่ากัน มันจะแยกพวกเขาไม่ได้อีก.</span></li>
+  </ul>
+
+  <h2><span class="en">Practice</span><span class="th">ข้อฝึก</span></h2>
+  <article class="q">
+    <h3>1 <span class="badge exam"><span class="en">Same ask as 2025, different market</span><span class="th">ถามแบบปี 2025 คนละตลาด</span></span></h3>
+    <p class="en">In the market for used cars, which problem is adverse selection and which would be moral hazard? Use one sentence each.</p>
+    <p class="th">ในตลาดรถมือสอง ปัญหาใดเป็น adverse selection และปัญหาใดเป็น moral hazard? ใช้อย่างละหนึ่งประโยค.</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">Adverse selection: sellers already know whether the car is a lemon, and at any given price the cars offered for sale are disproportionately lemons. Moral hazard: after a warranty is signed, the owner maintains the car less carefully because repairs are paid by someone else.</p>
+      <p class="th">Adverse selection: ผู้ขายรู้แล้วว่ารถเป็นมะนาวหรือไม่ และที่ราคาใด ๆ รถที่ถูกนำออกขายมีส่วนที่เป็นมะนาวมากเกินสัดส่วน. Moral hazard: หลังจากเซ็นการรับประกัน เจ้าของดูแลรถน้อยลงเพราะคนอื่นจ่ายค่าซ่อม.</p>
+    </details>
+  </article>
+  <article class="q">
+    <h3>2 <span class="badge past">2023</span></h3>
+    <p class="en">Why can it be profitable to pay a wage above the market-clearing wage when workers know their own effort better than the firm does?</p>
+    <p class="th">ทำไมการจ่ายค่าจ้างเหนือค่าจ้างที่เคลียร์ตลาดจึงอาจกำไร เมื่อคนงานรู้ความพยายามของตัวเองดีกว่ากิจการ?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">The firm cannot write a contract on effort it cannot see. Paying above the outside wage, and hiring fewer people than want the job, makes losing the job costly. Workers then supply effort to keep the rent. The extra output can more than pay for the higher wage. If effort were observable, the firm could pay a piece rate or fire shirkers without having to hold a queue of unemployed applicants, and the efficiency-wage gap would not be needed.</p>
+      <p class="th">กิจการเขียนสัญญาบนความพยายามที่มองไม่เห็นไม่ได้. การจ่ายเหนือค่าจ้างภายนอก และจ้างน้อยกว่าจำนวนคนที่อยากได้งาน ทำให้การตกงานแพง. คนงานจึงลงแรงเพื่อรักษาค่าเช่านั้น. ผลผลิตที่เพิ่มอาจคุ้มค่าจ้างที่สูงขึ้น. ถ้าความพยายามสังเกตได้ กิจการจะจ่ายตามชิ้นหรือไล่คนอู้ออกได้โดยไม่ต้องมีแถวคนว่างงาน และช่องว่าง efficiency wage ก็ไม่จำเป็น.</p>
+    </details>
+  </article>
+  <div class="pager">
+    <a href="ch16.html">← <span class="en">Ch 16</span><span class="th">บท 16</span></a>
+    <a href="ch18.html"><span class="en">Ch 18 Externalities</span><span class="th">บท 18 ผลกระทบภายนอก</span> →</a>
+  </div>
+</main>
+<footer class="site">
+  <p class="en">Principal–agent problems inside the firm are the same moral-hazard logic: the owner cannot watch the manager, so pay has to depend on something observable, such as profit, even though that loads risk onto the manager.</p>
+  <p class="th">ปัญหาตัวการ–ตัวแทนในกิจการเป็นตรรกะ moral hazard เดียวกัน: เจ้าของดูผู้จัดการไม่ได้ ดังนั้นค่าตอบแทนต้องผูกกับสิ่งที่สังเกตได้ เช่น กำไร แม้จะโยนความเสี่ยงไปให้ผู้จัดการ.</p>
+</footer>
+</body>
+</html>

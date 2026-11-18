@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch 11 · Pricing with market power</title>
+<meta name="description" content="Price discrimination, peak-load pricing, two-part tariffs, and bundling, with the 2025 matching and reservation-price problems.">
+<script>
+try {
+  var q = new URLSearchParams(location.search).get("lang");
+  var l = (q === "th" || q === "en") ? q : localStorage.getItem("micro-lang");
+  if (l === "th" || l === "en") {
+    document.documentElement.setAttribute("data-lang", l);
+    if (q) localStorage.setItem("micro-lang", q);
+  }
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content"><span class="en">Skip to content</span><span class="th">ข้ามไปเนื้อหา</span></a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">μ</span><span><span class="en">Micro final</span><span class="th">ไมโคร ไฟนอล</span><small><span class="en">Chapter 11</span><span class="th">บทที่ 11</span></small></span></a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="th">ไทย</button></div>
+</header>
+<nav id="site-nav" aria-label="Chapters"></nav>
+<main id="content">
+  <p class="kicker"><span class="en">Chapter 11</span><span class="th">บทที่ 11</span></p>
+  <h1><span class="en">Pricing with market power</span><span class="th">การตั้งราคาเมื่อมีอำนาจตลาด</span></h1>
+  <p class="lede">
+    <span class="en">A single price leaves consumer surplus on the table and refuses sales that would still cover marginal cost. Price discrimination, two-part tariffs, and bundling are ways to capture that surplus. The 2025 paper spends 13 points asking you to name the strategy and to price a bundle.</span>
+    <span class="th">ราคาเดียวทิ้งส่วนเกินผู้บริโภคไว้ และไม่ขายหน่วยที่ยังคุ้มต้นทุนส่วนเพิ่ม. การเลือกปฏิบัติทางราคา, two-part tariff, และ bundling คือวิธีเก็บส่วนเกินนั้น. ข้อสอบปี 2025 ให้ 13 คะแนนกับการเรียกชื่อกลยุทธ์และการตั้งราคาชุด.</span>
+  </p>
+  <p>
+    <span class="badge exam">2025 Q1 · 7 pts</span>
+    <span class="badge exam">2025 Q9 · 6 pts</span>
+    <span class="badge past"><span class="en">Matching item almost every year</span><span class="th">ข้อจับคู่เกือบทุกปี</span></span>
+  </p>
+
+  <h2><span class="en">One price versus perfect price discrimination</span><span class="th">ราคาเดียวเทียบกับการเลือกปฏิบัติสมบูรณ์</span></h2>
+  <figure class="fig">
+    <svg viewBox="0 0 680 400" role="img">
+      <title>Single monopoly price versus perfect price discrimination</title>
+      <line x1="60" y1="20" x2="60" y2="340" stroke="#1b1814"/>
+      <line x1="60" y1="340" x2="640" y2="340" stroke="#1b1814"/>
+      <polygon points="70,150 250,150 250,230 70,230" fill="rgba(30,77,123,.28)"/>
+      <polygon points="250,150 430,230 250,230" fill="rgba(27,107,69,.35)"/>
+      <line x1="70" y1="40" x2="560" y2="330" stroke="#0e3b2e" stroke-width="2.6"/>
+      <line x1="70" y1="40" x2="315" y2="330" stroke="#9d341f" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <line x1="70" y1="230" x2="520" y2="230" stroke="#1e4d7b" stroke-width="2.4"/>
+      <line x1="250" y1="150" x2="250" y2="340" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="430" y1="230" x2="430" y2="340" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <text x="66" y="16" font-size="14" font-family="sans-serif">P</text>
+      <text x="628" y="358" font-size="14" font-family="sans-serif">Q</text>
+      <text x="500" y="300" fill="#0e3b2e" font-size="15" font-family="sans-serif">D</text>
+      <text x="250" y="310" fill="#9d341f" font-size="15" font-family="sans-serif">MR</text>
+      <text x="490" y="222" fill="#1e4d7b" font-size="15" font-family="sans-serif">MC</text>
+      <text x="228" y="358" font-size="14" font-family="sans-serif">Q*</text>
+      <text x="408" y="358" font-size="14" font-family="sans-serif">Q**</text>
+      <text x="20" y="154" font-size="14" font-family="sans-serif">P*</text>
+      <text x="100" y="200" font-size="13" font-family="sans-serif">profit at one price</text>
+      <text x="280" y="200" font-size="13" font-family="sans-serif">extra profit</text>
+    </svg>
+    <figcaption>
+      <span class="en">One price: produce Q* where MR = MC and charge P*. Perfect (first-degree) price discrimination charges each buyer her reservation price, so the extra revenue from one more unit is the demand curve itself. Output expands to Q**, where demand crosses MC. Variable profit becomes the whole area between demand and MC. Consumer surplus falls to zero. DWL falls to zero — the inefficiency of monopoly is gone, and the surplus has been transferred to the seller.</span>
+      <span class="th">ราคาเดียว: ผลิต Q* ที่ MR = MC แล้วคิด P*. การเลือกปฏิบัติระดับหนึ่งที่สมบูรณ์ (perfect / first-degree price discrimination) คิดราคาเท่า reservation price ของแต่ละคน ดังนั้นรายรับส่วนเพิ่มของการผลิตเพิ่มหนึ่งหน่วยคือเส้นอุปสงค์เอง. ปริมาณขยายไป Q** ที่อุปสงค์ตัด MC. กำไรผันแปรกลายเป็นพื้นที่ทั้งหมดระหว่างอุปสงค์กับ MC. ส่วนเกินผู้บริโภคเหลือศูนย์. DWL เหลือศูนย์ — ความไร้ประสิทธิภาพหายไป และส่วนเกินย้ายไปอยู่ที่ผู้ขาย.</span>
+    </figcaption>
+  </figure>
+
+  <h2><span class="en">Name the strategy</span><span class="th">เรียกชื่อกลยุทธ์ให้ถูก</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th><span class="en">Strategy</span><span class="th">กลยุทธ์</span></th><th><span class="en">What is different</span><span class="th">อะไรต่างกัน</span></th><th><span class="en">The picture to remember</span><span class="th">ภาพที่ต้องจำ</span></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="en">First-degree / perfect price discrimination</span><span class="th">การเลือกปฏิบัติระดับหนึ่ง (First-degree / perfect)</span></td>
+          <td><span class="en">Each buyer pays her own reservation price.</span><span class="th">แต่ละคนจ่ายเท่า reservation price ของตน.</span></td>
+          <td><span class="en">Output where P = MC. CS = 0.</span><span class="th">ผลิตที่ P = MC. CS = 0.</span></td>
+        </tr>
+        <tr>
+          <td><span class="en">Second-degree</span><span class="th">ระดับสอง (Second-degree)</span></td>
+          <td><span class="en">The menu of quantities or versions is the same for everyone. Buyers self-select. Block pricing and storage tiers live here.</span><span class="th">เมนูปริมาณหรือรุ่นเหมือนกันสำหรับทุกคน ผู้ซื้อเลือกเอง. Block pricing และรุ่นความจุอยู่ในกลุ่มนี้.</span></td>
+          <td><span class="en">Declining steps along one demand curve.</span><span class="th">ขั้นบันไดราคาลดลงตามเส้นอุปสงค์เส้นเดียว.</span></td>
+        </tr>
+        <tr>
+          <td><span class="en">Third-degree</span><span class="th">ระดับสาม (Third-degree)</span></td>
+          <td><span class="en">Observable groups (country, student ID, age) pay different prices. The firm sets \(MR_1=MR_2=MC\). The less elastic group pays more.</span><span class="th">กลุ่มที่สังเกตได้ (ประเทศ, บัตรนักศึกษา, อายุ) จ่ายไม่เท่ากัน. กิจการตั้ง \(MR_1=MR_2=MC\). กลุ่มที่ยืดหยุ่นน้อยจ่ายแพงกว่า.</span></td>
+          <td><span class="en">Two demand curves, one MC.</span><span class="th">อุปสงค์สองเส้น, MC เส้นเดียว.</span></td>
+        </tr>
+        <tr>
+          <td><span class="en">Intertemporal price discrimination</span><span class="th">ข้ามเวลา (Intertemporal)</span></td>
+          <td><span class="en">High price for the impatient buyers now; a lower price for the same good later. New-season clothes, a film at release then at a discount.</span><span class="th">ราคาสูงสำหรับคนใจร้อนวันนี้ แล้วลดราคาของสินค้าเดิมทีหลัง. เสื้อผ้าต้นซีซัน, หนังวันฉายแล้วลดราคา.</span></td>
+          <td><span class="en">Two periods, demand shifts down over time. MC of the good itself need not change.</span><span class="th">สองช่วงเวลา อุปสงค์เลื่อนลงตามเวลา. MC ของตัวสินค้าไม่จำเป็นต้องเปลี่ยน.</span></td>
+        </tr>
+        <tr>
+          <td><span class="en">Peak-load pricing</span><span class="th">ราคาตามช่วงพีค (Peak-load)</span></td>
+          <td><span class="en">High price in the peak period because capacity is scarce and MC is higher. Grab surge pricing, evening parking, holiday hotel rates.</span><span class="th">ราคาสูงช่วงพีคเพราะกำลังการผลิตตึงและ MC สูงขึ้น. Grab ช่วงฝน, ที่จอดรถเย็น, โรงแรมวันหยุด.</span></td>
+          <td><span class="en">Peak MC above off-peak MC. Not the same as intertemporal discrimination.</span><span class="th">MC ช่วงพีคอยู่เหนือ MC นอกพีค. คนละเรื่องกับ intertemporal.</span></td>
+        </tr>
+        <tr>
+          <td><span class="en">Two-part tariff</span><span class="th">ราคาสองส่วน (Two-part tariff)</span></td>
+          <td><span class="en">An entry fee plus a per-unit price. Phone plans: monthly fee plus a charge beyond the allowance. With identical consumers, set the usage fee equal to MC and the entry fee equal to consumer surplus.</span><span class="th">ค่าเข้าบวกราคาต่อหน่วย. แพ็กเกจมือถือ: ค่ารายเดือนบวกค่าใช้เกินโควตา. ถ้าผู้บริโภคเหมือนกันทุกคน ให้ค่าใช้ต่อหน่วยเท่ากับ MC และค่าเข้าเท่ากับส่วนเกินผู้บริโภค.</span></td>
+          <td><span class="en">Usage price at MC; the triangle above it is the entry fee.</span><span class="th">ราคาต่อหน่วยที่ MC; สามเหลี่ยมเหนือมันคือค่าเข้า.</span></td>
+        </tr>
+        <tr>
+          <td><span class="en">Pure bundling / mixed bundling</span><span class="th">ขายเฉพาะเป็นชุด / ขายทั้งแยกและเป็นชุด</span></td>
+          <td><span class="en">Pure: only the package. Mixed: the package and the separate goods. Bundling pays when reservation prices are negatively correlated.</span><span class="th">Pure: ขายได้เฉพาะชุด. Mixed: มีทั้งชุดและแยก. Bundling คุ้มเมื่อ reservation price สัมพันธ์กันทางลบ.</span></td>
+          <td><span class="en">A table of reservation prices, not a demand curve.</span><span class="th">ตาราง reservation price ไม่ใช่เส้นอุปสงค์.</span></td>
+        </tr>
+        <tr>
+          <td><span class="en">Price differentiation</span><span class="th">Price differentiation</span></td>
+          <td><span class="en">On the 2025 list this is the leftover label: a price gap that tracks cost, not willingness to pay. If the gap sorts customers by elasticity or by a menu, use one of the names above instead.</span><span class="th">ในรายการปี 2025 นี่คือช่องที่เหลือ: ช่องว่างราคาที่ตามต้นทุน ไม่ใช่ตาม willingness to pay. ถ้าช่องว่างนั้นแยกคนตาม elasticity หรือตามเมนู ให้ใช้ชื่อด้านบน.</span></td>
+          <td><span class="en">Different cost, different price. Little market-power story.</span><span class="th">ต้นทุนต่าง ราคาต่าง. ไม่ได้ใช้อำนาจตลาดเป็นเรื่องหลัก.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h3><span class="en">2025 question 1 — the matching</span><span class="th">ข้อ 1 ปี 2025 — จับคู่</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th><span class="en">Case on the paper</span><span class="th">สถานการณ์ในข้อสอบ</span></th><th><span class="en">Answer</span><span class="th">คำตอบ</span></th></tr></thead>
+      <tbody>
+        <tr><td>1.1</td><td><span class="en">Flight only, hotel only, or flight + hotel.</span><span class="th">ขายตั๋วอย่างเดียว ที่พักอย่างเดียว หรือตั๋ว+ที่พัก.</span></td><td><span class="en">Mixed bundling</span><span class="th">Mixed bundling (ขายทั้งแยกและเป็นชุด)</span></td></tr>
+        <tr><td>1.2</td><td><span class="en">Monthly fee plus a per-minute or per-GB charge beyond the allowance.</span><span class="th">ค่ารายเดือน บวกค่านาทีหรือค่า GB ที่เกินโควตา.</span></td><td><span class="en">Two-part tariff</span><span class="th">Two-part tariff (ราคาสองส่วน)</span></td></tr>
+        <tr><td>1.3</td><td><span class="en">iPhone storage: 128 / 256 / 512 GB at different prices.</span><span class="th">ความจุ iPhone 128 / 256 / 512 GB คนละราคา.</span></td><td><span class="en">Second-degree (versions, self-selection)</span><span class="th">Second-degree (รุ่นให้เลือกเอง)</span></td></tr>
+        <tr><td>1.4</td><td><span class="en">5 GB for $10, 15 GB for $20, unlimited for $35.</span><span class="th">5 GB ราคา $10, 15 GB ราคา $20, ไม่จำกัด $35.</span></td><td><span class="en">Second-degree (quantity menu)</span><span class="th">Second-degree (เมนูตามปริมาณ)</span></td></tr>
+        <tr><td>1.5</td><td><span class="en">Netflix, Apple, Microsoft, Steam charge different prices by country.</span><span class="th">Netflix, Apple, Microsoft, Steam ตั้งราคาต่างกันตามประเทศ.</span></td><td><span class="en">Third-degree</span><span class="th">Third-degree (แยกตามกลุ่มประเทศ)</span></td></tr>
+        <tr><td>1.6</td><td><span class="en">Grab surge prices in rain, rush hour, or a big event.</span><span class="th">Grab ขึ้นราคาช่วงฝน ชั่วโมงเร่งด่วน หรืองานใหญ่.</span></td><td><span class="en">Peak-load pricing</span><span class="th">Peak-load pricing</span></td></tr>
+        <tr><td>1.7</td><td><span class="en">New-season clothes priced high; end-of-season discounts.</span><span class="th">เสื้อผ้าต้นซีซันราคาสูง ปลายซีซันลดราคา.</span></td><td><span class="en">Intertemporal price discrimination</span><span class="th">Intertemporal price discrimination</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p class="en">1.3 and 1.4 are both second-degree: the seller does not observe type, and buyers sort themselves. 1.6 is peak-load, not intertemporal — the high price is tied to a high-MC period, not to “early buyers of a durable.” 1.7 is intertemporal. Perfect price discrimination and “price differentiation” are unused on this particular matching.</p>
+    <p class="th">1.3 และ 1.4 เป็น second-degree ทั้งคู่: ผู้ขายไม่เห็นประเภท และผู้ซื้อแยกตัวเอง. 1.6 เป็น peak-load ไม่ใช่ intertemporal — ราคาสูงผูกกับช่วงที่ MC สูง ไม่ใช่ “คนที่ซื้อของคงทนเร็ว.” 1.7 เป็น intertemporal. Perfect price discrimination กับ “price differentiation” ไม่ถูกใช้ในข้อจับคู่นี้.</p>
+  </div>
+
+  <h2><span class="en">Formulas</span><span class="th">สูตร</span></h2>
+  <div class="grid-2">
+    <div class="formula">
+      <div class="name"><span class="en">Third-degree</span><span class="th">ระดับสาม</span></div>
+      $$MR_1=MR_2=MC, \qquad MR_i=P_i\left(1+\frac{1}{E_i}\right)$$
+      $$\frac{P_1}{P_2}=\frac{1+1/E_2}{1+1/E_1}$$
+      <p class="en">Charge more in the market with the smaller \(|E|\).</p>
+      <p class="th">คิดแพงกว่าในตลาดที่ \(|E|\) น้อยกว่า.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Two-part tariff, identical consumers</span><span class="th">ราคาสองส่วน ผู้บริโภคเหมือนกัน</span></div>
+      $$p=MC, \qquad T=CS(p)$$
+      <p class="en">Entry fee extracts the surplus. Usage is efficient. If consumers differ, the entry fee is limited by the low-demand person and the usage price is often above MC.</p>
+      <p class="th">ค่าเข้าดูดส่วนเกิน. การใช้มีประสิทธิภาพ. ถ้าผู้บริโภคต่างกัน ค่าเข้าถูกจำกัดโดยคนที่อุปสงค์ต่ำ และราคาต่อหน่วยมักสูงกว่า MC.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Advertising-to-sales</span><span class="th">สัดส่วนโฆษณาต่อยอดขาย</span></div>
+      $$\frac{A}{PQ}=\frac{E_A}{|E_d|}$$
+      <p class="en">Past papers (2021), not 2025. You need the advertising elasticity and the price elasticity. If the ratio is above the right-hand side, advertising is too high.</p>
+      <p class="th">ข้อเก่า (2021) ไม่ใช่ปี 2025. ต้องรู้ความยืดหยุ่นต่อโฆษณาและความยืดหยุ่นต่อราคา. ถ้าสัดส่วนสูงกว่าฝั่งขวา แสดงว่าโฆษณามากไป.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Bundling arithmetic</span><span class="th">เลขของ bundling</span></div>
+      $$\pi_i=(P_i-MC_i)\times(\text{number who buy})$$
+      $$\pi_B=(P_B-MC_1-MC_2)\times(\text{number who buy the bundle})$$
+      <p class="en">With a handful of consumers, the candidates for an optimal price are the reservation prices (or the sums, for a bundle). Compute every candidate. Do not average them.</p>
+      <p class="th">เมื่อมีผู้บริโภคไม่กี่คน ราคาที่เป็นตัวเลือกคือ reservation price (หรือผลบวก สำหรับชุด). คิดทุกตัวเลือก. อย่าเอาไปเฉลี่ย.</p>
+    </div>
+  </div>
+
+  <h2><span class="en">Worked example — two-part tariff</span><span class="th">ตัวอย่างทำเอง — two-part tariff</span></h2>
+  <p class="en">One hundred identical visitors. Each has \(P=12-q\). Marginal cost of a ride is 2. Fixed cost is zero.</p>
+  <p class="th">ผู้เยี่ยมชม 100 คนเหมือนกันทุกคน. แต่ละคนมี \(P=12-q\). ต้นทุนส่วนเพิ่มต่อรอบคือ 2. ไม่มีต้นทุนคงที่.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 640 360" role="img">
+      <title>Two-part tariff with identical consumers</title>
+      <line x1="60" y1="20" x2="60" y2="310" stroke="#1b1814"/>
+      <line x1="60" y1="310" x2="560" y2="310" stroke="#1b1814"/>
+      <polygon points="70,70 390,230 70,230" fill="rgba(198,161,91,.55)"/>
+      <line x1="70" y1="70" x2="500" y2="310" stroke="#0e3b2e" stroke-width="2.6"/>
+      <line x1="70" y1="230" x2="500" y2="230" stroke="#1e4d7b" stroke-width="2.4"/>
+      <line x1="390" y1="230" x2="390" y2="310" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <text x="64" y="16" font-size="14" font-family="sans-serif">P</text>
+      <text x="540" y="328" font-size="14" font-family="sans-serif">q per person</text>
+      <text x="20" y="78" font-size="14" font-family="sans-serif">12</text>
+      <text x="28" y="234" font-size="14" font-family="sans-serif">p = 2</text>
+      <text x="360" y="328" font-size="14" font-family="sans-serif">10</text>
+      <text x="150" y="160" font-size="14" font-family="sans-serif">entry fee T = CS = 50</text>
+      <text x="430" y="222" fill="#1e4d7b" font-size="14" font-family="sans-serif">MC</text>
+    </svg>
+    <figcaption>
+      <span class="en">Usage price equals MC. Each person rides 10 times. The gold triangle is the highest entry fee that person will pay.</span>
+      <span class="th">ราคาต่อรอบเท่ากับ MC. แต่ละคนเล่น 10 รอบ. สามเหลี่ยมสีทองคือค่าเข้าสูงสุดที่คนนั้นยอมจ่าย.</span>
+    </figcaption>
+  </figure>
+  <ol class="steps">
+    <li><p class="en">Set the ride price at marginal cost. Quantity per person follows from demand.</p><p class="th">ตั้งราคาต่อรอบเท่ากับต้นทุนส่วนเพิ่ม. ปริมาณต่อคนอ่านจากอุปสงค์.</p>
+      $$p=2, \qquad 2=12-q \Rightarrow q=10$$
+    </li>
+    <li><p class="en">Consumer surplus is the entry fee.</p><p class="th">ส่วนเกินผู้บริโภคคือค่าเข้า.</p>
+      $$T=\tfrac{1}{2}(12-2)\cdot 10=50$$
+    </li>
+    <li><p class="en">Profit. The usage margin is zero, so profit is only the entry fees. Compare with a single monopoly price: \(MR=12-2q=2\) gives \(q=5\), \(P=7\), profit per person \(=(7-2)\cdot 5=25\), which is half of 50.</p><p class="th">กำไร. ส่วนต่างต่อรอบเป็นศูนย์ ดังนั้นกำไรมีแค่ค่าเข้า. เทียบกับราคาผูกขาดเดียว: \(MR=12-2q=2\) ได้ \(q=5\), \(P=7\), กำไรต่อคน \(=(7-2)\cdot 5=25\) ซึ่งเป็นครึ่งหนึ่งของ 50.</p>
+      $$\pi=100\times 50=5000$$
+    </li>
+  </ol>
+
+  <h2><span class="en">Worked example — separate prices, pure bundling, mixed bundling</span><span class="th">ตัวอย่างทำเอง — ขายแยก, pure bundling, mixed bundling</span></h2>
+  <p class="en">Marginal cost is 30 for each good. Reservation prices:</p>
+  <p class="th">ต้นทุนส่วนเพิ่มสินค้าละ 30. Reservation price:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th>Good 1</th><th>Good 2</th><th><span class="en">Sum</span><span class="th">ผลบวก</span></th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>100</td><td>20</td><td>120</td></tr>
+        <tr><td>B</td><td>20</td><td>100</td><td>120</td></tr>
+        <tr><td>C</td><td>70</td><td>70</td><td>140</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ol class="steps">
+    <li>
+      <p class="en"><strong>Sell separately.</strong> Candidate prices are the reservation prices. A price of 20 is below MC, so profit is negative. Good 1 at 70 is bought by A and C: \((70-30)\times 2=80\). Good 1 at 100 is bought only by A: \(70\). So \(P_1=70\), profit 80. By symmetry \(P_2=70\), profit 80. Total profit 160. (C buys both and is indifferent on each; the firm still earns 40 per good from C.)</p>
+      <p class="th"><strong>ขายแยก.</strong> ราคาตัวเลือกคือ reservation price. ราคา 20 ต่ำกว่า MC กำไรติดลบ. สินค้า 1 ราคา 70 มี A กับ C ซื้อ: \((70-30)\times 2=80\). ราคา 100 มีแค่ A: \(70\). ดังนั้น \(P_1=70\) กำไร 80. สมมาตร \(P_2=70\) กำไร 80. กำไรรวม 160. (C ซื้อทั้งคู่และเฉย ๆ ในแต่ละชิ้น กิจการยังได้ 40 ต่อชิ้นจาก C.)</p>
+    </li>
+    <li>
+      <p class="en"><strong>Pure bundling.</strong> Everyone’s sum is at least 120. At \(P_B=120\) all three buy. Bundle cost is 60. Profit \(=(120-60)\times 3=180\). At 140 only C buys, profit \(80\). Pure bundling at 120 beats separate sales.</p>
+      <p class="th"><strong>Pure bundling.</strong> ผลบวกของทุกคนไม่ต่ำกว่า 120. ที่ \(P_B=120\) ทั้งสามคนซื้อ. ต้นทุนชุดคือ 60. กำไร \(=(120-60)\times 3=180\). ที่ 140 มีแค่ C กำไร \(80\). Pure bundling ที่ 120 ดีกว่าการขายแยก.</p>
+    </li>
+    <li>
+      <p class="en"><strong>Mixed bundling.</strong> Try \(P_1=100\), \(P_2=100\), \(P_B=140\).</p>
+      <p class="th"><strong>Mixed bundling.</strong> ลอง \(P_1=100\), \(P_2=100\), \(P_B=140\).</p>
+      <ul>
+        <li><span class="en">A’s surplus from good 1 alone is 0; the bundle surplus is \(120-140&lt;0\). A buys only good 1. Profit 70.</span><span class="th">ส่วนเกินของ A จากสินค้า 1 อย่างเดียวคือ 0; ส่วนเกินจากชุดคือ \(120-140&lt;0\). A ซื้อแค่สินค้า 1. กำไร 70.</span></li>
+        <li><span class="en">B buys only good 2. Profit 70.</span><span class="th">B ซื้อแค่สินค้า 2. กำไร 70.</span></li>
+        <li><span class="en">C cannot buy either good alone (\(70&lt;100\)) and is willing to pay 140 for the bundle. Profit \(140-60=80\).</span><span class="th">C ซื้อแยกไม่ได้ (\(70&lt;100\)) และยอมจ่าย 140 สำหรับชุด. กำไร \(140-60=80\).</span></li>
+      </ul>
+      <p class="en">Total profit \(70+70+80=220\), which beats pure bundling (180) and separate sales (160). The negative correlation is what makes the bundle useful for C while A and B are more profitable one good at a time.</p>
+      <p class="th">กำไรรวม \(70+70+80=220\) ดีกว่า pure bundling (180) และขายแยก (160). ความสัมพันธ์ทางลบทำให้ชุดมีประโยชน์สำหรับ C ขณะที่ A กับ B กำไรกว่าถ้าขายทีละชิ้น.</p>
+    </li>
+  </ol>
+
+  <h2><span class="en">2025 question 9</span><span class="th">ข้อ 9 ปี 2025</span></h2>
+  <p class="en">Both goods cost 20. Demands are independent. Reservation prices: A (25, 100), B (40, 80), C (60, 60), D (100, 25).</p>
+  <p class="th">สินค้าทั้งสองต้นทุน 20. อุปสงค์เป็นอิสระต่อกัน. Reservation price: A (25, 100), B (40, 80), C (60, 60), D (100, 25).</p>
+  <ol class="steps">
+    <li>
+      <p class="en"><strong>Separate.</strong> Good 1 candidates:</p>
+      <p class="th"><strong>ขายแยก.</strong> ตัวเลือกสินค้า 1:</p>
+      $$\begin{align*}
+      P=25 &\Rightarrow (5)\times 4=20\\
+      P=40 &\Rightarrow (20)\times 3=60\\
+      P=60 &\Rightarrow (40)\times 2=80\\
+      P=100 &\Rightarrow (80)\times 1=80
+      \end{align*}$$
+      <p class="en">Good 2 is the mirror image, also profit 80. Any pair with \(P_1\in\{60,100\}\) and \(P_2\in\{60,100\}\) is optimal. Total profit \(160\).</p>
+      <p class="th">สินค้า 2 เป็นภาพสะท้อน กำไร 80 เช่นกัน. คู่ใดก็ได้ที่ \(P_1\in\{60,100\}\) และ \(P_2\in\{60,100\}\) เหมาะสม. กำไรรวม \(160\).</p>
+    </li>
+    <li>
+      <p class="en"><strong>Pure bundling.</strong> Sums are 125, 120, 120, 125. Bundle cost is 40.</p>
+      <p class="th"><strong>Pure bundling.</strong> ผลบวกคือ 125, 120, 120, 125. ต้นทุนชุดคือ 40.</p>
+      $$P_B=120 \Rightarrow (120-40)\times 4=320$$
+      $$P_B=125 \Rightarrow (125-40)\times 2=170$$
+    </li>
+  </ol>
+  <p class="answer"><span class="en">Separate: prices 60 or 100 on each good, profit 160. Pure bundle: price 120, profit 320.</span><span class="th">ขายแยก: ราคา 60 หรือ 100 ในแต่ละสินค้า กำไร 160. ชุดอย่างเดียว: ราคา 120 กำไร 320.</span></p>
+  <p class="en">The 2025 question stops at pure bundling. The values are negatively correlated (A wants good 2, D wants good 1), which is why the bundle roughly doubles profit.</p>
+  <p class="th">ข้อปี 2025 หยุดที่ pure bundling. ค่ามีความสัมพันธ์ทางลบ (A อยากได้สินค้า 2, D อยากได้สินค้า 1) จึงทำให้ชุดเพิ่มกำไรเกือบเท่าตัว.</p>
+
+  <h2><span class="en">Third-degree numbers</span><span class="th">ตัวเลข third-degree</span></h2>
+  <p class="en">\(MC=6\). Market 1: \(P_1=30-Q_1\). Market 2: \(P_2=42-2Q_2\).</p>
+  <p class="th">\(MC=6\). ตลาด 1: \(P_1=30-Q_1\). ตลาด 2: \(P_2=42-2Q_2\).</p>
+  $$MR_1=30-2Q_1=6 \Rightarrow Q_1=12,\; P_1=18,\; E_1=(-1)\frac{18}{12}=-1.5$$
+  $$MR_2=42-4Q_2=6 \Rightarrow Q_2=9,\; P_2=24,\; E_2=\left(-\tfrac{1}{2}\right)\frac{24}{9}=-\tfrac{4}{3}$$
+  <p class="en">Market 2 is less elastic (\(|E|=1.33&lt;1.5\)) and pays the higher price. Both marginal revenues equal 6.</p>
+  <p class="th">ตลาด 2 ยืดหยุ่นน้อยกว่า (\(|E|=1.33&lt;1.5\)) และจ่ายราคาสูงกว่า. MR ทั้งสองเท่ากับ 6.</p>
+
+  <h2><span class="en">Practice</span><span class="th">ข้อฝึก</span></h2>
+  <article class="q">
+    <h3>1 <span class="badge past"><span class="en">Matching, new cases</span><span class="th">จับคู่ กรณีใหม่</span></span></h3>
+    <p class="en">Name the strategy: (a) a $10 card that gives 10% off for a year; (b) residents of the city pay less than tourists for the same park; (c) matinee tickets are cheaper than evening tickets; (d) a new headphone is expensive for a year, then the price is cut; (e) pie is $3, but $1 with the prime-rib dinner, and pie is also sold alone.</p>
+    <p class="th">บอกชื่อกลยุทธ์: (a) จ่ายบัตร $10 แล้วลด 10% ทั้งปี; (b) คนในเมืองจ่ายถูกกว่านักท่องเที่ยวสำหรับสวนเดียวกัน; (c) ตั๋วรอบบ่ายถูกกว่ารอบเย็น; (d) หูฟังรุ่นใหม่แพงหนึ่งปีแล้วลดราคา; (e) พายชิ้นละ $3 แต่ชิ้นละ $1 ถ้าสั่งสเต๊ก และพายก็ขายแยกได้.</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">(a) Two-part tariff. (b) Third-degree. (c) Peak-load — the evening crowd hits a capacity constraint. (d) Intertemporal price discrimination. (e) Mixed bundling. These are the 2024 bookstore-card, Disney-resident, new-audio, and parking items, plus the pie-with-dinner item, in the same family as 2020 and 2023.</p>
+      <p class="th">(a) Two-part tariff. (b) Third-degree. (c) Peak-load — คนดูรอบเย็นชนข้อจำกัดด้านที่นั่ง. (d) Intertemporal price discrimination. (e) Mixed bundling. เป็นครอบครัวเดียวกับข้อปี 2024, 2020 และ 2023.</p>
+    </details>
+  </article>
+  <article class="q">
+    <h3>2 <span class="badge past">2023 style</span></h3>
+    <p class="en">Computer reservation prices: consumer 1 values the computer at 1,200 and the monitor at 600; consumer 2 values them at 1,500 and 400. Marginal costs are 1,000 and 300. Can bundling raise profit above selling separately?</p>
+    <p class="th">Reservation price: คนที่ 1 ให้ค่าคอมพิวเตอร์ 1,200 และจอ 600; คนที่ 2 ให้ค่า 1,500 และ 400. ต้นทุนส่วนเพิ่ม 1,000 และ 300. การขายเป็นชุดเพิ่มกำไรกว่าขายแยกได้หรือไม่?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">Separately, a computer price of 1,200 sells two units, profit \((200)\times 2=400\). A price of 1,500 sells one, profit 500. So price the computer at 1,500, profit 500. Monitor: 400 sells two, profit \((100)\times 2=200\); 600 sells one, profit 300. Price the monitor at 600, profit 300. Separate profit = 800. Only consumer 2 buys a computer and only consumer 1 buys a monitor.</p>
+      <p class="th">ขายแยก: คอมพิวเตอร์ราคา 1,200 ขายได้สองเครื่อง กำไร \((200)\times 2=400\). ราคา 1,500 ขายได้หนึ่ง กำไร 500. จึงตั้งราคาคอมพิวเตอร์ที่ 1,500 กำไร 500. จอ: ราคา 400 ขายได้สอง กำไร 200; ราคา 600 ขายได้หนึ่ง กำไร 300. ตั้งราคาจอที่ 600 กำไร 300. กำไรแยกรวม 800. มีแค่คนที่ 2 ซื้อคอมพิวเตอร์ และแค่คนที่ 1 ซื้อจอ.</p>
+      <p class="en">Sums are 1,800 and 1,900. A pure bundle at 1,800 sells to both. Cost of a bundle is 1,300. Profit \(=(500)\times 2=1000&gt;800\). Yes, bundling raises profit by 200. The reservations are negatively correlated.</p>
+      <p class="th">ผลบวกคือ 1,800 และ 1,900. ชุดราคา 1,800 ขายได้ทั้งคู่. ต้นทุนชุดคือ 1,300. กำไร \(=(500)\times 2=1000&gt;800\). ได้ bundling เพิ่มกำไร 200. Reservation มีความสัมพันธ์ทางลบ.</p>
+    </details>
+  </article>
+  <div class="pager">
+    <a href="ch10.html">← <span class="en">Ch 10</span><span class="th">บท 10</span></a>
+    <a href="ch12.html"><span class="en">Ch 12 Oligopoly</span><span class="th">บท 12 ผู้ขายน้อยราย</span> →</a>
+  </div>
+</main>
+<footer class="site">
+  <p class="en">Diagrams on this page are redrawn for study. They are not copies of the lecture slides.</p>
+  <p class="th">รูปในหน้านี้วาดใหม่เพื่อใช้อ่านสอบ ไม่ได้คัดลอกจากสไลด์.</p>
+</footer>
+</body>
+</html>

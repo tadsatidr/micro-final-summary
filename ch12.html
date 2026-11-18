@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch 12 · Monopolistic competition and oligopoly</title>
+<meta name="description" content="Cournot, Stackelberg, and Bertrand calculations, reaction curves, and why monopolistic competition is a poor target for price regulation.">
+<script>
+try {
+  var q = new URLSearchParams(location.search).get("lang");
+  var l = (q === "th" || q === "en") ? q : localStorage.getItem("micro-lang");
+  if (l === "th" || l === "en") {
+    document.documentElement.setAttribute("data-lang", l);
+    if (q) localStorage.setItem("micro-lang", q);
+  }
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content"><span class="en">Skip to content</span><span class="th">ข้ามไปเนื้อหา</span></a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">μ</span><span><span class="en">Micro final</span><span class="th">ไมโคร ไฟนอล</span><small><span class="en">Chapter 12</span><span class="th">บทที่ 12</span></small></span></a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="th">ไทย</button></div>
+</header>
+<nav id="site-nav" aria-label="Chapters"></nav>
+<main id="content">
+  <p class="kicker"><span class="en">Chapter 12</span><span class="th">บทที่ 12</span></p>
+  <h1><span class="en">Monopolistic competition and oligopoly</span><span class="th">การแข่งขันผูกขาดและผู้ขายน้อยราย</span></h1>
+  <p class="lede">
+    <span class="en">This chapter carries the most points on the 2025 paper: a Cournot/Bertrand calculation (10) and a short argument about regulating monopolistic competition (4). Older papers in the packet ask the same pair of models almost every year, sometimes with collusion as a third part.</span>
+    <span class="th">บทนี้มีคะแนนมากที่สุดในปี 2025: คำนวณ Cournot/Bertrand (10) และเหตุผลสั้น ๆ ว่าทำไมไม่กำกับตลาดแข่งขันผูกขาด (4). ข้อเก่าในชุดเดียวกันถามคู่แบบจำลองนี้เกือบทุกปี บางปีมี collusion เป็นส่วนที่สาม.</span>
+  </p>
+  <p>
+    <span class="badge exam">2025 Q5 · 10 pts</span>
+    <span class="badge exam">2025 Q13 · 4 pts</span>
+    <span class="badge past"><span class="en">Cournot then Bertrand: 2020–2025</span><span class="th">Cournot แล้ว Bertrand: 2020–2025</span></span>
+  </p>
+
+  <h2><span class="en">Monopolistic competition</span><span class="th">การแข่งขันผูกขาด</span></h2>
+  <p class="en">Two ingredients: differentiated products (downward-sloping demand for the brand, but many close substitutes) and free entry. Short run can show profit. Entry shifts demand down until it is tangent to average cost. Long run: \(P=AC&gt;MC\), economic profit is zero, and output is to the left of minimum AC (excess capacity).</p>
+  <p class="th">มีส่วนผสมสองอย่าง: สินค้าแตกต่างกัน (อุปสงค์ของแบรนด์ลาดลง แต่มีสินค้าใกล้เคียงหลายตัว) และเข้าออกเสรี. ระยะสั้นอาจมีกำไร. การเข้ามาเลื่อนอุปสงค์ลงจนสัมผัสเส้นต้นทุนเฉลี่ย. ระยะยาว: \(P=AC&gt;MC\), กำไรเชิงเศรษฐกิจเป็นศูนย์, และปริมาณอยู่ทางซ้ายของ AC ต่ำสุด (มีกำลังการผลิตส่วนเกิน).</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 720 340" role="img">
+      <title>Monopolistic competition in the short run and the long run</title>
+      <text x="120" y="22" font-size="14" font-family="sans-serif">Short run</text>
+      <text x="470" y="22" font-size="14" font-family="sans-serif">Long run</text>
+      <line x1="36" y1="28" x2="36" y2="300" stroke="#1b1814"/>
+      <line x1="36" y1="300" x2="330" y2="300" stroke="#1b1814"/>
+      <path d="M50 70 C 90 70, 120 250, 180 255 C 240 250, 280 70, 320 60" fill="none" stroke="#8c6a2a" stroke-width="2.2"/>
+      <path d="M70 280 C 120 270, 160 250, 190 180 C 220 110, 250 50, 300 36" fill="none" stroke="#1e4d7b" stroke-width="2.2"/>
+      <line x1="48" y1="48" x2="250" y2="290" stroke="#0e3b2e" stroke-width="2.4"/>
+      <line x1="48" y1="48" x2="150" y2="290" stroke="#9d341f" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="118" y1="150" x2="118" y2="300" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="36" y1="150" x2="118" y2="150" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <rect x="36" y="150" width="82" height="48" fill="rgba(30,77,123,.28)"/>
+      <text x="48" y="176" font-size="12" font-family="sans-serif">profit</text>
+      <text x="300" y="120" fill="#0e3b2e" font-size="13" font-family="sans-serif">D</text>
+      <text x="250" y="90" fill="#8c6a2a" font-size="13" font-family="sans-serif">AC</text>
+      <text x="300" y="70" fill="#1e4d7b" font-size="13" font-family="sans-serif">MC</text>
+      <text x="100" y="318" font-size="13" font-family="sans-serif">Qsr</text>
+
+      <line x1="390" y1="28" x2="390" y2="300" stroke="#1b1814"/>
+      <line x1="390" y1="300" x2="690" y2="300" stroke="#1b1814"/>
+      <path d="M410 80 C 450 80, 490 250, 545 258 C 600 250, 640 80, 680 64" fill="none" stroke="#8c6a2a" stroke-width="2.2"/>
+      <path d="M430 290 C 480 275, 530 250, 560 170 C 585 100, 620 48, 675 34" fill="none" stroke="#1e4d7b" stroke-width="2.2"/>
+      <line x1="420" y1="70" x2="660" y2="270" stroke="#0e3b2e" stroke-width="2.4"/>
+      <line x1="420" y1="70" x2="545" y2="280" stroke="#9d341f" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="512" y1="148" x2="512" y2="300" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="575" y1="198" x2="575" y2="300" stroke="#5c564c" stroke-dasharray="3 3"/>
+      <polygon points="512,148 575,198 512,214" fill="rgba(157,52,31,.4)"/>
+      <circle cx="512" cy="148" r="4" fill="#0e3b2e"/>
+      <text x="500" y="318" font-size="13" font-family="sans-serif">Qlr</text>
+      <text x="560" y="318" font-size="13" font-family="sans-serif">min AC</text>
+      <text x="520" y="140" font-size="12" font-family="sans-serif">P=AC</text>
+      <text x="590" y="250" fill="#0e3b2e" font-size="13" font-family="sans-serif">D</text>
+      <text x="640" y="100" fill="#8c6a2a" font-size="13" font-family="sans-serif">AC</text>
+      <text x="525" y="188" font-size="12" font-family="sans-serif">DWL</text>
+    </svg>
+    <figcaption>
+      <span class="en">Left: short run, price above AC, a profit rectangle. Right: free entry has shifted demand down until it is tangent to AC. Price equals average cost, so profit is zero, but price is still above MC, so a deadweight-loss triangle remains. Quantity is left of the bottom of AC.</span>
+      <span class="th">ซ้าย: ระยะสั้น ราคาอยู่เหนือ AC มีสี่เหลี่ยมกำไร. ขวา: การเข้ามาอย่างเสรีเลื่อนอุปสงค์ลงจนสัมผัส AC. ราคาเท่ากับต้นทุนเฉลี่ย กำไรจึงเป็นศูนย์ แต่ราคายังสูงกว่า MC จึงยังมีสามเหลี่ยม deadweight loss. ปริมาณอยู่ทางซ้ายของก้น AC.</span>
+    </figcaption>
+  </figure>
+
+  <h3><span class="en">2025 question 13 — why not regulate it?</span><span class="th">ข้อ 13 ปี 2025 — ทำไมไม่ควรกำกับ?</span></h3>
+  <div class="grid-2">
+    <div class="card">
+      <p class="en"><strong>The markup is small.</strong> Brand elasticities in this market structure are often around −4 to −8 (the cola and coffee examples in the chapter). The Lerner index \(1/|E|\) is then 0.13 to 0.25. The DWL triangle is small next to the cost of writing a price rule for every brand.</p>
+      <p class="th"><strong>ส่วนเพิ่มราคาเล็ก.</strong> ความยืดหยุ่นของแบรนด์ในโครงสร้างนี้มักอยู่ราว −4 ถึง −8 (ตัวอย่างโคล่าและกาแฟในบท). ดัชนี Lerner \(1/|E|\) จึงอยู่ที่ 0.13 ถึง 0.25. สามเหลี่ยม DWL เล็กเมื่อเทียบกับต้นทุนของการเขียนกฎราคาให้ทุกแบรนด์.</p>
+    </div>
+    <div class="card">
+      <p class="en"><strong>Forcing P = MC causes losses.</strong> Long-run tangency means \(P=AC&gt;MC\). A regulated price at MC lies below AC, so every firm loses money, exit follows, and the variety people were paying for disappears. Profit is already zero, so there is no monopoly profit to “give back.”</p>
+      <p class="th"><strong>การบังคับ P = MC ทำให้ขาดทุน.</strong> จุดสัมผัสระยะยาวหมายถึง \(P=AC&gt;MC\). ราคาที่ถูกกำกับที่ MC อยู่ใต้ AC ทุกกิจการขาดทุน แล้วออกจากตลาด ความหลากหลายที่คนยอมจ่ายก็หายไป. กำไรเป็นศูนย์อยู่แล้ว จึงไม่มีกำไรผูกขาดให้ “คืน.”</p>
+    </div>
+  </div>
+  <p class="en">A 2022 question asks for one argument that “too many shampoo brands” is wasteful (excess capacity, P &gt; MC) and one argument against (variety is valuable, and the DWL is small). Those are the two sides of the same diagram.</p>
+  <p class="th">ข้อปี 2022 ให้หาเหตุผลหนึ่งข้อว่า “แชมพูหลายยี่ห้อเกินไป” สิ้นเปลือง (กำลังการผลิตส่วนเกิน, P &gt; MC) และเหตุผลค้านหนึ่งข้อ (ความหลากหลายมีค่า และ DWL เล็ก). นั่นคือสองด้านของรูปเดียวกัน.</p>
+
+  <h2><span class="en">Cournot reaction curves</span><span class="th">เส้นปฏิกิริยาของ Cournot</span></h2>
+  <p class="en">Cournot: two firms choose quantity at the same time. Each treats the other’s quantity as fixed. A Nash equilibrium is a pair of quantities where each is a best response to the other — the crossing of the reaction curves. The slide example is \(P=30-Q\) and \(MC=0\).</p>
+  <p class="th">Cournot: สองกิจการเลือกปริมาณพร้อมกัน. แต่ละฝ่ายถือว่าปริมาณของอีกฝ่ายคงที่. ดุลยภาพ Nash คือคู่ปริมาณที่แต่ละฝ่ายตอบสนองดีที่สุดต่ออีกฝ่าย — จุดตัดของเส้นปฏิกิริยา (reaction curve). ตัวอย่างในสไลด์คือ \(P=30-Q\) และ \(MC=0\).</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 440" role="img">
+      <title>Cournot reaction curves, collusion, and Stackelberg for P = 30 − Q</title>
+      <line x1="80" y1="40" x2="80" y2="360" stroke="#1b1814"/>
+      <line x1="80" y1="360" x2="560" y2="360" stroke="#1b1814"/>
+      <line x1="80" y1="60" x2="300" y2="360" stroke="#0e3b2e" stroke-width="2.6"/>
+      <line x1="80" y1="210" x2="520" y2="360" stroke="#1e4d7b" stroke-width="2.6"/>
+      <line x1="80" y1="210" x2="300" y2="360" stroke="#8c6a2a" stroke-width="2.2" stroke-dasharray="6 4"/>
+      <circle cx="226.7" cy="260" r="5" fill="#9d341f"/>
+      <circle cx="190" cy="285" r="5" fill="#8c6a2a"/>
+      <circle cx="300" cy="285" r="5" fill="#0e3b2e"/>
+      <text x="88" y="34" font-size="14" font-family="sans-serif">q2</text>
+      <text x="548" y="378" font-size="14" font-family="sans-serif">q1</text>
+      <text x="200" y="70" fill="#0e3b2e" font-size="14" font-family="sans-serif">Firm 1: q1 = 15 − q2/2</text>
+      <text x="360" y="340" fill="#1e4d7b" font-size="14" font-family="sans-serif">Firm 2: q2 = 15 − q1/2</text>
+      <text x="100" y="200" fill="#8c6a2a" font-size="13" font-family="sans-serif">collusion q1 + q2 = 15</text>
+      <text x="236" y="254" font-size="13" font-family="sans-serif">Cournot (10, 10)</text>
+      <text x="308" y="280" font-size="13" font-family="sans-serif">Stackelberg (15, 7.5)</text>
+      <text x="80" y="278" font-size="13" font-family="sans-serif">(7.5, 7.5)</text>
+      <text x="292" y="378" font-size="12" font-family="sans-serif">15</text>
+      <text x="512" y="378" font-size="12" font-family="sans-serif">30</text>
+      <text x="48" y="214" font-size="12" font-family="sans-serif">15</text>
+      <text x="48" y="64" font-size="12" font-family="sans-serif">30</text>
+    </svg>
+    <figcaption>
+      <span class="en">Slide numbers, not the 2025 numbers. Firm 1’s reaction is \(q_1=15-q_2/2\) (green, hits the q1 axis at 15). Firm 2’s reaction is \(q_2=15-q_1/2\) (blue). Cournot is (10, 10). The dashed line is joint-profit maximum \(q_1+q_2=15\); equal sharing is (7.5, 7.5). Stackelberg leader produces 15 and the follower, on its reaction curve, produces 7.5.</span>
+      <span class="th">ตัวเลขจากสไลด์ ไม่ใช่ตัวเลขปี 2025. เส้นปฏิกิริยาของกิจการ 1 คือ \(q_1=15-q_2/2\) (เขียว ตัดแกน q1 ที่ 15). ของกิจการ 2 คือ \(q_2=15-q_1/2\) (น้ำเงิน). Cournot คือ (10, 10). เส้นประคือกำไรร่วมสูงสุด \(q_1+q_2=15\); แบ่งเท่ากันคือ (7.5, 7.5). ผู้นำ Stackelberg ผลิต 15 และผู้ตามบนเส้นปฏิกิริยาของตนผลิต 7.5.</span>
+    </figcaption>
+  </figure>
+
+  <h2><span class="en">Formulas for identical firms, \(P=a-b(q_1+q_2)\), constant MC \(=c\)</span><span class="th">สูตรเมื่อกิจการเหมือนกัน \(P=a-b(q_1+q_2)\) และ MC คงที่เท่ากับ \(c\)</span></h2>
+  <div class="grid-2">
+    <div class="formula">
+      <div class="name">Cournot</div>
+      $$q_1=\frac{a-c}{2b}-\frac{q_2}{2}, \qquad q_i=\frac{a-c}{3b}$$
+      $$Q=\frac{2(a-c)}{3b}, \quad P=\frac{a+2c}{3}, \quad \pi_i=\frac{(a-c)^2}{9b}$$
+      <p class="en">Derive the reaction curve on the exam. Use the closed form only as a check.</p>
+      <p class="th">ในห้องสอบให้หาเส้นปฏิกิริยาเอง. ใช้สูตรสำเร็จแค่ตรวจคำตอบ.</p>
+    </div>
+    <div class="formula">
+      <div class="name">Stackelberg</div>
+      $$q_L=\frac{a-c}{2b}, \quad q_F=\frac{a-c}{4b}, \quad P=\frac{a+3c}{4}$$
+      <p class="en">Leader substitutes the follower’s reaction curve into its own revenue, then sets MR = MC. The leader produces more and earns more.</p>
+      <p class="th">ผู้นำแทนเส้นปฏิกิริยาของผู้ตามลงในรายรับของตน แล้วตั้ง MR = MC. ผู้นำผลิตมากกว่าและได้กำไรมากกว่า.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Bertrand, homogeneous goods</span><span class="th">Bertrand สินค้าเหมือนกัน</span></div>
+      $$P_1=P_2=c, \qquad \pi_1=\pi_2=0, \qquad Q=\frac{a-c}{b}$$
+      <p class="en">Undercutting stops only at MC. With the same constant MC, one price above MC is not a Nash equilibrium. Profit is zero even though there are only two firms.</p>
+      <p class="th">การตัดราคาหยุดที่ MC เท่านั้น. เมื่อ MC คงที่เท่ากัน ราคาที่สูงกว่า MC ไม่ใช่ Nash. กำไรเป็นศูนย์แม้มีแค่สองกิจการ.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Collusion</span><span class="th">สมรู้ร่วมคิด (Collusion)</span></div>
+      $$Q=\frac{a-c}{2b}, \quad P=\frac{a+c}{2}$$
+      <p class="en">The cartel behaves as a monopolist. Each firm then wants to cheat: the Cournot point, not the collusion point, is the Nash equilibrium. That is the prisoners’ dilemma of oligopoly pricing.</p>
+      <p class="th">คาร์เทลทำตัวเหมือนผู้ผูกขาด. แต่ละกิจการอยากโกง: จุด Cournot ไม่ใช่จุด collusion คือ Nash. นั่นคือ prisoners’ dilemma ของการตั้งราคาในตลาดผู้ขายน้อยราย.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p class="en"><strong>Slide check, \(P=30-Q\), \(MC=0\).</strong> Cournot: each produces 10, \(P=10\), profit \(100\) each. Collusion: \(Q=15\), each 7.5, \(P=15\), profit \(112.5\) each. Stackelberg: leader 15, follower 7.5, \(P=7.5\), profits \(112.5\) and \(56.25\). The Bertrand slide uses \(MC=3\) instead: Cournot each 9, \(P=12\), profit \(81\); Bertrand \(P=3\), \(Q=27\), profit \(0\).</p>
+    <p class="th"><strong>ตรวจกับสไลด์ \(P=30-Q\), \(MC=0\).</strong> Cournot: คนละ 10, \(P=10\), กำไรคนละ \(100\). Collusion: \(Q=15\), คนละ 7.5, \(P=15\), กำไรคนละ \(112.5\). Stackelberg: ผู้นำ 15 ผู้ตาม 7.5, \(P=7.5\), กำไร \(112.5\) และ \(56.25\). สไลด์ Bertrand ใช้ \(MC=3\): Cournot คนละ 9, \(P=12\), กำไร \(81\); Bertrand \(P=3\), \(Q=27\), กำไร \(0\).</p>
+  </div>
+
+  <h2><span class="en">Worked example — 2025 question 5</span><span class="th">ตัวอย่างทำเอง — ข้อ 5 ปี 2025</span></h2>
+  <p class="en">\(Q_D=100-5P\), two firms, each with constant \(MC=2\).</p>
+  <p class="th">\(Q_D=100-5P\), สองกิจการ, MC คงที่เท่ากับ 2 ทั้งคู่.</p>
+  <ol class="steps">
+    <li>
+      <p class="en">Invert demand before taking revenue.</p>
+      <p class="th">กลับอุปสงค์ก่อนหารายรับ.</p>
+      $$P=20-\frac{1}{5}(q_1+q_2)$$
+    </li>
+    <li>
+      <p class="en">Firm 1’s revenue and marginal revenue, treating \(q_2\) as fixed.</p>
+      <p class="th">รายรับและ MR ของกิจการ 1 โดยถือว่า \(q_2\) คงที่.</p>
+      $$R_1=20q_1-\tfrac{1}{5}q_1^2-\tfrac{1}{5}q_1 q_2$$
+      $$MR_1=20-\tfrac{2}{5}q_1-\tfrac{1}{5}q_2$$
+    </li>
+    <li>
+      <p class="en">Set MR equal to 2 and solve the reaction curve.</p>
+      <p class="th">ตั้ง MR เท่ากับ 2 แล้วหาเส้นปฏิกิริยา.</p>
+      $$20-\tfrac{2}{5}q_1-\tfrac{1}{5}q_2=2 \Rightarrow 2q_1+q_2=90 \Rightarrow q_1=45-\tfrac{1}{2}q_2$$
+      <p class="en">Firm 2 is symmetric: \(q_2=45-\tfrac{1}{2}q_1\).</p>
+      <p class="th">กิจการ 2 สมมาตร: \(q_2=45-\tfrac{1}{2}q_1\).</p>
+    </li>
+    <li>
+      $$q_1=45-\tfrac{1}{2}\left(45-\tfrac{1}{2}q_1\right)=22.5+\tfrac{1}{4}q_1$$
+      $$\tfrac{3}{4}q_1=22.5 \Rightarrow q_1=q_2=30, \quad Q=60$$
+      $$P=20-0.2\times 60=8, \qquad \pi_i=(8-2)\times 30=180$$
+    </li>
+    <li>
+      <p class="en"><strong>Bertrand.</strong> Homogeneous product, same constant MC. The only Nash equilibrium in prices is \(P=MC=2\). Then \(Q=100-5\times 2=90\), and each firm’s profit is 0.</p>
+      <p class="th"><strong>Bertrand.</strong> สินค้าเหมือนกัน MC คงที่เท่ากัน. ดุลยภาพ Nash ของราคาคือ \(P=MC=2\) เท่านั้น. จากนั้น \(Q=100-5\times 2=90\) และกำไรของแต่ละกิจการเป็น 0.</p>
+    </li>
+  </ol>
+  <p class="answer"><span class="en">Cournot: each firm 30, \(P=8\), profit 180 each. Bertrand: \(P=2\), \(Q=90\), profit 0 each.</span><span class="th">Cournot: กิจการละ 30, \(P=8\), กำไรคนละ 180. Bertrand: \(P=2\), \(Q=90\), กำไรคนละ 0.</span></p>
+  <p class="en">Closed-form check: \(a=20\), \(b=1/5\), \(c=2\). Cournot quantity \((a-c)/(3b)=18/0.6=30\). Price \((a+2c)/3=24/3=8\). It matches, but the reaction-curve lines are what the mark scheme wants to see.</p>
+  <p class="th">ตรวจด้วยสูตรสำเร็จ: \(a=20\), \(b=1/5\), \(c=2\). ปริมาณ Cournot \((a-c)/(3b)=18/0.6=30\). ราคา \((a+2c)/3=24/3=8\). ตรงกัน แต่เส้นปฏิกิริยาคือสิ่งที่เกณฑ์ให้คะแนนอยากเห็น.</p>
+
+  <h2><span class="en">Practice</span><span class="th">ข้อฝึก</span></h2>
+  <article class="q">
+    <h3>1 <span class="badge past"><span class="en">2022 style, with collusion</span><span class="th">แนวปี 2022 มี collusion</span></span></h3>
+    <p class="en">\(P=100-2Q\), \(Q=q_1+q_2\), \(TC_i=4q_i\). Find the Cournot equilibrium and profits. If the firms collude, what industry output and price maximize joint profit?</p>
+    <p class="th">\(P=100-2Q\), \(Q=q_1+q_2\), \(TC_i=4q_i\). หาดุลยภาพ Cournot และกำไร. ถ้าสมรู้ร่วมคิด ปริมาณและราคาของอุตสาหกรรมที่ทำให้กำไรร่วมสูงสุดคือเท่าใด?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      $$MR_1=100-4q_1-2q_2=4 \Rightarrow q_1=24-\tfrac{1}{2}q_2$$
+      <p class="en">Symmetric solution: \(q_i=16\), \(Q=32\), \(P=100-64=36\), \(\pi_i=(36-4)\times 16=512\).</p>
+      <p class="th">คำตอบสมมาตร: \(q_i=16\), \(Q=32\), \(P=100-64=36\), \(\pi_i=(36-4)\times 16=512\).</p>
+      <p class="en">Collusion is the monopoly problem: \(MR=100-4Q=4\), so \(Q=24\), \(P=52\). Split equally, each produces 12. Joint profit \(=(52-4)\times 24=1152\), which is more than \(512\times 2=1024\).</p>
+      <p class="th">Collusion คือโจทย์ผูกขาด: \(MR=100-4Q=4\) ดังนั้น \(Q=24\), \(P=52\). แบ่งเท่ากัน คนละ 12. กำไรร่วม \(=(52-4)\times 24=1152\) มากกว่า \(512\times 2=1024\).</p>
+    </details>
+  </article>
+  <article class="q">
+    <h3>2 <span class="badge past"><span class="en">Unequal MC, 2023 style</span><span class="th">MC ไม่เท่ากัน แนวปี 2023</span></span></h3>
+    <p class="en">\(P=6-0.01Q\). Firm A has \(MC=1\), firm C has \(MC=2\), fixed costs are zero. Find Cournot quantities and profits. If they choose prices instead, what price does each charge?</p>
+    <p class="th">\(P=6-0.01Q\). กิจการ A มี \(MC=1\), กิจการ C มี \(MC=2\), ไม่มีต้นทุนคงที่. หาปริมาณและกำไรแบบ Cournot. ถ้าเลือกราคาแทน แต่ละฝ่ายคิดราคาเท่าใด?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      $$MR_A=6-0.02q_A-0.01q_C=1 \Rightarrow q_A=250-0.5q_C$$
+      $$MR_C=6-0.02q_C-0.01q_A=2 \Rightarrow q_C=200-0.5q_A$$
+      $$q_A=250-0.5(200-0.5q_A)=150+0.25q_A \Rightarrow q_A=200,\; q_C=100$$
+      $$Q=300,\; P=6-3=3$$
+      $$\pi_A=(3-1)\times 200=400, \qquad \pi_C=(3-2)\times 100=100$$
+      <p class="en">Price competition with homogeneous goods: the lower-cost firm undercuts. The equilibrium price is just at firm C’s cost, \(P=2\) (A captures the market; C sells nothing and earns zero). A’s quantity is \(Q=6/0.01-2/0.01=400\), profit \((2-1)\times 400=400\). If a tie at \(P=2\) is allowed to split demand, say so — the usual Bertrand-with-cost-advantage result is that the efficient firm sets price equal to the rival’s MC.</p>
+      <p class="th">แข่งขันด้วยราคาสินค้าเหมือนกัน: ฝ่ายต้นทุนต่ำกว่าตัดราคา. ราคาดุลยภาพอยู่ที่ต้นทุนของ C คือ \(P=2\) (A กวาดตลาด; C ไม่ขายและกำไรเป็นศูนย์). ปริมาณของ A คือ \(Q=(6-2)/0.01=400\) กำไร \((2-1)\times 400=400\). ถ้าให้เสมอกันที่ \(P=2\) แล้วแบ่งตลาด ต้องเขียนไว้ — ผล Bertrand มาตรฐานเมื่อต้นทุนไม่เท่ากันคือฝ่ายที่มีประสิทธิภาพตั้งราคาเท่ากับ MC ของคู่แข่ง.</p>
+    </details>
+  </article>
+  <div class="pager">
+    <a href="ch11.html">← <span class="en">Ch 11</span><span class="th">บท 11</span></a>
+    <a href="ch13.html"><span class="en">Ch 13 Games</span><span class="th">บท 13 ทฤษฎีเกม</span> →</a>
+  </div>
+</main>
+<footer class="site">
+  <p class="en">Reaction curves above use the lecture example \(P=30-Q\), \(MC=0\). The 2025 algebra is in the worked example and is a different diagram: intercepts at 45, crossing at (30, 30).</p>
+  <p class="th">เส้นปฏิกิริยาด้านบนใช้ตัวอย่างในบทเรียน \(P=30-Q\), \(MC=0\). พีชคณิตปี 2025 อยู่ในตัวอย่างทำเอง คนละรูป: จุดตัดแกนที่ 45 และตัดกันที่ (30, 30).</p>
+</footer>
+</body>
+</html>

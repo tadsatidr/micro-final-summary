@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch 14 · Markets for factor inputs</title>
+<meta name="description" content="Marginal revenue product, monopsony marginal expenditure, economic rent, and Ricardian rent, with the 2025 labor calculation.">
+<script>
+try {
+  var q = new URLSearchParams(location.search).get("lang");
+  var l = (q === "th" || q === "en") ? q : localStorage.getItem("micro-lang");
+  if (l === "th" || l === "en") {
+    document.documentElement.setAttribute("data-lang", l);
+    if (q) localStorage.setItem("micro-lang", q);
+  }
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content"><span class="en">Skip to content</span><span class="th">ข้ามไปเนื้อหา</span></a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">μ</span><span><span class="en">Micro final</span><span class="th">ไมโคร ไฟนอล</span><small><span class="en">Chapter 14</span><span class="th">บทที่ 14</span></small></span></a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="th">ไทย</button></div>
+</header>
+<nav id="site-nav" aria-label="Chapters"></nav>
+<main id="content">
+  <p class="kicker"><span class="en">Chapter 14</span><span class="th">บทที่ 14</span></p>
+  <h1><span class="en">Markets for factor inputs</span><span class="th">ตลาดปัจจัยการผลิต</span></h1>
+  <p class="lede">
+    <span class="en">A firm hires a factor until the extra revenue from one more unit equals the extra expenditure on it. In a competitive labor market those two curves are \(MRP_L\) and the wage. A monopsonist faces an upward-sloping supply, so marginal expenditure lies above the wage. The 2025 paper asks for the ME equation, the hire, and the wage, plus a short account of Ricardian rent.</span>
+    <span class="th">กิจการจ้างปัจจัยจนรายรับส่วนเพิ่มจากหนึ่งหน่วยเท่ากับรายจ่ายส่วนเพิ่มของหน่วยนั้น. ในตลาดแรงงานแข่งขัน เส้นสองเส้นนั้นคือ \(MRP_L\) กับค่าจ้าง. ผู้ซื้อผูกขาดเผชิญอุปทานที่ชันขึ้น ดังนั้นรายจ่ายส่วนเพิ่มอยู่เหนือค่าจ้าง. ข้อสอบปี 2025 ถามสมการ ME, จำนวนที่จ้าง, และค่าจ้าง พร้อมคำอธิบายสั้น ๆ ของค่าเช่าแบบ Ricardian.</span>
+  </p>
+  <p>
+    <span class="badge exam">2025 Q11 · 7 pts</span>
+    <span class="badge exam">2025 Q10 · 3 pts</span>
+    <span class="badge past"><span class="en">Hiring table 2022 and 2024; rent 2020</span><span class="th">ตารางจ้างงานปี 2022 และ 2024; ค่าเช่าปี 2020</span></span>
+  </p>
+
+  <h2><span class="en">Competitive hire versus monopsony</span><span class="th">การจ้างแบบแข่งขันเทียบกับผู้ซื้อผูกขาด</span></h2>
+  <figure class="fig">
+    <svg viewBox="0 0 680 420" role="img">
+      <title>Monopsony labor market using the 2025 supply and MRP curves</title>
+      <line x1="70" y1="28" x2="70" y2="350" stroke="#1b1814"/>
+      <line x1="70" y1="350" x2="620" y2="350" stroke="#1b1814"/>
+      <polygon points="282.5,175.6 282.5,262.8 388.8,219.2" fill="rgba(157,52,31,.4)"/>
+      <line x1="70" y1="350" x2="580" y2="140.7" stroke="#0e3b2e" stroke-width="2.6"/>
+      <line x1="70" y1="350" x2="452.5" y2="36" stroke="#9d341f" stroke-width="2.4" stroke-dasharray="7 4"/>
+      <line x1="70" y1="88.3" x2="580" y2="297.7" stroke="#1e4d7b" stroke-width="2.6"/>
+      <line x1="70" y1="262.8" x2="282.5" y2="262.8" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="282.5" y1="175.6" x2="282.5" y2="350" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="388.8" y1="219.2" x2="388.8" y2="350" stroke="#5c564c" stroke-dasharray="3 3"/>
+      <line x1="70" y1="219.2" x2="388.8" y2="219.2" stroke="#5c564c" stroke-dasharray="3 3"/>
+      <circle cx="282.5" cy="175.6" r="4.5" fill="#1b1814"/>
+      <circle cx="282.5" cy="262.8" r="4.5" fill="#0e3b2e"/>
+      <circle cx="388.8" cy="219.2" r="4.5" fill="#1e4d7b"/>
+      <text x="76" y="22" font-size="14" font-family="sans-serif">w, MRP</text>
+      <text x="600" y="368" font-size="14" font-family="sans-serif">L</text>
+      <text x="500" y="150" fill="#0e3b2e" font-size="14" font-family="sans-serif">S: w = L/100</text>
+      <text x="400" y="48" fill="#9d341f" font-size="14" font-family="sans-serif">ME = L/50</text>
+      <text x="470" y="290" fill="#1e4d7b" font-size="14" font-family="sans-serif">MRP</text>
+      <text x="8" y="266" font-size="13" font-family="sans-serif">10/3</text>
+      <text x="18" y="180" font-size="13" font-family="sans-serif">20/3</text>
+      <text x="24" y="223" font-size="13" font-family="sans-serif">5</text>
+      <text x="248" y="372" font-size="13" font-family="sans-serif">333</text>
+      <text x="372" y="372" font-size="13" font-family="sans-serif">500</text>
+      <text x="300" y="210" font-size="13" font-family="sans-serif">DWL</text>
+    </svg>
+    <figcaption>
+      <span class="en">Drawn to the 2025 curves. The monopsonist hires where MRP crosses ME (L = 1,000/3) and pays the wage on the supply curve below that point (w = 10/3). MRP there is 20/3, above the wage. A competitive market on the same curves hires 500 at wage 5. The triangle is the deadweight loss from hiring too few workers.</span>
+      <span class="th">วาดตามเส้นของข้อสอบปี 2025. ผู้ซื้อผูกขาดจ้างตรงที่ MRP ตัด ME (L = 1,000/3) แล้วจ่ายค่าจ้างบนเส้นอุปทานใต้จุดนั้น (w = 10/3). MRP ตรงนั้นคือ 20/3 สูงกว่าค่าจ้าง. ตลาดแข่งขันบนเส้นเดียวกันจ้าง 500 ที่ค่าจ้าง 5. สามเหลี่ยมคือส่วนสูญเสียจากการจ้างน้อยเกินไป.</span>
+    </figcaption>
+    <ul class="legend">
+      <li><i class="swatch dwl"></i><span class="en">Deadweight loss of monopsony</span><span class="th">ส่วนสูญเสียน้ำหนักเปล่าของผู้ซื้อผูกขาด</span></li>
+    </ul>
+  </figure>
+
+  <h2><span class="en">Formulas</span><span class="th">สูตร</span></h2>
+  <div class="grid-2">
+    <div class="formula">
+      <div class="name"><span class="en">Marginal revenue product</span><span class="th">ผลผลิตส่วนเพิ่มเป็นมูลค่า (MRP)</span></div>
+      $$MRP_L = MP_L \times MR$$
+      <p class="en">If the output market is competitive, \(MR=P\), so \(MRP_L=P\cdot MP_L\). If the firm is a monopoly in output, \(MR&lt;P\), so labor demand lies further left. Hire while \(MRP_L&gt;w\); stop when they are equal.</p>
+      <p class="th">ถ้าตลาดผลผลิตแข่งขัน \(MR=P\) ดังนั้น \(MRP_L=P\cdot MP_L\). ถ้ากิจการผูกขาดในผลผลิต \(MR&lt;P\) เส้นอุปสงค์แรงงานอยู่ทางซ้ายกว่า. จ้างต่อเมื่อ \(MRP_L&gt;w\); หยุดเมื่อเท่ากัน.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Monopsony expenditure</span><span class="th">รายจ่ายของผู้ซื้อผูกขาด</span></div>
+      $$ME = w + L\frac{dw}{dL} = w\left(1+\frac{1}{E_S}\right)$$
+      $$MRP_L = ME, \quad \text{then read } w \text{ off supply}$$
+      <p class="en">Do not pay the ME. ME is the internal margin. The wage is the height of supply at the chosen L. Supply elasticity \(E_S&gt;0\); more elastic supply means less monopsony power.</p>
+      <p class="th">อย่าจ่ายเท่ากับ ME. ME คือส่วนเพิ่มภายใน. ค่าจ้างคือความสูงของอุปทาน ณ L ที่เลือก. ความยืดหยุ่นของอุปทาน \(E_S&gt;0\); อุปทานยิ่งยืดหยุ่น อำนาจผู้ซื้อผูกขาดยิ่งน้อย.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Economic rent</span><span class="th">ค่าเช่าเชิงเศรษฐกิจ (Economic rent)</span></div>
+      <p class="en">Payment above what the factor would accept. On an upward labor-supply curve it is the area above supply and below the wage, up to the workers hired. It is not the same object as accounting rent on a shop lease.</p>
+      <p class="th">ส่วนที่จ่ายเกินกว่าที่ปัจจัยยอมรับ. บนเส้นอุปทานแรงงานที่ชันขึ้น มันคือพื้นที่เหนืออุปทานและใต้ค่าจ้างจนถึงจำนวนที่จ้าง. ไม่ใช่ค่าเช่าร้านในบัญชี.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Ricardian rent</span><span class="th">ค่าเช่าแบบ Ricardian</span></div>
+      <p class="en">Land of better quality has a lower cost of growing the crop. The price of the crop is set by cost on the worst land still in use (the margin), which earns zero rent. Better land earns a rent equal to its cost advantage. Rent is price-determined: a higher crop price brings worse land into use and raises rent on the better land. It is not a cost that determines the price.</p>
+      <p class="th">ที่ดินคุณภาพดีกว่ามีต้นทุนการปลูกต่ำกว่า. ราคาพืชถูกกำหนดโดยต้นทุนบนที่ดินที่แย่ที่สุดที่ยังถูกใช้ (ชายขอบ) ซึ่งได้ค่าเช่าเป็นศูนย์. ที่ดินที่ดีกว่าได้ค่าเช่าเท่ากับส่วนต่างต้นทุน. ค่าเช่าถูกกำหนดโดยราคา: ราคาพืชสูงขึ้นจะดึงที่ดินที่แย่กว่ามาใช้ และเพิ่มค่าเช่าบนที่ดินที่ดีกว่า. มันไม่ใช่ต้นทุนที่ไปกำหนดราคา.</p>
+    </div>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 680 280" role="img">
+      <title>Economic rent and Ricardian rent on fixed land</title>
+      <line x1="40" y1="20" x2="40" y2="230" stroke="#1b1814"/>
+      <line x1="40" y1="230" x2="300" y2="230" stroke="#1b1814"/>
+      <polygon points="40,230 40,90 180,90 40,200" fill="rgba(27,107,69,.35)"/>
+      <line x1="40" y1="200" x2="250" y2="60" stroke="#0e3b2e" stroke-width="2.4"/>
+      <line x1="40" y1="40" x2="250" y2="210" stroke="#1e4d7b" stroke-width="2.4"/>
+      <line x1="40" y1="90" x2="180" y2="90" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <text x="250" y="70" fill="#0e3b2e" font-size="13" font-family="sans-serif">S labor</text>
+      <text x="200" y="200" fill="#1e4d7b" font-size="13" font-family="sans-serif">MRP</text>
+      <text x="70" y="80" font-size="13" font-family="sans-serif">rent</text>
+      <text x="46" y="250" font-size="13" font-family="sans-serif">Upward supply: rent is the triangle</text>
+
+      <line x1="400" y1="20" x2="400" y2="230" stroke="#1b1814"/>
+      <line x1="400" y1="230" x2="650" y2="230" stroke="#1b1814"/>
+      <line x1="520" y1="30" x2="520" y2="230" stroke="#0e3b2e" stroke-width="2.6"/>
+      <line x1="410" y1="50" x2="620" y2="200" stroke="#1e4d7b" stroke-width="2.2"/>
+      <line x1="410" y1="90" x2="620" y2="150" stroke="#1e4d7b" stroke-width="2.2" stroke-dasharray="5 3"/>
+      <rect x="400" y="118" width="120" height="112" fill="rgba(198,161,91,.45)"/>
+      <text x="530" y="40" fill="#0e3b2e" font-size="13" font-family="sans-serif">S land</text>
+      <text x="560" y="190" fill="#1e4d7b" font-size="13" font-family="sans-serif">D1</text>
+      <text x="560" y="140" fill="#1e4d7b" font-size="13" font-family="sans-serif">D2</text>
+      <text x="420" y="180" font-size="13" font-family="sans-serif">all payment is rent</text>
+      <text x="410" y="250" font-size="13" font-family="sans-serif">Fixed land: a higher demand raises rent</text>
+    </svg>
+    <figcaption>
+      <span class="en">Left: some workers would have worked for less than w*; the triangle above supply is economic rent. Right: land in fixed supply. The whole payment is rent, and a shift from D1 to D2 raises the rent without calling forth more land. That is the Ricardian picture in the factor market. The quality story — better plots earn more than the marginal plot — is the same idea applied acre by acre.</span>
+      <span class="th">ซ้าย: แรงงานบางคนยอมทำงานที่ค่าจ้างต่ำกว่า w*; สามเหลี่ยมเหนืออุปทานคือค่าเช่าเชิงเศรษฐกิจ. ขวา: ที่ดินอุปทานคงที่. เงินที่จ่ายทั้งหมดเป็นค่าเช่า และการเลื่อนจาก D1 ไป D2 เพิ่มค่าเช่าโดยไม่ได้เรียกที่ดินเพิ่ม. นี่คือภาพ Ricardian ในตลาดปัจจัย. เรื่องคุณภาพ — แปลงที่ดีกว่าได้มากกว่าแปลงชายขอบ — เป็นความคิดเดียวกันทีละแปลง.</span>
+    </figcaption>
+  </figure>
+
+  <h2><span class="en">Worked example — 2025 question 11</span><span class="th">ตัวอย่างทำเอง — ข้อ 11 ปี 2025</span></h2>
+  <p class="en">Supply to the firm: \(L=100w\). Labor demand: \(L=1000-100\,MRP_L\). The firm is a monopsonist.</p>
+  <p class="th">อุปทานที่เข้าหากิจการ: \(L=100w\). อุปสงค์แรงงาน: \(L=1000-100\,MRP_L\). กิจการเป็นผู้ซื้อผูกขาด.</p>
+  <ol class="steps">
+    <li>
+      <p class="en">Write the wage, then marginal expenditure. Two routes, same answer.</p>
+      <p class="th">เขียนค่าจ้าง แล้วหารายจ่ายส่วนเพิ่ม. สองทางได้คำตอบเดียวกัน.</p>
+      $$w=\frac{L}{100}$$
+      $$ME=\frac{d(wL)}{dL}=\frac{d}{dL}\left(\frac{L^2}{100}\right)=\frac{L}{50}$$
+      $$ME=w+L\frac{dw}{dL}=\frac{L}{100}+L\cdot\frac{1}{100}=\frac{L}{50}$$
+    </li>
+    <li>
+      <p class="en">Invert the demand curve so MRP is on the left.</p>
+      <p class="th">กลับเส้นอุปสงค์ให้ MRP อยู่ซ้าย.</p>
+      $$MRP_L=10-\frac{L}{100}$$
+    </li>
+    <li>
+      <p class="en">Set MRP equal to ME. Then read the wage off supply, not off ME.</p>
+      <p class="th">ตั้ง MRP เท่ากับ ME. แล้วอ่านค่าจ้างจากอุปทาน ไม่ใช่จาก ME.</p>
+      $$10-\frac{L}{100}=\frac{L}{50}=\frac{2L}{100}$$
+      $$10=\frac{3L}{100} \Rightarrow L=\frac{1000}{3}\approx 333.33$$
+      $$w=\frac{1000/3}{100}=\frac{10}{3}\approx 3.33$$
+      $$MRP_L=10-\frac{10}{3}=\frac{20}{3}\approx 6.67 &gt; w$$
+    </li>
+  </ol>
+  <p class="answer"><span class="en">\(ME=L/50\). Hire \(1000/3\) workers. Pay \(w=10/3\).</span><span class="th">\(ME=L/50\). จ้าง \(1000/3\) คน. จ่าย \(w=10/3\).</span></p>
+  <p class="en">Competitive check on the same curves: \(L/100=10-L/100\), so \(L=500\), \(w=5\). The monopsonist hires fewer people and pays a lower wage. That comparison is the 2023 “draw both employers” question.</p>
+  <p class="th">ตรวจแบบแข่งขันบนเส้นเดียวกัน: \(L/100=10-L/100\) ดังนั้น \(L=500\), \(w=5\). ผู้ซื้อผูกขาดจ้างน้อยกว่าและจ่ายค่าจ้างต่ำกว่า. การเทียบนี้คือข้อปี 2023 ที่ให้วาดนายจ้างทั้งสองแบบ.</p>
+
+  <h3><span class="en">2025 question 10, in one paragraph</span><span class="th">ข้อ 10 ปี 2025 ในย่อหน้าเดียว</span></h3>
+  <p class="en">Ricardian rent is generated because land differs in fertility while the crop sells at one price. That price has to cover cost on the least fertile land that is still worth using, so that marginal land earns no rent. Every better acre saves cost relative to the margin, and that saving is rent. Because the supply of each grade of land is fixed, the rent does not call forth more of that land; a rise in the crop price creates the rent rather than the other way around.</p>
+  <p class="th">ค่าเช่าแบบ Ricardian เกิดเพราะที่ดินอุดมสมบูรณ์ไม่เท่ากัน แต่พืชขายได้ราคาเดียว. ราคานั้นต้องครอบคลุมต้นทุนบนที่ดินที่แย่ที่สุดซึ่งยังคุ้มที่จะใช้ ดังนั้นที่ดินชายขอบไม่ได้ค่าเช่า. ทุกเอเคอร์ที่ดีกว่าประหยัดต้นทุนเมื่อเทียบกับชายขอบ และส่วนที่ประหยัดได้นั้นคือค่าเช่า. เพราะอุปทานของที่ดินแต่ละเกรดคงที่ ค่าเช่าไม่ได้เรียกที่ดินเกรดนั้นเพิ่ม; ราคาพืชที่สูงขึ้นเป็นฝ่ายสร้างค่าเช่า ไม่ใช่กลับกัน.</p>
+
+  <h2><span class="en">Practice</span><span class="th">ข้อฝึก</span></h2>
+  <article class="q">
+    <h3>1 <span class="badge past"><span class="en">2024 hiring table</span><span class="th">ตารางจ้างงานปี 2024</span></span></h3>
+    <p class="en">Minimum wage $4.25 per hour, 8 hours a day, so a day of labor costs $34. Output sells for $5. Days of labor and output: (0, 0), (1, 8), (2, 15), (3, 21), (4, 26), (5, 30). How many days are hired?</p>
+    <p class="th">ค่าจ้างขั้นต่ำ $4.25 ต่อชั่วโมง วันละ 8 ชั่วโมง ดังนั้นแรงงานหนึ่งวันต้นทุน $34. ผลผลิตขายได้ชิ้นละ $5. จำนวนวันกับผลผลิต: (0, 0), (1, 8), (2, 15), (3, 21), (4, 26), (5, 30). จะจ้างกี่วัน?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th><span class="en">Day</span><span class="th">วัน</span></th><th>MP</th><th>\(MRP=5\cdot MP\)</th><th><span class="en">Hire?</span><span class="th">จ้างไหม</span></th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>8</td><td>40</td><td>40 &gt; 34</td></tr>
+            <tr><td>2</td><td>7</td><td>35</td><td>35 &gt; 34</td></tr>
+            <tr><td>3</td><td>6</td><td>30</td><td>30 &lt; 34 stop</td></tr>
+            <tr><td>4</td><td>5</td><td>25</td><td><span class="en">no</span><span class="th">ไม่</span></td></tr>
+            <tr><td>5</td><td>4</td><td>20</td><td><span class="en">no</span><span class="th">ไม่</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="answer"><span class="en">Hire 2 days. The third day’s MRP is $30, below the $34 wage.</span><span class="th">จ้าง 2 วัน. MRP ของวันที่สามคือ $30 ต่ำกว่าค่าจ้าง $34.</span></p>
+    </details>
+  </article>
+  <article class="q">
+    <h3>2 <span class="badge past">2022</span></h3>
+    <p class="en">The only variable input is labor. An average worker produces 100 breads a day, costs $128 a day, and bread sells for $2. Is the firm maximizing profit?</p>
+    <p class="th">ปัจจัยผันแปรมีแค่แรงงาน. แรงงานหนึ่งคนโดยเฉลี่ยผลิตขนมปัง 100 ก้อนต่อวัน ต้นทุนวันละ $128 ขนมปังราคา $2. กิจการกำไรสูงสุดหรือยัง?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">Value of the extra breads from one more worker, if marginal product equals that 100, is \(P\cdot MP=2\times 100=200\). The wage is 128. Because \(200&gt;128\), the last worker still adds more revenue than cost, so the firm should hire more. Profit maximization needs \(P\cdot MP_L=w\) at the margin. (If 100 were only the average product, you would need the marginal product before you could be sure. The question is written so that 100 is the output of the worker you are deciding about.)</p>
+      <p class="th">มูลค่าของขนมปังเพิ่มจากแรงงานอีกหนึ่งคน ถ้าผลผลิตส่วนเพิ่มเท่ากับ 100 คือ \(P\cdot MP=2\times 100=200\). ค่าจ้างคือ 128. เพราะ \(200&gt;128\) คนสุดท้ายยังสร้างรายรับมากกว่าต้นทุน กิจการควรจ้างเพิ่ม. การกำไรสูงสุดต้องการ \(P\cdot MP_L=w\) ที่หน่วยสุดท้าย. (ถ้า 100 เป็นแค่ผลผลิตเฉลี่ย จะต้องรู้ผลผลิตส่วนเพิ่มก่อนถึงจะชัวร์. โจทย์เขียนมาให้ 100 เป็นผลผลิตของคนที่กำลังตัดสินใจ.)</p>
+    </details>
+  </article>
+  <article class="q">
+    <h3>3 <span class="badge past"><span class="en">2020 labor market</span><span class="th">ตลาดแรงงานปี 2020</span></span></h3>
+    <p class="en">Supply \(L=100w\). Industry demand \(L=450-50w\). Find the competitive wage and employment, and the workers’ economic rent. Then suppose one buyer: how many workers, and at what wage?</p>
+    <p class="th">อุปทาน \(L=100w\). อุปสงค์อุตสาหกรรม \(L=450-50w\). หาค่าจ้างและการจ้างแบบแข่งขัน และค่าเช่าเชิงเศรษฐกิจของแรงงาน. แล้วสมมติมีผู้ซื้อคนเดียว: จ้างกี่คน ที่ค่าจ้างเท่าใด?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">Competitive: \(w=L/100\) and \(w=(450-L)/50=9-L/50\). So \(L/100=9-2L/100\), \(3L/100=9\), \(L=300\), \(w=3\). Rent is the triangle under the wage and above supply from 0 to 300: \(\tfrac{1}{2}\times 300\times 3=450\).</p>
+      <p class="th">แข่งขัน: \(w=L/100\) และ \(w=(450-L)/50=9-L/50\). ดังนั้น \(L/100=9-2L/100\), \(3L/100=9\), \(L=300\), \(w=3\). ค่าเช่าคือสามเหลี่ยมใต้ค่าจ้างและเหนืออุปทานจาก 0 ถึง 300: \(\tfrac{1}{2}\times 300\times 3=450\).</p>
+      <p class="en">One buyer: \(ME=L/50\). Demand in MRP form: \(w=9-L/50\), and that wage on the demand curve is the MRP. Set \(9-L/50=L/50\), so \(9=2L/50=L/25\), \(L=225\). Wage on supply: \(w=225/100=2.25\).</p>
+      <p class="th">ผู้ซื้อคนเดียว: \(ME=L/50\). อุปสงค์ในรูป MRP: \(w=9-L/50\) และค่าจ้างบนเส้นอุปสงค์นั้นคือ MRP. ตั้ง \(9-L/50=L/50\) ดังนั้น \(9=L/25\), \(L=225\). ค่าจ้างบนอุปทาน: \(w=225/100=2.25\).</p>
+    </details>
+  </article>
+  <div class="pager">
+    <a href="ch13.html">← <span class="en">Ch 13</span><span class="th">บท 13</span></a>
+    <a href="ch16.html"><span class="en">Ch 16 Equilibrium</span><span class="th">บท 16 ดุลยภาพทั่วไป</span> →</a>
+  </div>
+</main>
+<footer class="site">
+  <p class="en">A wage increase has a substitution effect toward more hours and an income effect toward more leisure. When the income effect wins, the market labor-supply curve bends backward. That diagram was not on the 2025 paper.</p>
+  <p class="th">ค่าจ้างที่สูงขึ้นมีผลทดแทนไปทางชั่วโมงทำงานที่มากขึ้น และผลรายได้ไปทางพักผ่อนที่มากขึ้น. เมื่อผลรายได้ชนะ เส้นอุปทานแรงงานของตลาดจะงอกลับ. รูปนั้นไม่อยู่ในข้อสอบปี 2025.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch 10 · Monopoly and monopsony</title>
+<meta name="description" content="Monopoly and monopsony graphs, the markup rule, the Lerner index, and the 2025 cost-and-demand calculation.">
+<script>
+try {
+  var q = new URLSearchParams(location.search).get("lang");
+  var l = (q === "th" || q === "en") ? q : localStorage.getItem("micro-lang");
+  if (l === "th" || l === "en") {
+    document.documentElement.setAttribute("data-lang", l);
+    if (q) localStorage.setItem("micro-lang", q);
+  }
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content"><span class="en">Skip to content</span><span class="th">ข้ามไปเนื้อหา</span></a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">μ</span><span><span class="en">Micro final</span><span class="th">ไมโคร ไฟนอล</span><small><span class="en">Chapter 10</span><span class="th">บทที่ 10</span></small></span></a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="th">ไทย</button></div>
+</header>
+<nav id="site-nav" aria-label="Chapters"></nav>
+<main id="content">
+  <p class="kicker"><span class="en">Chapter 10</span><span class="th">บทที่ 10</span></p>
+  <h1><span class="en">Monopoly and monopsony</span><span class="th">ตลาดผูกขาดและผู้ซื้อผูกขาด</span></h1>
+  <p class="lede">
+    <span class="en">A seller with market power (monopoly) faces the market demand curve. A buyer with market power (monopsony) faces the market supply curve. Both set the margin equal to marginal cost or marginal value, then read the price off the demand or supply curve — not off MR or ME.</span>
+    <span class="th">ผู้ขายที่มีอำนาจตลาด (monopoly) เผชิญอุปสงค์ทั้งตลาด. ผู้ซื้อที่มีอำนาจตลาด (monopsony) เผชิญอุปทานทั้งตลาด. ทั้งคู่ตั้งส่วนเพิ่มให้เท่ากับต้นทุนหรือมูลค่าส่วนเพิ่ม แล้วไปอ่านราคาบนเส้นอุปสงค์หรืออุปทาน ไม่ได้อ่านบน MR หรือ ME.</span>
+  </p>
+  <p>
+    <span class="badge exam">2025 Q12 · 10 pts</span>
+    <span class="badge past"><span class="en">Also 2020–22, 2024: elasticity, markup, tax</span><span class="th">ปีอื่นด้วย: elasticity, markup, ภาษี</span></span>
+  </p>
+
+  <h2><span class="en">The monopoly graph</span><span class="th">กราฟผูกขาด</span></h2>
+  <p class="en">For a straight demand curve, marginal revenue (MR) starts at the same intercept and is twice as steep, so it hits zero at half the quantity where demand hits zero. Produce where \(MR=MC\). The price is the point on demand above that quantity. The competitive benchmark is where demand crosses MC.</p>
+  <p class="th">ถ้าอุปสงค์เป็นเส้นตรง รายรับส่วนเพิ่ม (MR) เริ่มที่จุดตัดเดียวกันแต่ชันเป็นสองเท่า จึงตัดศูนย์ที่ปริมาณครึ่งหนึ่งของจุดที่อุปสงค์ตัดศูนย์. ผลิตตรงที่ \(MR=MC\). ราคาคือจุดบนอุปสงค์เหนือปริมาณนั้น. จุดแข่งขันคือที่อุปสงค์ตัด MC.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 680 420" role="img">
+      <title>Monopoly output, price, surplus, and deadweight loss</title>
+      <line x1="70" y1="24" x2="70" y2="360" stroke="#1b1814" stroke-width="1.6"/>
+      <line x1="70" y1="360" x2="640" y2="360" stroke="#1b1814" stroke-width="1.6"/>
+      <polygon points="70,118 250,118 250,210 70,210" fill="rgba(198,161,91,.45)"/>
+      <polygon points="70,48 250,118 70,118" fill="rgba(27,107,69,.35)"/>
+      <polygon points="250,118 250,210 390,210" fill="rgba(157,52,31,.38)"/>
+      <line x1="90" y1="210" x2="620" y2="210" stroke="#1e4d7b" stroke-width="2.4"/>
+      <line x1="90" y1="48" x2="600" y2="340" stroke="#0e3b2e" stroke-width="2.6"/>
+      <line x1="90" y1="48" x2="345" y2="340" stroke="#9d341f" stroke-width="2.4" stroke-dasharray="7 4"/>
+      <line x1="250" y1="118" x2="250" y2="360" stroke="#1b1814" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="390" y1="210" x2="390" y2="360" stroke="#1b1814" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="70" y1="118" x2="250" y2="118" stroke="#1b1814" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="250" cy="210" r="4.5" fill="#1b1814"/>
+      <circle cx="250" cy="118" r="4.5" fill="#0e3b2e"/>
+      <circle cx="390" cy="210" r="4.5" fill="#1e4d7b"/>
+      <text x="78" y="18" font-size="14" font-family="sans-serif">P</text>
+      <text x="628" y="378" font-size="14" font-family="sans-serif">Q</text>
+      <text x="548" y="328" font-size="15" fill="#0e3b2e" font-family="sans-serif">D = AR</text>
+      <text x="300" y="328" font-size="15" fill="#9d341f" font-family="sans-serif">MR</text>
+      <text x="560" y="202" font-size="15" fill="#1e4d7b" font-family="sans-serif">MC</text>
+      <text x="86" y="112" font-size="14" font-family="sans-serif">Pm</text>
+      <text x="40" y="214" font-size="14" font-family="sans-serif">MC</text>
+      <text x="232" y="380" font-size="14" font-family="sans-serif">Qm</text>
+      <text x="372" y="380" font-size="14" font-family="sans-serif">Qc</text>
+      <text x="92" y="90" font-size="13" font-family="sans-serif">CS</text>
+      <text x="130" y="170" font-size="13" font-family="sans-serif">PS / profit</text>
+      <text x="292" y="175" font-size="13" font-family="sans-serif">DWL</text>
+    </svg>
+    <figcaption>
+      <span class="en">Constant MC. Profit is maximized at Qm where MR = MC. Price is Pm on demand, so P &gt; MC. The triangle between Qm and Qc, under demand and above MC, is the deadweight loss (DWL). Giving the profit rectangle back to consumers would not remove that triangle: the units between Qm and Qc are still not produced.</span>
+      <span class="th">MC คงที่. กำไรสูงสุดที่ Qm ซึ่ง MR = MC. ราคาคือ Pm บนอุปสงค์ ดังนั้น P &gt; MC. สามเหลี่ยมระหว่าง Qm กับ Qc ใต้เส้นอุปสงค์และเหนือ MC คือส่วนสูญเสียน้ำหนักเปล่า (Deadweight Loss, DWL). แม้เอาสี่เหลี่ยมกำไรคืนให้ผู้บริโภค สามเหลี่ยมนั้นก็ไม่หาย เพราะหน่วยระหว่าง Qm กับ Qc ยังไม่ได้ถูกผลิต.</span>
+    </figcaption>
+    <ul class="legend">
+      <li><i class="swatch cs"></i><span class="en">Consumer surplus (CS)</span><span class="th">ส่วนเกินผู้บริโภค (Consumer Surplus)</span></li>
+      <li><i class="swatch ps"></i><span class="en">Producer surplus, here equal to profit</span><span class="th">ส่วนเกินผู้ผลิต (Producer Surplus) ซึ่งในรูปนี้เท่ากับกำไร</span></li>
+      <li><i class="swatch dwl"></i><span class="en">Deadweight loss (DWL)</span><span class="th">ส่วนสูญเสียน้ำหนักเปล่า (Deadweight Loss)</span></li>
+    </ul>
+  </figure>
+
+  <div class="callout">
+    <p class="en"><strong>There is no monopoly supply curve.</strong> Output depends on MC and on the shape of demand. A shift in demand can change price without changing quantity, or quantity without changing price. Do not draw an upward “monopoly supply” and shift it.</p>
+    <p class="th"><strong>ตลาดผูกขาดไม่มีเส้นอุปทาน.</strong> ปริมาณขึ้นกับ MC และรูปร่างของอุปสงค์. อุปสงค์เลื่อนอาจทำให้ราคาเปลี่ยนโดยปริมาณเท่าเดิม หรือปริมาณเปลี่ยนโดยราคาเท่าเดิม. อย่าวาด “เส้นอุปทานของผู้ผูกขาด” แล้วเลื่อนมัน.</p>
+  </div>
+
+  <h2><span class="en">Formulas</span><span class="th">สูตร</span></h2>
+  <div class="grid-2">
+    <div class="formula">
+      <div class="name"><span class="en">Profit maximum</span><span class="th">กำไรสูงสุด</span></div>
+      $$\pi = R(Q)-C(Q), \qquad MR = MC$$
+      <p class="en">If \(MR&gt;MC\), produce more. If \(MR&lt;MC\), produce less.</p>
+      <p class="th">ถ้า \(MR&gt;MC\) ให้ผลิตเพิ่ม. ถ้า \(MR&lt;MC\) ให้ผลิตลด.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Linear demand</span><span class="th">อุปสงค์เส้นตรง</span></div>
+      $$P = a-bQ \Rightarrow MR = a-2bQ$$
+      <p class="en">Same intercept, twice the slope. MR = 0 at the midpoint of demand.</p>
+      <p class="th">จุดตัดเดียวกัน ความชันเป็นสองเท่า. MR = 0 ที่จุดกึ่งกลางของอุปสงค์.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Markup rule (rule of thumb)</span><span class="th">กฎ markup</span></div>
+      $$MR = P\left(1+\frac{1}{E_d}\right)=MC$$
+      $$P = \frac{MC}{1+1/E_d}$$
+      <p class="en">\(E_d\) is the elasticity at the optimal point, a negative number. The firm never operates where \(|E_d|&lt;1\), because then MR is negative and cannot equal a positive MC.</p>
+      <p class="th">\(E_d\) คือความยืดหยุ่น ณ จุดที่เลือกผลิต เป็นจำนวนลบ. กิจการจะไม่ผลิตบนช่วงที่ \(|E_d|&lt;1\) เพราะ MR ติดลบ เท่ากับ MC ที่เป็นบวกไม่ได้.</p>
+    </div>
+    <div class="formula">
+      <div class="name">Lerner index</div>
+      $$L=\frac{P-MC}{P}=-\frac{1}{E_d}$$
+      <p class="en">Markup as a fraction of price. Competition: \(L=0\). The 2025 paper asks for this number.</p>
+      <p class="th">ส่วนเพิ่มราคาคิดเป็นสัดส่วนของราคา. ตลาดแข่งขัน: \(L=0\). ข้อสอบปี 2025 ถามตัวเลขนี้.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Two plants</span><span class="th">สองโรงงาน</span></div>
+      $$MR(Q_1+Q_2)=MC_1(Q_1)=MC_2(Q_2)$$
+      <p class="en">Equalize marginal cost across plants, then set that common MC equal to MR.</p>
+      <p class="th">ทำให้ MC ของทุกโรงงานเท่ากัน แล้วตั้ง MC นั้นให้เท่ากับ MR.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Specific tax, linear demand, constant MC</span><span class="th">ภาษีต่อหน่วย อุปสงค์เส้นตรง MC คงที่</span></div>
+      $$\Delta P = t/2$$
+      <p class="en">Past papers (2022): if \(E_d=-3\) and a $6 tax is imposed on a linear demand, price rises by $3. The old elasticity is not what you plug into the markup rule after the tax — along a straight demand curve, half the tax is passed on.</p>
+      <p class="th">ข้อเก่า (2022): ถ้า \(E_d=-3\) แล้วมีภาษี $6 บนอุปสงค์เส้นตรง ราคาขึ้น $3. อย่าเอา elasticity เดิมไปใส่ในสูตร markup หลังภาษี — บนเส้นตรง ราคาขึ้นครึ่งหนึ่งของภาษี.</p>
+    </div>
+  </div>
+
+  <h2><span class="en">Worked example — 2025 question 12</span><span class="th">ตัวอย่างทำเอง — ข้อ 12 ปี 2025</span></h2>
+  <p class="en">Each firm’s cost is \(C=100+2q^2\), so \(MC=4q\) and \(AC=100/q+2q\). Industry demand is \(P=90-2Q\).</p>
+  <p class="th">ต้นทุนของแต่ละกิจการ \(C=100+2q^2\) ดังนั้น \(MC=4q\) และ \(AC=100/q+2q\). อุปสงค์อุตสาหกรรม \(P=90-2Q\).</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 680 420" role="img">
+      <title>Monopoly solution for P = 90 − 2Q and MC = 4Q</title>
+      <line x1="78" y1="30" x2="78" y2="348" stroke="#1b1814"/>
+      <line x1="78" y1="348" x2="620" y2="348" stroke="#1b1814"/>
+      <polygon points="203,145.5 203,213 244.7,168" fill="rgba(157,52,31,.4)"/>
+      <line x1="78" y1="78" x2="578" y2="348" stroke="#0e3b2e" stroke-width="2.6"/>
+      <line x1="78" y1="78" x2="328" y2="348" stroke="#9d341f" stroke-width="2.4" stroke-dasharray="7 4"/>
+      <line x1="78" y1="348" x2="356" y2="48" stroke="#1e4d7b" stroke-width="2.4"/>
+      <line x1="203" y1="145.5" x2="203" y2="348" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="78" y1="145.5" x2="203" y2="145.5" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="244.7" y1="168" x2="244.7" y2="348" stroke="#5c564c" stroke-dasharray="3 3"/>
+      <circle cx="203" cy="213" r="4.5" fill="#1b1814"/>
+      <circle cx="203" cy="145.5" r="4.5" fill="#0e3b2e"/>
+      <circle cx="244.7" cy="168" r="4.5" fill="#1e4d7b"/>
+      <text x="84" y="24" font-size="14" font-family="sans-serif">P</text>
+      <text x="600" y="368" font-size="14" font-family="sans-serif">Q</text>
+      <text x="500" y="300" fill="#0e3b2e" font-size="15" font-family="sans-serif">P = 90 − 2Q</text>
+      <text x="300" y="300" fill="#9d341f" font-size="15" font-family="sans-serif">MR = 90 − 4Q</text>
+      <text x="360" y="80" fill="#1e4d7b" font-size="15" font-family="sans-serif">MC = 4Q</text>
+      <text x="8" y="150" font-size="13" font-family="sans-serif">67.5</text>
+      <text x="8" y="216" font-size="13" font-family="sans-serif">45</text>
+      <text x="168" y="368" font-size="13" font-family="sans-serif">11.25</text>
+      <text x="228" y="368" font-size="13" font-family="sans-serif">15</text>
+      <text x="214" y="160" font-size="13" font-family="sans-serif">DWL</text>
+    </svg>
+    <figcaption>
+      <span class="en">Scaled to the 2025 cost and demand curves. MR crosses MC at Q = 11.25. Price on demand is 67.5. MC there is 45. The competitive point on these same curves is Q = 15, P = 60. Profit is not the rectangle (P − MC)·Q, because MC is rising and there is a fixed cost — compute π = PQ − C.</span>
+      <span class="th">สเกลตามต้นทุนและอุปสงค์ของข้อสอบปี 2025. MR ตัด MC ที่ Q = 11.25. ราคาบนอุปสงค์คือ 67.5. MC ตรงนั้นคือ 45. จุด P = MC บนเส้นเดียวกันคือ Q = 15, P = 60. กำไรไม่ใช่สี่เหลี่ยม (P − MC)·Q เพราะ MC ชันขึ้นและมีต้นทุนคงที่ — คำนวณ π = PQ − C.</span>
+    </figcaption>
+  </figure>
+
+  <h3>12.1 <span class="en">One firm</span><span class="th">มีกิจการเดียว</span></h3>
+  <ol class="steps">
+    <li>
+      <p class="en">With one firm, \(Q=q\). Revenue is \(R=(90-2q)q=90q-2q^2\), so \(MR=90-4q\).</p>
+      <p class="th">มีกิจการเดียว \(Q=q\). รายรับ \(R=(90-2q)q=90q-2q^2\) ดังนั้น \(MR=90-4q\).</p>
+    </li>
+    <li>
+      <p class="en">Set MR equal to MC.</p>
+      <p class="th">ตั้ง MR ให้เท่ากับ MC.</p>
+      $$90-4q=4q \Rightarrow 90=8q \Rightarrow q=\frac{45}{4}=11.25$$
+    </li>
+    <li>
+      <p class="en">Price on the demand curve, then cost and profit.</p>
+      <p class="th">อ่านราคาบนอุปสงค์ แล้วหาต้นทุนและกำไร.</p>
+      $$P=90-2(11.25)=67.5$$
+      $$C=100+2(11.25)^2=100+253.125=353.125$$
+      $$\pi=67.5\times 11.25-353.125=759.375-353.125=406.25$$
+    </li>
+    <li>
+      <p class="en">Lerner index. Check it against elasticity.</p>
+      <p class="th">ดัชนี Lerner. ตรวจกับความยืดหยุ่น.</p>
+      $$MC=4\times 11.25=45, \qquad L=\frac{67.5-45}{67.5}=\frac{22.5}{67.5}=\frac{1}{3}$$
+      $$E_d=\frac{dQ}{dP}\cdot\frac{P}{Q}=\left(-\frac{1}{2}\right)\frac{67.5}{11.25}=-3, \qquad L=-\frac{1}{E_d}=\frac{1}{3}$$
+    </li>
+  </ol>
+  <p class="answer"><span class="en">Monopoly: \(Q=11.25\), \(P=67.5\), \(\pi=406.25\), \(L=1/3\).</span><span class="th">ผูกขาด: \(Q=11.25\), \(P=67.5\), \(\pi=406.25\), \(L=1/3\).</span></p>
+
+  <h3>12.2 <span class="en">Competitive industry</span><span class="th">อุตสาหกรรมแข่งขัน</span></h3>
+  <p class="en">“The industry is competitive” with a fixed cost and free entry means long-run equilibrium: price equals minimum average cost, economic profit is zero, and the Lerner index is zero because \(P=MC\) at the bottom of AC.</p>
+  <p class="th">“อุตสาหกรรมแข่งขัน” เมื่อมีต้นทุนคงที่และเข้าออกเสรี หมายถึงดุลยภาพระยะยาว: ราคาเท่ากับ AC ต่ำสุด กำไรเชิงเศรษฐกิจเป็นศูนย์ และ Lerner เป็นศูนย์เพราะ \(P=MC\) ที่ก้นของ AC.</p>
+  <ol class="steps">
+    <li>
+      $$AC=\frac{100}{q}+2q, \qquad \frac{dAC}{dq}=-\frac{100}{q^2}+2=0 \Rightarrow q^2=50 \Rightarrow q=\sqrt{50}=5\sqrt{2}\approx 7.071$$
+    </li>
+    <li>
+      <p class="en">Minimum AC equals MC at that output.</p>
+      <p class="th">AC ต่ำสุดเท่ากับ MC ที่ปริมาณนั้น.</p>
+      $$P=MC=4\sqrt{50}=20\sqrt{2}\approx 28.28$$
+    </li>
+    <li>
+      <p class="en">Market quantity from demand, profit per firm is zero.</p>
+      <p class="th">ปริมาณตลาดจากอุปสงค์ กำไรต่อกิจการเป็นศูนย์.</p>
+      $$Q=\frac{90-20\sqrt{2}}{2}=45-10\sqrt{2}\approx 30.86, \qquad \pi=0, \qquad L=0$$
+      <p class="en">The implied number of firms is \(Q/q\approx 4.36\). With a continuous model that is the zero-profit benchmark; an integer-firm story would check profit at \(n=4\) and \(n=5\), but the profit level the question asks for in the long-run competitive industry is 0.</p>
+      <p class="th">จำนวนกิจการโดยนัยคือ \(Q/q\approx 4.36\). ในแบบจำลองต่อเนื่อง นี่คือจุดกำไรเป็นศูนย์. ถ้าต้องเป็นจำนวนเต็มจะตรวจกำไรที่ \(n=4\) และ \(n=5\) อีกที แต่ระดับกำไรที่โจทย์ถามสำหรับอุตสาหกรรมแข่งขันระยะยาวคือ 0.</p>
+    </li>
+  </ol>
+  <div class="callout">
+    <p class="en"><strong>If a grader instead forces P = MC on the monopoly’s own MC curve</strong> (one cost function, no entry), then \(90-2Q=4Q\), so \(Q=15\), \(P=60\), \(\pi=60\cdot 15-(100+2\cdot 15^2)=350\), and \(L=0\). Say which benchmark you are using. The wording “each firm” plus “competitive industry” is the zero-profit one.</p>
+    <p class="th"><strong>ถ้าผู้ตรวจให้ตั้ง P = MC บน MC ของผู้ผูกขาดเอง</strong> (เส้นต้นทุนเดียว ไม่มีการเข้า) จะได้ \(90-2Q=4Q\) ดังนั้น \(Q=15\), \(P=60\), \(\pi=60\cdot 15-(100+2\cdot 15^2)=350\) และ \(L=0\). เขียนให้ชัดว่าใช้จุดไหน. ถ้อยคำ “each firm” กับ “competitive industry” ชี้ไปที่กำไรเป็นศูนย์.</p>
+  </div>
+  <p class="answer"><span class="en">Long-run competition: \(P\approx 28.28\), \(Q\approx 30.86\), \(\pi=0\), \(L=0\).</span><span class="th">แข่งขันระยะยาว: \(P\approx 28.28\), \(Q\approx 30.86\), \(\pi=0\), \(L=0\).</span></p>
+
+  <h2><span class="en">Practice</span><span class="th">ข้อฝึก</span></h2>
+
+  <article class="q">
+    <h3>1 <span class="badge past"><span class="en">2024 style</span><span class="th">แนวปี 2024</span></span></h3>
+    <p class="en">Demand is \(Q=10-0.4P\) and \(MC=3+6Q\). Find the profit-maximizing price, the elasticity at that point, and the markup \((P-MC)/P\).</p>
+    <p class="th">อุปสงค์ \(Q=10-0.4P\) และ \(MC=3+6Q\). หาราคาที่กำไรสูงสุด, elasticity ณ จุดนั้น, และ markup \((P-MC)/P\).</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">Invert demand: \(0.4P=10-Q\), so \(P=25-2.5Q\) and \(MR=25-5Q\).</p>
+      <p class="th">กลับอุปสงค์: \(0.4P=10-Q\) ดังนั้น \(P=25-2.5Q\) และ \(MR=25-5Q\).</p>
+      $$25-5Q=3+6Q \Rightarrow 22=11Q \Rightarrow Q=2, \quad P=25-5=20$$
+      $$MC=3+12=15, \qquad E_d=\frac{dQ}{dP}\frac{P}{Q}=(-0.4)\frac{20}{2}=-4$$
+      $$\frac{P-MC}{P}=\frac{5}{20}=0.25=-\frac{1}{E_d}$$
+      <p class="answer">\(P=20\), \(E_d=-4\), markup \(=25\%\) of price.</p>
+    </details>
+  </article>
+
+  <article class="q">
+    <h3>2 <span class="badge past"><span class="en">2024 / 2021 style</span><span class="th">แนวปี 2024 / 2021</span></span></h3>
+    <p class="en">A monopolist sells 20 units at $250. Elasticity is \(-1.5\). What is MC if profit is maximized? Separately: price is $40, elasticity is \(-2\), output is 800. Find MC and the percentage markup of price over marginal cost, \((P-MC)/MC\).</p>
+    <p class="th">ผู้ผูกขาดขาย 20 หน่วยที่ราคา $250. Elasticity เท่ากับ \(-1.5\). MC เป็นเท่าใดถ้ากำไรสูงสุดแล้ว? อีกข้อ: ราคา $40, elasticity \(-2\), ปริมาณ 800. หา MC และเปอร์เซ็นต์ markup ของราคาเหนือต้นทุนส่วนเพิ่ม \((P-MC)/MC\).</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      $$MC=P\left(1+\frac{1}{E_d}\right)=250\left(1-\frac{1}{1.5}\right)=250\cdot\frac{1}{3}=\frac{250}{3}\approx 83.33$$
+      $$MC=40\left(1-\frac{1}{2}\right)=20, \qquad \frac{P-MC}{MC}=\frac{20}{20}=100\%$$
+      <p class="en">Read the wording. “As a percentage of price” is the Lerner index \((P-MC)/P\). “Markup of price over marginal cost” is \((P-MC)/MC\).</p>
+      <p class="th">อ่านถ้อยคำ. “เป็นเปอร์เซ็นต์ของราคา” คือ Lerner \((P-MC)/P\). “markup ของราคาเหนือ MC” คือ \((P-MC)/MC\).</p>
+    </details>
+  </article>
+
+  <article class="q">
+    <h3>3 <span class="badge past">2020</span></h3>
+    <p class="en">“If monopoly profit were taxed away and given to consumers, the social cost of monopoly would disappear.” True or false?</p>
+    <p class="th">“ถ้าเก็บกำไรผูกขาดไปคืนให้ผู้บริโภค ต้นทุนทางสังคมของอำนาจผูกขาดจะหายไป.” จริงหรือเท็จ?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">False. The transfer of the profit rectangle is not a social cost. The social cost is the DWL triangle: units worth more than their MC that are not produced. Redistributing profit does not produce those units.</p>
+      <p class="th">เท็จ. การโอนสี่เหลี่ยมกำไรไม่ใช่ต้นทุนทางสังคม. ต้นทุนทางสังคมคือสามเหลี่ยม DWL: หน่วยที่ผู้ซื้อให้ค่าสูงกว่า MC แต่ไม่ได้ถูกผลิต. แจกกำไรคืนไม่ได้ทำให้หน่วยเหล่านั้นถูกผลิต.</p>
+    </details>
+  </article>
+
+  <div class="pager">
+    <a href="index.html">← <span class="en">Overview</span><span class="th">ภาพรวม</span></a>
+    <a href="ch11.html"><span class="en">Ch 11 Pricing</span><span class="th">บท 11 การตั้งราคา</span> →</a>
+  </div>
+</main>
+<footer class="site">
+  <p class="en">Monopsony as a buyer is drawn in Chapter 14, where the 2025 labor question sits. The monopoly power of a seller in the output market also shifts labor demand, because \(MRP_L=MP_L\cdot MR\) and \(MR&lt;P\).</p>
+  <p class="th">กราฟผู้ซื้อผูกขาดอยู่ในบท 14 ซึ่งเป็นที่ของโจทย์แรงงานปี 2025. อำนาจผูกขาดในตลาดผลผลิตยังทำให้เส้นอุปสงค์แรงงานเลื่อน เพราะ \(MRP_L=MP_L\cdot MR\) และ \(MR&lt;P\).</p>
+</footer>
+</body>
+</html>

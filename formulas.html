@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula sheet · Micro final</title>
+<meta name="description" content="One-page formula sheet for the intermediate microeconomics final: monopoly, pricing, oligopoly, games, factors, general equilibrium, information, and externalities.">
+<script>
+try {
+  var q = new URLSearchParams(location.search).get("lang");
+  var l = (q === "th" || q === "en") ? q : localStorage.getItem("micro-lang");
+  if (l === "th" || l === "en") {
+    document.documentElement.setAttribute("data-lang", l);
+    if (q) localStorage.setItem("micro-lang", q);
+  }
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content"><span class="en">Skip to content</span><span class="th">ข้ามไปเนื้อหา</span></a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">μ</span><span><span class="en">Micro final</span><span class="th">ไมโคร ไฟนอล</span><small><span class="en">Formula sheet</span><span class="th">แผ่นสูตร</span></small></span></a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="th">ไทย</button></div>
+</header>
+<nav id="site-nav" aria-label="Chapters"></nav>
+<main id="content">
+  <p class="kicker"><span class="en">Crib sheet</span><span class="th">สูตรรวบ</span></p>
+  <h1><span class="en">Formulas on one page</span><span class="th">สูตรในหน้าเดียว</span></h1>
+  <p class="en">Derivations and the 2025 numbers live in the chapters. This page is the list to be able to write from a blank sheet.</p>
+  <p class="th">ที่มาและตัวเลขปี 2025 อยู่ในแต่ละบท. หน้านี้คือรายการที่ต้องเขียนได้จากกระดาษเปล่า.</p>
+
+  <h2><a href="ch10.html">10 · <span class="en">Monopoly</span><span class="th">ผูกขาด</span></a></h2>
+  <div class="grid-2">
+    <div class="formula"><div class="name">\(MR=MC\)</div>
+      $$P=a-bQ \Rightarrow MR=a-2bQ$$
+      $$MR=P\left(1+\frac{1}{E_d}\right)=MC, \qquad P=\frac{MC}{1+1/E_d}$$
+    </div>
+    <div class="formula"><div class="name">Lerner</div>
+      $$L=\frac{P-MC}{P}=-\frac{1}{E_d}$$
+      <p class="en">Never produce where \(|E_d|&lt;1\). Linear demand, constant MC, specific tax: \(\Delta P=t/2\). Two plants: \(MR=MC_1=MC_2\).</p>
+      <p class="th">อย่าผลิตตรงที่ \(|E_d|&lt;1\). อุปสงค์เส้นตรง MC คงที่ ภาษีต่อหน่วย: \(\Delta P=t/2\). สองโรงงาน: \(MR=MC_1=MC_2\).</p>
+    </div>
+  </div>
+
+  <h2><a href="ch11.html">11 · <span class="en">Pricing</span><span class="th">การตั้งราคา</span></a></h2>
+  <div class="grid-2">
+    <div class="formula"><div class="name"><span class="en">Third degree</span><span class="th">ระดับสาม</span></div>
+      $$MR_1=MR_2=MC$$
+      <p class="en">Higher price in the less elastic market. Identical consumers, two-part tariff: usage price \(=MC\), entry fee \(=CS\).</p>
+      <p class="th">ราคาสูงกว่าในตลาดที่ยืดหยุ่นน้อยกว่า. ผู้บริโภคเหมือนกัน two-part tariff: ราคาต่อหน่วย \(=MC\), ค่าเข้า \(=CS\).</p>
+    </div>
+    <div class="formula"><div class="name"><span class="en">Bundling and ads</span><span class="th">ชุดและโฆษณา</span></div>
+      $$\pi=(P-MC)\times(\text{buyers})$$
+      $$\frac{A}{PQ}=\frac{E_A}{|E_d|}$$
+      <p class="en">Try every reservation price and every sum. Negatively correlated values favor a bundle.</p>
+      <p class="th">ลองทุก reservation price และทุกผลบวก. ค่าที่สัมพันธ์ทางลบเอื้อต่อการขายเป็นชุด.</p>
+    </div>
+  </div>
+
+  <h2><a href="ch12.html">12 · <span class="en">Oligopoly</span><span class="th">ผู้ขายน้อยราย</span></a></h2>
+  <div class="formula">
+    <div class="name">\(P=a-b(q_1+q_2)\), \(MC=c\)</div>
+    $$\text{Cournot } q_i=\frac{a-c}{3b},\; P=\frac{a+2c}{3},\; \pi_i=\frac{(a-c)^2}{9b}$$
+    $$\text{Stackelberg } q_L=\frac{a-c}{2b},\; q_F=\frac{a-c}{4b},\; P=\frac{a+3c}{4}$$
+    $$\text{Bertrand } P=c,\;\pi=0 \qquad \text{Collusion } Q=\frac{a-c}{2b}$$
+    <p class="en">On the paper, derive the reaction curve \(q_1=(a-c)/(2b)-q_2/2\). Long-run monopolistic competition: \(P=AC&gt;MC\), profit 0, do not force \(P=MC\).</p>
+    <p class="th">ในข้อสอบให้หาเส้นปฏิกิริยา \(q_1=(a-c)/(2b)-q_2/2\). แข่งขันผูกขาดระยะยาว: \(P=AC&gt;MC\), กำไร 0, อย่าบังคับ \(P=MC\).</p>
+  </div>
+
+  <h2><a href="ch13.html">13 · <span class="en">Games</span><span class="th">ทฤษฎีเกม</span></a></h2>
+  <div class="grid-2">
+    <div class="formula"><div class="name">IESDS / Nash / maximin</div>
+      <p class="en">Strict dominance: higher in every cell, no ties. Delete and repeat. Nash: mutual best responses. Maximin: maximize the worst payoff. Maximin need not be Nash.</p>
+      <p class="th">เด่นอย่างเข้ม: สูงกว่าทุกช่อง ห้ามมีเสมอ. ตัดแล้วทำซ้ำ. Nash: ตอบสนองดีที่สุดซึ่งกันและกัน. Maximin: ทำให้ผลได้ที่แย่ที่สุดสูงที่สุด. Maximin ไม่จำเป็นต้องเป็น Nash.</p>
+    </div>
+    <div class="formula"><div class="name">SPE</div>
+      <p class="en">Tree, then backward induction. The first mover uses the later player’s actual best response, not a threat that would not be carried out.</p>
+      <p class="th">วาดต้นไม้ แล้วอุปนัยย้อนกลับ. ผู้เดินก่อนใช้การตอบจริงของผู้เล่นทีหลัง ไม่ใช่คำขู่ที่จะไม่ถูกทำ.</p>
+    </div>
+  </div>
+
+  <h2><a href="ch14.html">14 · <span class="en">Factors</span><span class="th">ปัจจัยการผลิต</span></a></h2>
+  <div class="formula">
+    $$MRP_L=MP_L\times MR \quad (MR=P \text{ if the output market is competitive})$$
+    $$w=\text{supply}, \quad TE=wL, \quad ME=\frac{d(wL)}{dL}=w\left(1+\frac{1}{E_S}\right)$$
+    $$MRP_L=ME, \text{ then read } w \text{ from supply}$$
+    <p class="en">Economic rent: area above supply, below the wage. Ricardian rent: the cost gap between better land and the marginal land. Rent is determined by the crop price.</p>
+    <p class="th">ค่าเช่าเชิงเศรษฐกิจ: พื้นที่เหนืออุปทาน ใต้ค่าจ้าง. ค่าเช่า Ricardian: ช่องว่างต้นทุนระหว่างที่ดินที่ดีกว่ากับที่ดินชายขอบ. ราคาพืชเป็นฝ่ายกำหนดค่าเช่า.</p>
+  </div>
+
+  <h2><a href="ch16.html">16 · <span class="en">General equilibrium</span><span class="th">ดุลยภาพทั่วไป</span></a></h2>
+  <div class="formula">
+    $$MRS^A=MRS^B=\frac{P_x}{P_y}, \qquad MRTS=\frac{w}{r}, \qquad MRS=MRT$$
+    <p class="en">If \(MRS_{xy}&gt;P_x/P_y\), buy more x. Contract curve = Pareto efficient, not “equally fair.” Comparative advantage = lower opportunity cost, not fewer hours in both goods.</p>
+    <p class="th">ถ้า \(MRS_{xy}&gt;P_x/P_y\) ให้ซื้อ x เพิ่ม. เส้นสัญญา = มีประสิทธิภาพแบบ Pareto ไม่ใช่ “ยุติธรรมเท่ากัน.” ความได้เปรียบโดยเปรียบเทียบ = ต้นทุนค่าเสียโอกาสต่ำกว่า ไม่ใช่ใช้ชั่วโมงน้อยกว่าในทั้งสองสินค้า.</p>
+  </div>
+
+  <h2><a href="ch17.html">17 · <span class="en">Information</span><span class="th">ข้อมูล</span></a></h2>
+  <div class="formula">
+    <p class="en"><strong>Adverse selection:</strong> hidden type, before the contract. <strong>Moral hazard:</strong> hidden action, after the contract. A warranty can signal quality and then create moral hazard. Efficiency wage: pay above the clearing wage so the threat of job loss elicits effort that cannot be observed.</p>
+    <p class="th"><strong>Adverse selection:</strong> ประเภทที่ซ่อนอยู่ ก่อนสัญญา. <strong>Moral hazard:</strong> การกระทำที่ซ่อนอยู่ หลังสัญญา. การรับประกันส่งสัญญาณคุณภาพ แล้วสร้าง moral hazard ตามมา. Efficiency wage: จ่ายเหนือค่าจ้างที่เคลียร์ตลาด เพื่อให้ภัยของการตกงานดึงความพยายามที่สังเกตไม่ได้ออกมา.</p>
+  </div>
+
+  <h2><a href="ch18.html">18 · <span class="en">Externalities and public goods</span><span class="th">ผลกระทบภายนอกและสาธารณสินค้า</span></a></h2>
+  <div class="formula">
+    $$MSC=MPC+MEC, \quad t=MEC(Q^*), \quad MSB=MPB+MEB, \quad s=MEB(Q^*)$$
+    $$\sum_i MB_i(Q)=MC \quad \text{(vertical sum; stop a demand at zero)}$$
+    <p class="en">Private goods: add quantities (horizontal). Public goods: add willingness to pay (vertical). Free riding follows from nonexclusion.</p>
+    <p class="th">สินค้าเอกชน: บวกปริมาณ (แนวนอน). สาธารณสินค้า: บวกความเต็มใจจ่าย (แนวตั้ง). Free rider ตามมาจากการกีดกันไม่ได้.</p>
+  </div>
+
+  <div class="callout">
+    <p class="en">Outside these chapters, but in the older papers: a perpetuity paying \(A\) per year is worth \(PV=A/r\). At 10 percent, $500 a year is worth $5,000.</p>
+    <p class="th">นอกบทเหล่านี้ แต่มีในข้อเก่า: perpetuity ที่จ่ายปีละ \(A\) มีค่า \(PV=A/r\). ที่ 10 เปอร์เซ็นต์ ปีละ $500 มีค่า $5,000.</p>
+  </div>
+  <div class="pager">
+    <a href="index.html">← <span class="en">Overview</span><span class="th">ภาพรวม</span></a>
+    <a href="exam.html"><span class="en">2025 exam</span><span class="th">ข้อสอบ 2025</span> →</a>
+  </div>
+</main>
+<footer class="site">
+  <p class="en">A formula without the graph that goes with it is half a mark. Open the chapter if a line here is only a reminder.</p>
+  <p class="th">สูตรที่ไม่มีรูปคู่กันได้คะแนนแค่ครึ่ง. เปิดบทถ้าบรรทัดในนี้เป็นแค่เครื่องเตือน.</p>
+</footer>
+</body>
+</html>

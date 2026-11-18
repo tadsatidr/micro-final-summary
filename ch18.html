@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch 18 · Externalities and public goods</title>
+<meta name="description" content="Negative and positive externalities, the Pigouvian tax, and the vertical sum for a public good, including the mosquito-control problem from the 2025 exam.">
+<script>
+try {
+  var q = new URLSearchParams(location.search).get("lang");
+  var l = (q === "th" || q === "en") ? q : localStorage.getItem("micro-lang");
+  if (l === "th" || l === "en") {
+    document.documentElement.setAttribute("data-lang", l);
+    if (q) localStorage.setItem("micro-lang", q);
+  }
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content"><span class="en">Skip to content</span><span class="th">ข้ามไปเนื้อหา</span></a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">μ</span><span><span class="en">Micro final</span><span class="th">ไมโคร ไฟนอล</span><small><span class="en">Chapter 18</span><span class="th">บทที่ 18</span></small></span></a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="th">ไทย</button></div>
+</header>
+<nav id="site-nav" aria-label="Chapters"></nav>
+<main id="content">
+  <p class="kicker"><span class="en">Chapter 18</span><span class="th">บทที่ 18</span></p>
+  <h1><span class="en">Externalities and public goods</span><span class="th">ผลกระทบภายนอกและสาธารณสินค้า</span></h1>
+  <p class="lede">
+    <span class="en">An externality is a cost or benefit that falls on someone who did not choose the activity. A public good is nonrival and nonexclusive. The 2025 paper asks for one example of each kind of externality it names, and for the efficient quantity of a public good. The same public-good arithmetic is copied in the 2023 and 2024 papers.</span>
+    <span class="th">ผลกระทบภายนอก (externality) คือต้นทุนหรือประโยชน์ที่ตกแก่คนที่ไม่ได้เลือกกิจกรรมนั้น. สาธารณสินค้า (public good) ไม่แย่งกันใช้และกีดกันไม่ได้. ข้อสอบปี 2025 ขอตัวอย่างผลกระทบภายนอกตามที่โจทย์ระบุ และปริมาณสาธารณสินค้าที่มีประสิทธิภาพ. เลขชุดเดียวกันถูกคัดลอกในปี 2023 และ 2024.</span>
+  </p>
+  <p>
+    <span class="badge exam">2025 Q4 · 4 pts</span>
+    <span class="badge exam">2025 Q6 · 5 pts</span>
+    <span class="badge past"><span class="en">Pigouvian true/false in 2023; free rider in 2023</span><span class="th">ถูก-ผิดภาษี Pigou ปี 2023; free rider ปี 2023</span></span>
+  </p>
+
+  <h2><span class="en">Negative externality</span><span class="th">ผลกระทบภายนอกทางลบ</span></h2>
+  <figure class="fig">
+    <svg viewBox="0 0 680 380" role="img">
+      <title>Pigouvian tax closes the gap between private and social marginal cost</title>
+      <line x1="60" y1="24" x2="60" y2="320" stroke="#1b1814"/>
+      <line x1="60" y1="320" x2="640" y2="320" stroke="#1b1814"/>
+      <polygon points="250,140 430,230 250,230" fill="rgba(157,52,31,.38)"/>
+      <line x1="80" y1="40" x2="560" y2="300" stroke="#0e3b2e" stroke-width="2.6"/>
+      <line x1="80" y1="230" x2="560" y2="230" stroke="#1e4d7b" stroke-width="2.4"/>
+      <line x1="80" y1="140" x2="560" y2="140" stroke="#9d341f" stroke-width="2.4"/>
+      <line x1="250" y1="140" x2="250" y2="320" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="430" y1="230" x2="430" y2="320" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="60" y1="140" x2="80" y2="140" stroke="#9d341f"/>
+      <text x="66" y="18" font-size="14" font-family="sans-serif">P</text>
+      <text x="620" y="340" font-size="14" font-family="sans-serif">Q</text>
+      <text x="500" y="280" fill="#0e3b2e" font-size="15" font-family="sans-serif">MSB = D</text>
+      <text x="480" y="222" fill="#1e4d7b" font-size="15" font-family="sans-serif">MPC</text>
+      <text x="480" y="132" fill="#9d341f" font-size="15" font-family="sans-serif">MSC = MPC + MEC</text>
+      <text x="230" y="340" font-size="14" font-family="sans-serif">Q*</text>
+      <text x="410" y="340" font-size="14" font-family="sans-serif">Qm</text>
+      <text x="8" y="145" font-size="13" font-family="sans-serif">MSC</text>
+      <text x="18" y="234" font-size="13" font-family="sans-serif">MPC</text>
+      <text x="150" y="128" font-size="13" font-family="sans-serif">tax t = MEC</text>
+      <text x="300" y="190" font-size="13" font-family="sans-serif">DWL</text>
+    </svg>
+    <figcaption>
+      <span class="en">The firm looks at its own marginal private cost (MPC). Society also bears the marginal external cost (MEC), so marginal social cost is \(MSC=MPC+MEC\). The market quantity Qm, where demand crosses MPC, is too large. The efficient quantity Q* is where demand crosses MSC. A Pigouvian tax equal to MEC at Q* shifts MPC up onto MSC. The tax is not equal to the firm’s whole marginal cost of production, and it is not automatically the vertical gap measured at the unregulated quantity unless MEC is constant, as drawn here.</span>
+      <span class="th">กิจการมองต้นทุนส่วนเพิ่มส่วนตัว (MPC). สังคมยังแบกรับต้นทุนส่วนเพิ่มภายนอก (MEC) ดังนั้นต้นทุนส่วนเพิ่มทางสังคมคือ \(MSC=MPC+MEC\). ปริมาณตลาด Qm ที่อุปสงค์ตัด MPC มากเกินไป. ปริมาณที่มีประสิทธิภาพ Q* คือที่อุปสงค์ตัด MSC. ภาษีแบบ Pigou เท่ากับ MEC ณ Q* จะเลื่อน MPC ขึ้นไปทับ MSC. ภาษีไม่ได้เท่ากับต้นทุนส่วนเพิ่มในการผลิตทั้งหมดของกิจการ และไม่ได้เท่ากับช่องว่างแนวตั้งที่ปริมาณไร้การกำกับโดยอัตโนมัติ เว้นแต่ MEC จะคงที่อย่างในรูปนี้.</span>
+    </figcaption>
+    <ul class="legend">
+      <li><i class="swatch dwl"></i><span class="en">Deadweight loss if the externality is ignored</span><span class="th">ส่วนสูญเสียน้ำหนักเปล่าถ้าไม่สนใจผลกระทบภายนอก</span></li>
+    </ul>
+  </figure>
+
+  <div class="grid-2">
+    <div class="formula">
+      <div class="name"><span class="en">Negative externality</span><span class="th">ทางลบ</span></div>
+      $$MSC = MPC + MEC, \qquad MSB = MSC \text{ at } Q^*$$
+      $$t = MEC(Q^*)$$
+      <p class="en">Too much is produced. The tax is per unit of the damaging activity.</p>
+      <p class="th">ผลิตมากไป. ภาษีคิดต่อหน่วยของกิจกรรมที่ก่อความเสียหาย.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Positive externality</span><span class="th">ทางบวก</span></div>
+      $$MSB = MPB + MEB, \qquad s = MEB(Q^*)$$
+      <p class="en">The market, which sees only marginal private benefit, produces too little. A subsidy per unit, not a tax, moves quantity up to Q*.</p>
+      <p class="th">ตลาดที่เห็นแค่ประโยชน์ส่วนเพิ่มส่วนตัวผลิตน้อยไป. เงินอุดหนุนต่อหน่วย ไม่ใช่ภาษี ที่จะดันปริมาณขึ้นไปที่ Q*.</p>
+    </div>
+  </div>
+
+  <p class="en"><strong>A numeric negative case.</strong> Demand \(P=20-Q\), \(MPC=4\), constant external cost 6, so \(MSC=10\). Unregulated: \(20-Q=4\), \(Q_m=16\). Efficient: \(20-Q=10\), \(Q^*=10\). Tax \(t=6\). Deadweight loss \(=\tfrac{1}{2}\times 6\times 6=18\).</p>
+  <p class="th"><strong>ตัวเลขกรณีทางลบ.</strong> อุปสงค์ \(P=20-Q\), \(MPC=4\), ต้นทุนภายนอกคงที่ 6 ดังนั้น \(MSC=10\). ไม่มีนโยบาย: \(20-Q=4\), \(Q_m=16\). มีประสิทธิภาพ: \(20-Q=10\), \(Q^*=10\). ภาษี \(t=6\). ส่วนสูญเสีย \(=\tfrac{1}{2}\times 6\times 6=18\).</p>
+
+  <div class="callout warn">
+    <p class="en"><strong>2023 true/false.</strong> “The government should impose a unit tax equal to the marginal cost of production.” False. That would tax the private cost, not the external cost. For a negative externality the unit tax equals \(MEC(Q^*)\). For a positive externality the tool is a subsidy. A tax equal to MPC would shrink output for no reason tied to the externality, and it would not land on Q*.</p>
+    <p class="th"><strong>ถูก-ผิดปี 2023.</strong> “รัฐควรเก็บภาษีต่อหน่วยเท่ากับต้นทุนส่วนเพิ่มของการผลิต.” เท็จ. นั่นคือการไปเก็บภาษีบนต้นทุนส่วนตัว ไม่ใช่ต้นทุนภายนอก. สำหรับผลกระทบทางลบ ภาษีต่อหน่วยเท่ากับ \(MEC(Q^*)\). สำหรับผลกระทบทางบวก เครื่องมือคือเงินอุดหนุน. ภาษีที่เท่ากับ MPC จะหดปริมาณโดยไม่มีเหตุจากผลกระทบภายนอก และจะไม่ลงที่ Q*.</p>
+  </div>
+
+  <h3><span class="en">2025 question 4 — examples in the form the question asks</span><span class="th">ข้อ 4 ปี 2025 — ตัวอย่างตามแบบที่โจทย์ขอ</span></h3>
+  <div class="grid-2">
+    <div class="card">
+      <h3>4.1 <span class="en">Negative, firm on people</span><span class="th">ทางลบ จากกิจการสู่คน</span></h3>
+      <p class="en">A dye plant dumps wastewater into a canal. Households downstream face higher medical bills and have to buy drinking water. The plant’s MPC does not include those bills, so it dumps past the point where MSC crosses the demand for dyed cloth. (A factory’s sulfur emissions and the asthma they cause in the neighborhood is the same structure.)</p>
+      <p class="th">โรงย้อมปล่อยน้ำเสียลงคลอง. ครัวเรือนท้ายน้ำมีค่ารักษาสูงขึ้นและต้องซื้อน้ำดื่ม. MPC ของโรงงานไม่รวมบิลเหล่านั้น จึงปล่อยเลยจุดที่ MSC ตัดอุปสงค์ของผ้าย้อม. (ควันกำมะถันของโรงงานกับโรคหอบหืดของคนในละแวกเดียวกันเป็นโครงสร้างเดียวกัน.)</p>
+    </div>
+    <div class="card">
+      <h3>4.2 <span class="en">Positive, person on person</span><span class="th">ทางบวก จากคนสู่คน</span></h3>
+      <p class="en">A person gets vaccinated. Neighbors face a lower chance of infection, but the vaccinated person counts only her own avoided illness. Vaccinations stop short of the quantity where marginal social benefit equals marginal cost. A neighbor who keeps bees that pollinate another neighbor’s orchard is the same kind of person-to-person benefit.</p>
+      <p class="th">คนหนึ่งฉีดวัคซีน. เพื่อนบ้านมีโอกาสติดโรคน้อยลง แต่คนที่ฉีดนับแค่การป่วยที่ตัวเองเลี่ยงได้. การฉีดจึงหยุดก่อนปริมาณที่ประโยชน์ส่วนเพิ่มทางสังคมเท่ากับต้นทุนส่วนเพิ่ม. เพื่อนบ้านที่เลี้ยงผึ้งแล้วไปผสมเกสรสวนของอีกคนเป็นประโยชน์จากคนสู่คนชนิดเดียวกัน.</p>
+    </div>
+  </div>
+  <p class="en">The question asks for one example in each cell. It does not ask for a diagram. Naming the third party and the unpriced effect is the whole point. Coase’s theorem is the nearby idea the chapter also teaches: if bargaining is cheap and property rights are clear, the plant and the households can reach Q* without a tax. When many households are affected, bargaining costs are high and the tax (or a liability rule) is the practical tool. 2025 did not ask about Coase.</p>
+  <p class="th">โจทย์ขอตัวอย่างหนึ่งในแต่ละช่อง ไม่ได้ขอรูป. การระบุคนที่สามและผลกระทบที่ไม่มีราคาคือประเด็นทั้งหมด. ทฤษฎีบทของ Coase เป็นความคิดใกล้กันที่บทนี้สอนด้วย: ถ้าการต่อรองถูกและสิทธิในทรัพย์สินชัด โรงงานกับครัวเรือนไปถึง Q* ได้โดยไม่ต้องมีภาษี. เมื่อครัวเรือนจำนวนมากได้รับผลกระทบ ต้นทุนการต่อรองสูง และภาษี (หรือกฎความรับผิด) คือเครื่องมือที่ใช้ได้จริง. ปี 2025 ไม่ได้ถามเรื่อง Coase.</p>
+
+  <h2><span class="en">Public goods — vertical, not horizontal</span><span class="th">สาธารณสินค้า — บวกแนวตั้ง ไม่ใช่แนวนอน</span></h2>
+  <p class="en">A good is nonrival when one person’s use does not use it up (marginal cost of another viewer is about zero). It is nonexclusive when people cannot be kept from using it. A pure public good is both. Private goods are rival and exclusive: add the demand curves horizontally. Public goods are consumed in the same quantity by everyone: add willingness to pay vertically, at each quantity.</p>
+  <p class="th">สินค้าไม่แย่งกันใช้ (nonrival) เมื่อการใช้ของคนหนึ่งไม่ได้ทำให้ของหมดไป (ต้นทุนส่วนเพิ่มของผู้ชมเพิ่มอีกคนใกล้ศูนย์). สินค้ากีดกันไม่ได้ (nonexclusive) เมื่อกันคนไม่ให้ใช้ไม่ได้. สาธารณสินค้าแท้เป็นทั้งสองอย่าง. สินค้าเอกชนแย่งกันใช้และกีดกันได้: บวกเส้นอุปสงค์ในแนวนอน. สาธารณสินค้าถูกบริโภคในปริมาณเดียวกันโดยทุกคน: บวกความเต็มใจจ่ายในแนวตั้ง ที่แต่ละปริมาณ.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 430" role="img">
+      <title>Vertical sum of two demands for mosquito control</title>
+      <line x1="64" y1="36" x2="64" y2="360" stroke="#1b1814"/>
+      <line x1="64" y1="360" x2="640" y2="360" stroke="#1b1814"/>
+      <line x1="64" y1="260" x2="300" y2="360" stroke="#1e4d7b" stroke-width="2.2"/>
+      <line x1="64" y1="160" x2="537" y2="360" stroke="#0e3b2e" stroke-width="2.2"/>
+      <polyline points="64,60 300,260 537,360" fill="none" stroke="#9d341f" stroke-width="2.8"/>
+      <line x1="64" y1="310" x2="620" y2="310" stroke="#8c6a2a" stroke-width="2.4"/>
+      <line x1="419" y1="310" x2="419" y2="360" stroke="#1b1814" stroke-dasharray="3 3"/>
+      <line x1="360" y1="285" x2="360" y2="360" stroke="#8a8174" stroke-dasharray="2 3"/>
+      <circle cx="419" cy="310" r="5" fill="#9d341f"/>
+      <circle cx="360" cy="285" r="4" fill="none" stroke="#8a8174" stroke-width="2"/>
+      <text x="70" y="28" font-size="14" font-family="sans-serif">P, MB</text>
+      <text x="620" y="378" font-size="14" font-family="sans-serif">q</text>
+      <text x="180" y="350" fill="#1e4d7b" font-size="14" font-family="sans-serif">A: P = 100 − q</text>
+      <text x="400" y="300" fill="#0e3b2e" font-size="14" font-family="sans-serif">B: P = 200 − q</text>
+      <text x="80" y="78" fill="#9d341f" font-size="14" font-family="sans-serif">MSB vertical sum</text>
+      <text x="500" y="302" fill="#8c6a2a" font-size="14" font-family="sans-serif">MC = 50</text>
+      <text x="400" y="396" font-size="13" font-family="sans-serif">150</text>
+      <text x="340" y="396" font-size="13" fill="#8a8174" font-family="sans-serif">125</text>
+      <text x="8" y="314" font-size="13" font-family="sans-serif">50</text>
+      <text x="8" y="264" font-size="13" font-family="sans-serif">100</text>
+      <text x="8" y="164" font-size="13" font-family="sans-serif">200</text>
+      <text x="8" y="64" font-size="13" font-family="sans-serif">300</text>
+      <text x="286" y="396" font-size="13" font-family="sans-serif">100</text>
+    </svg>
+    <figcaption>
+      <span class="en">Person A’s demand hits zero at q = 100. Up to there, MSB = (100 − q) + (200 − q) = 300 − 2q. Past 100, A’s marginal benefit on the demand curve is zero, so MSB follows B’s demand, 200 − q. MC = 50 crosses that second segment at q = 150. The hollow dot at 125 is what you get by setting 300 − 2q = 50 even though that equation is no longer the vertical sum once A’s price would be negative.</span>
+      <span class="th">อุปสงค์ของ A ชนศูนย์ที่ q = 100. ก่อนถึงจุดนั้น MSB = (100 − q) + (200 − q) = 300 − 2q. หลังจาก 100 ประโยชน์ส่วนเพิ่มของ A บนเส้นอุปสงค์เป็นศูนย์ ดังนั้น MSB ตามอุปสงค์ของ B คือ 200 − q. MC = 50 ตัดช่วงที่สองที่ q = 150. จุดกลวงที่ 125 คือสิ่งที่ได้จากการตั้ง 300 − 2q = 50 ทั้งที่สมการนั้นไม่ใช่ผลบวกแนวตั้งอีกต่อไปเมื่อราคาของ A จะติดลบ.</span>
+    </figcaption>
+  </figure>
+
+  <h3><span class="en">2025 question 6 — and the identical item in 2023 and 2024</span><span class="th">ข้อ 6 ปี 2025 — และข้อเดียวกันในปี 2023 และ 2024</span></h3>
+  <p class="en">\(q_A=100-P\), \(q_B=200-P\), mosquito control is nonexclusive, \(MC=50\).</p>
+  <p class="th">\(q_A=100-P\), \(q_B=200-P\), การกำจัดยุงกีดกันไม่ได้, \(MC=50\).</p>
+  <ol class="steps">
+    <li>
+      <p class="en">Because the good is nonexclusive and, as mosquito control, nonrival, both people “consume” the same q. Add prices, not quantities.</p>
+      <p class="th">เพราะสินค้ากีดกันไม่ได้ และในฐานะการกำจัดยุงก็ไม่แย่งกันใช้ ทั้งสองคน “บริโภค” q เดียวกัน. บวกราคา ไม่ใช่บวกปริมาณ.</p>
+      $$MB_A=\max(100-q,\,0), \qquad MB_B=\max(200-q,\,0)$$
+    </li>
+    <li>
+      <p class="en">On the interval where both are positive, \(q\le 100\):</p>
+      <p class="th">บนช่วงที่ทั้งคู่เป็นบวก \(q\le 100\):</p>
+      $$MSB=300-2q$$
+      <p class="en">At q = 100, MSB = 100, which is still above MC = 50, so the optimum is not in this interval. Setting \(300-2q=50\) gives q = 125, which is outside the interval. That candidate is invalid.</p>
+      <p class="th">ที่ q = 100, MSB = 100 ซึ่งยังสูงกว่า MC = 50 ดังนั้นจุดเหมาะสมไม่อยู่ในช่วงนี้. การตั้ง \(300-2q=50\) ได้ q = 125 ซึ่งอยู่นอกช่วง. ตัวเลือกนั้นใช้ไม่ได้.</p>
+    </li>
+    <li>
+      <p class="en">For \(100&lt;q\le 200\), only B has a positive marginal benefit:</p>
+      <p class="th">สำหรับ \(100&lt;q\le 200\) มีแค่ B ที่ประโยชน์ส่วนเพิ่มเป็นบวก:</p>
+      $$MSB=200-q=50 \Rightarrow q=150$$
+      <p class="en">Check: \(MB_B=50=MC\), and \(MB_A=0\). This point is on the summed demand curve in the figure.</p>
+      <p class="th">ตรวจ: \(MB_B=50=MC\) และ \(MB_A=0\). จุดนี้อยู่บนเส้นอุปสงค์ที่บวกแล้วในรูป.</p>
+    </li>
+  </ol>
+  <p class="answer"><span class="en">Efficient mosquito control is 150 units.</span><span class="th">การกำจัดยุงที่มีประสิทธิภาพคือ 150 หน่วย.</span></p>
+  <div class="callout">
+    <p class="en"><strong>If a one-line key says 125.</strong> That line adds \(100-q\) and \(200-q\) without checking the sign, so it treats person A as being harmed by 25 at the margin. The demand curve written as \(q_A=100-P\) does not assign a negative price; it hits the quantity axis at 100. Show the kink. The 2023 paper also asks whether free riding occurs: yes. The good is nonexclusive, so each person can enjoy whatever the other pays for and has a reason to understate willingness to pay. Private provision falls short of 150.</p>
+    <p class="th"><strong>ถ้าเฉลยบรรทัดเดียวเขียน 125.</strong> บรรทัดนั้นบวก \(100-q\) กับ \(200-q\) โดยไม่ตรวจเครื่องหมาย จึงถือว่า A ถูกทำให้เดือดร้อน 25 ที่หน่วยสุดท้าย. เส้นอุปสงค์ที่เขียนเป็น \(q_A=100-P\) ไม่ได้ให้ราคาติดลบ มันชนแกนปริมาณที่ 100. ให้โชว์จุดหัก. ข้อปี 2023 ยังถามว่าเกิด free rider หรือไม่: เกิด. สินค้ากีดกันไม่ได้ ดังนั้นแต่ละคนเสพสิ่งที่อีกคนจ่ายได้ และมีเหตุให้รายงานความเต็มใจจ่ายต่ำกว่าจริง. การจัดหาโดยเอกชนต่ำกว่า 150.</p>
+  </div>
+
+  <h2><span class="en">Classify the good</span><span class="th">จำแนกสินค้า</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th><span class="en">Good</span><span class="th">สินค้า</span></th><th><span class="en">Rival?</span><span class="th">แย่งกันใช้?</span></th><th><span class="en">Exclusive?</span><span class="th">กีดกันได้?</span></th><th><span class="en">Where it appeared</span><span class="th">โผล่ที่ไหน</span></th></tr></thead>
+      <tbody>
+        <tr><td><span class="en">Street lights</span><span class="th">ไฟถนน</span></td><td><span class="en">No</span><span class="th">ไม่</span></td><td><span class="en">No</span><span class="th">ไม่</span></td><td>2020</td></tr>
+        <tr><td><span class="en">Cable television</span><span class="th">เคเบิลทีวี</span></td><td><span class="en">No</span><span class="th">ไม่</span></td><td><span class="en">Yes, with a scrambler</span><span class="th">ได้ ถ้ามีเครื่องเข้ารหัส</span></td><td>2022</td></tr>
+        <tr><td><span class="en">Congested non-toll road</span><span class="th">ถนนไม่มีค่าผ่านทางที่รถติด</span></td><td><span class="en">Yes, once crowded</span><span class="th">ใช่ เมื่อแออัด</span></td><td><span class="en">No</span><span class="th">ไม่</span></td><td>2022</td></tr>
+        <tr><td><span class="en">Fish in a river</span><span class="th">ปลาในแม่น้ำ</span></td><td><span class="en">Yes</span><span class="th">ใช่</span></td><td><span class="en">No — a common-property resource</span><span class="th">ไม่ — ทรัพยากรทรัพย์ส่วนรวม</span></td><td>2020</td></tr>
+        <tr><td><span class="en">Public library</span><span class="th">ห้องสมุดสาธารณะ</span></td><td><span class="en">Partly, for a scarce seat or book</span><span class="th">บางส่วน ถ้าที่นั่งหรือหนังสือขาด</span></td><td><span class="en">Can be, with a card</span><span class="th">ทำได้ ถ้าต้องใช้บัตร</span></td><td>2020</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="en">Common property (the fish, the crawfish pond in the chapter) is overused because each user ignores the cost her catch imposes on the others. That is a negative externality among users, drawn as private marginal cost below social marginal cost. It is not a public good: the fish are rival.</p>
+  <p class="th">ทรัพย์ส่วนรวม (ปลา, บ่อกุ้งเครย์ฟิชในบท) ถูกใช้มากไปเพราะแต่ละคนไม่สนใจต้นทุนที่การจับของเธอสร้างให้อีกฝ่าย. นั่นคือผลกระทบภายนอกทางลบระหว่างผู้ใช้ วาดเป็นต้นทุนส่วนเพิ่มส่วนตัวที่อยู่ใต้ต้นทุนส่วนเพิ่มทางสังคม. มันไม่ใช่สาธารณสินค้า: ปลาแย่งกันใช้.</p>
+
+  <h2><span class="en">Practice — three groups, as in 2021</span><span class="th">ข้อฝึก — สามกลุ่ม แบบปี 2021</span></h2>
+  <article class="q">
+    <h3><span class="badge past">2021</span></h3>
+    <p class="en">Willingness to pay for hours of public television: \(W_1=200-T\), \(W_2=240-2T\), \(W_3=320-2T\). Marginal cost is 200 per hour. How many hours are efficient?</p>
+    <p class="th">ความเต็มใจจ่ายสำหรับชั่วโมงโทรทัศน์สาธารณะ: \(W_1=200-T\), \(W_2=240-2T\), \(W_3=320-2T\). ต้นทุนส่วนเพิ่มชั่วโมงละ 200. กี่ชั่วโมงจึงมีประสิทธิภาพ?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">Each curve hits zero at a different hour: \(W_1=0\) at \(T=200\), \(W_2=0\) at \(T=120\), \(W_3=0\) at \(T=160\). MC is 200, which is large, so check the region where all three are still positive, \(T\le 120\):</p>
+      <p class="th">แต่ละเส้นชนศูนย์คนละชั่วโมง: \(W_1=0\) ที่ \(T=200\), \(W_2=0\) ที่ \(T=120\), \(W_3=0\) ที่ \(T=160\). MC เท่ากับ 200 ซึ่งสูง ให้ตรวจช่วงที่ทั้งสามยังเป็นบวก \(T\le 120\):</p>
+      $$MSB=(200-T)+(240-2T)+(320-2T)=760-5T$$
+      $$760-5T=200 \Rightarrow 5T=560 \Rightarrow T=112$$
+      <p class="en">112 is inside \(T\le 120\), so the kink does not bind. At 112 hours, \(W_1=88\), \(W_2=16\), \(W_3=96\), and \(88+16+96=200\). Efficient hours: 112.</p>
+      <p class="th">112 อยู่ในช่วง \(T\le 120\) ดังนั้นจุดหักไม่มาผูกมัด. ที่ 112 ชั่วโมง \(W_1=88\), \(W_2=16\), \(W_3=96\) และ \(88+16+96=200\). ชั่วโมงที่มีประสิทธิภาพ: 112.</p>
+    </details>
+  </article>
+  <div class="pager">
+    <a href="ch17.html">← <span class="en">Ch 17</span><span class="th">บท 17</span></a>
+    <a href="exam.html"><span class="en">2025 exam</span><span class="th">ข้อสอบ 2025</span> →</a>
+  </div>
+</main>
+<footer class="site">
+  <p class="en">Stock externalities, such as accumulated pollution, are in the chapter: the damage depends on the stock, not only on this year’s flow. The 2025 paper did not ask for that distinction.</p>
+  <p class="th">ผลกระทบภายนอกแบบสต็อก เช่น มลพิษที่สะสม อยู่ในบท: ความเสียหายขึ้นกับสต็อก ไม่ใช่แค่กระแสของปีนี้. ข้อสอบปี 2025 ไม่ได้ถามความต่างนี้.</p>
+</footer>
+</body>
+</html>

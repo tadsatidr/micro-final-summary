@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch 13 · Game theory</title>
+<meta name="description" content="Dominance, iterated elimination, Nash equilibrium, maximin, and subgame-perfect equilibrium, including the 2025 payoff matrix.">
+<script>
+try {
+  var q = new URLSearchParams(location.search).get("lang");
+  var l = (q === "th" || q === "en") ? q : localStorage.getItem("micro-lang");
+  if (l === "th" || l === "en") {
+    document.documentElement.setAttribute("data-lang", l);
+    if (q) localStorage.setItem("micro-lang", q);
+  }
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content"><span class="en">Skip to content</span><span class="th">ข้ามไปเนื้อหา</span></a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">μ</span><span><span class="en">Micro final</span><span class="th">ไมโคร ไฟนอล</span><small><span class="en">Chapter 13</span><span class="th">บทที่ 13</span></small></span></a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="th">ไทย</button></div>
+</header>
+<nav id="site-nav" aria-label="Chapters"></nav>
+<main id="content">
+  <p class="kicker"><span class="en">Chapter 13</span><span class="th">บทที่ 13</span></p>
+  <h1><span class="en">Game theory and competitive strategy</span><span class="th">ทฤษฎีเกมและกลยุทธ์การแข่งขัน</span></h1>
+  <p class="lede">
+    <span class="en">Payoffs are written (player 1, player 2). A dominant strategy is best no matter what the other person does. A Nash equilibrium is a pair of strategies in which each is a best response to the other. The 2025 paper asks for strict iterated elimination, then whether the maximin outcome is Nash. Older papers also ask for the extensive form and subgame-perfect equilibrium.</span>
+    <span class="th">ผลได้เขียนเป็น (ผู้เล่น 1, ผู้เล่น 2). กลยุทธ์เด่น (dominant strategy) ดีที่สุดไม่ว่าอีกฝ่ายจะทำอะไร. ดุลยภาพ Nash คือคู่กลยุทธ์ที่แต่ละฝ่ายตอบสนองดีที่สุดต่ออีกฝ่าย. ข้อสอบปี 2025 ให้ตัดกลยุทธ์ด้อยอย่างเข้มแบบวนซ้ำ แล้วถามว่าผลของ maximin เป็น Nash หรือไม่. ข้อเก่าถาม extensive form และดุลยภาพสมบูรณ์ของเกมย่อยด้วย.</span>
+  </p>
+  <p>
+    <span class="badge exam">2025 Q2 · 10 pts</span>
+    <span class="badge past"><span class="en">Matrix every year; SPE in 2022–2024; maximin in 2020 and 2025</span><span class="th">ตารางทุกปี; SPE ใน 2022–2024; maximin ใน 2020 และ 2025</span></span>
+  </p>
+
+  <h2><span class="en">What to circle in a matrix</span><span class="th">จะวงอะไรในตาราง</span></h2>
+  <div class="grid-2">
+    <div class="formula">
+      <div class="name"><span class="en">Strictly dominated</span><span class="th">ด้อยอย่างเข้ม</span></div>
+      <p class="en">Strategy A strictly dominates B if A’s payoff is higher in every column (or every row, for the column player). Equal in even one cell is not strict. Delete strictly dominated strategies, then look again. Order does not matter for strict dominance. The question says “strictly,” so do not delete a strategy that is only weakly worse.</p>
+      <p class="th">กลยุทธ์ A เด่นกว่า B อย่างเข้ม ถ้าผลได้ของ A สูงกว่าในทุกคอลัมน์ (หรือทุกแถว สำหรับผู้เล่นฝั่งคอลัมน์). แม้เสมอกันแค่ช่องเดียวก็ไม่นับว่าเข้ม. ตัดกลยุทธ์ที่ด้อยอย่างเข้มแล้วมองใหม่. ลำดับการตัดไม่สำคัญสำหรับการเด่นอย่างเข้ม. โจทย์บอก “strictly” อย่าตัดกลยุทธ์ที่แย่กว่าแบบอ่อน.</p>
+    </div>
+    <div class="formula">
+      <div class="name">Nash</div>
+      <p class="en">Underline player 1’s best payoff in each column and player 2’s best payoff in each row. A cell where both payoffs are underlined is a pure Nash equilibrium. “I am doing the best I can given what you are doing.”</p>
+      <p class="th">ขีดเส้นใต้ผลได้ที่ดีที่สุดของผู้เล่น 1 ในแต่ละคอลัมน์ และของผู้เล่น 2 ในแต่ละแถว. ช่องที่ขีดทั้งสองตัวคือ Nash แบบบริสุทธิ์. “ฉันทำให้ดีที่สุดแล้ว เมื่อรู้ว่าเธอทำอย่างนี้.”</p>
+    </div>
+    <div class="formula">
+      <div class="name">Maximin</div>
+      <p class="en">For each of your strategies, write the worst payoff. Choose the strategy whose worst payoff is the highest. This is a security strategy. It need not be a best response, so the maximin cell need not be Nash.</p>
+      <p class="th">สำหรับแต่ละกลยุทธ์ของตน เขียนผลได้ที่แย่ที่สุด. เลือกกลยุทธ์ที่ผลได้แย่ที่สุดนั้นสูงที่สุด. นี่คือกลยุทธ์เพื่อความปลอดภัย. ไม่จำเป็นต้องเป็นการตอบสนองที่ดีที่สุด ดังนั้นช่อง maximin ไม่จำเป็นต้องเป็น Nash.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Subgame-perfect equilibrium</span><span class="th">ดุลยภาพสมบูรณ์ของเกมย่อย (SPE)</span></div>
+      <p class="en">Draw the tree. Solve from the last decision backward. The first mover anticipates those later choices. A Nash equilibrium that relies on a threat the later player would not carry out does not survive.</p>
+      <p class="th">วาดต้นไม้. แก้จากจุดตัดสินใจสุดท้ายย้อนขึ้นมา. ผู้เดินก่อนคาดการณ์ทางเลือกตอนหลัง. Nash ที่อาศัยคำขู่ซึ่งผู้เล่นตอนหลังจะไม่ทำจริง จะไม่รอด.</p>
+    </div>
+  </div>
+
+  <h2><span class="en">2025 question 2 — the matrix</span><span class="th">ข้อ 2 ปี 2025 — ตาราง</span></h2>
+  <p class="en">Player 1’s payoff is on the left.</p>
+  <p class="th">ผลได้ของผู้เล่น 1 อยู่ด้านซ้าย.</p>
+  <div class="table-wrap">
+    <table class="payoff">
+      <thead>
+        <tr><th></th><th></th><th colspan="3">Player 2</th></tr>
+        <tr><th></th><th></th><th>Left</th><th>Center</th><th>Right</th></tr>
+      </thead>
+      <tbody>
+        <tr><th rowspan="3">Player 1</th><th>Top</th><td>(3, 0)</td><td>(2, 1)</td><td>(0, 0)</td></tr>
+        <tr><th>Middle</th><td>(1, 1)</td><td>(1, 1)</td><td>(5, 0)</td></tr>
+        <tr><th>Bottom</th><td>(0, 1)</td><td>(4, 2)</td><td>(0, 1)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>2.1 IESDS</h3>
+  <ol class="steps">
+    <li>
+      <p class="en">No strategy of player 1 is strictly dominated at the start. Compare player 2. Center gives 1, 1, 2. Right gives 0, 0, 1. Center is strictly better in every row, so <strong>Right is strictly dominated</strong>. Delete the Right column. Left is not strictly dominated yet: against Middle, Left and Center both pay 1.</p>
+      <p class="th">ตอนเริ่ม ไม่มีกลยุทธ์ของผู้เล่น 1 ที่ด้อยอย่างเข้ม. ดูผู้เล่น 2. Center ให้ 1, 1, 2. Right ให้ 0, 0, 1. Center ดีกว่าอย่างเข้มทุกแถว ดังนั้น <strong>Right ด้อยอย่างเข้ม</strong>. ตัดคอลัมน์ Right. Left ยังไม่ด้อยอย่างเข้ม: ถ้าอีกฝ่ายเล่น Middle, Left กับ Center ได้ 1 เท่ากัน.</p>
+    </li>
+    <li>
+      <p class="en">In the remaining columns Left and Center, Top pays (3, 2) and Middle pays (1, 1). <strong>Top strictly dominates Middle.</strong> Delete Middle.</p>
+      <p class="th">ในคอลัมน์ที่เหลือคือ Left กับ Center, Top ได้ (3, 2) และ Middle ได้ (1, 1). <strong>Top เด่นกว่า Middle อย่างเข้ม.</strong> ตัด Middle.</p>
+    </li>
+    <li>
+      <p class="en">Player 2 now faces only Top and Bottom. Left pays (0, 1). Center pays (1, 2). <strong>Center strictly dominates Left.</strong> Delete Left.</p>
+      <p class="th">ผู้เล่น 2 เหลือแค่แถว Top กับ Bottom. Left ได้ (0, 1). Center ได้ (1, 2). <strong>Center เด่นกว่า Left อย่างเข้ม.</strong> ตัด Left.</p>
+    </li>
+    <li>
+      <p class="en">Only Center remains. Top pays 2, Bottom pays 4. <strong>Bottom strictly dominates Top.</strong></p>
+      <p class="th">เหลือแค่ Center. Top ได้ 2, Bottom ได้ 4. <strong>Bottom เด่นกว่า Top อย่างเข้ม.</strong></p>
+    </li>
+  </ol>
+  <div class="table-wrap">
+    <table class="payoff">
+      <thead>
+        <tr><th></th><th>Left</th><th>Center</th><th>Right</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>Top</th><td class="elim">(3, 0)</td><td class="elim">(2, 1)</td><td class="elim">(0, 0)</td></tr>
+        <tr><th>Middle</th><td class="elim">(1, 1)</td><td class="elim">(1, 1)</td><td class="elim">(5, 0)</td></tr>
+        <tr><th>Bottom</th><td class="elim">(0, 1)</td><td class="keep">(4, 2)</td><td class="elim">(0, 1)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="answer"><span class="en">IESDS leaves (Bottom, Center) with payoffs (4, 2).</span><span class="th">IESDS เหลือ (Bottom, Center) ผลได้ (4, 2).</span></p>
+  <p class="en">That cell is also the only pure Nash equilibrium. Given Center, player 1’s payoffs are 2, 1, 4, so Bottom is the best response. Given Bottom, player 2’s payoffs are 1, 2, 1, so Center is the best response.</p>
+  <p class="th">ช่องนั้นเป็น Nash แบบบริสุทธิ์ช่องเดียวด้วย. ถ้าอีกฝ่ายเล่น Center ผลได้ของผู้เล่น 1 คือ 2, 1, 4 ดังนั้น Bottom คือการตอบที่ดีที่สุด. ถ้าผู้เล่น 1 เล่น Bottom ผลได้ของผู้เล่น 2 คือ 1, 2, 1 ดังนั้น Center คือการตอบที่ดีที่สุด.</p>
+
+  <h3>2.2 Maximin</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th><span class="en">Strategy</span><span class="th">กลยุทธ์</span></th><th><span class="en">Payoffs</span><span class="th">ผลได้</span></th><th><span class="en">Worst</span><span class="th">แย่สุด</span></th></tr></thead>
+      <tbody>
+        <tr><td>Top</td><td>3, 2, 0</td><td>0</td></tr>
+        <tr><td>Middle</td><td>1, 1, 5</td><td>1</td></tr>
+        <tr><td>Bottom</td><td>0, 4, 0</td><td>0</td></tr>
+        <tr><td>Left</td><td>0, 1, 1</td><td>0</td></tr>
+        <tr><td>Center</td><td>1, 1, 2</td><td>1</td></tr>
+        <tr><td>Right</td><td>0, 0, 1</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="en">Player 1’s maximin strategy is Middle (security level 1). Player 2’s is Center (security level 1). The cell is (Middle, Center) = (1, 1).</p>
+  <p class="th">กลยุทธ์ maximin ของผู้เล่น 1 คือ Middle (ระดับความปลอดภัย 1). ของผู้เล่น 2 คือ Center (ระดับความปลอดภัย 1). ช่องคือ (Middle, Center) = (1, 1).</p>
+  <p class="en">It is <strong>not</strong> a Nash equilibrium. If player 2 plays Center, player 1 earns 2 from Top, 1 from Middle, and 4 from Bottom. The best response is Bottom, not Middle. (Player 2 is willing to play Center against Middle, since Left also pays 1 and Right pays 0. The failure is on player 1’s side.)</p>
+  <p class="th">ช่องนี้<strong>ไม่ใช่</strong> Nash. ถ้าผู้เล่น 2 เล่น Center ผู้เล่น 1 ได้ 2 จาก Top, 1 จาก Middle, และ 4 จาก Bottom. การตอบที่ดีที่สุดคือ Bottom ไม่ใช่ Middle. (ผู้เล่น 2 ยอมเล่น Center เมื่ออีกฝ่ายเล่น Middle เพราะ Left ก็ได้ 1 และ Right ได้ 0. จุดที่พังอยู่ฝั่งผู้เล่น 1.)</p>
+
+  <h2><span class="en">Extensive form</span><span class="th">รูปขยาย (Extensive form)</span></h2>
+  <p class="en">2025 did not ask for a tree. The 2022, 2023, and 2024 papers did: someone moves first, the other observes, find the SPE. Solve backward.</p>
+  <p class="th">ปี 2025 ไม่ได้ถามต้นไม้. ข้อปี 2022, 2023 และ 2024 ถาม: มีคนเดินก่อน อีกฝ่ายเห็น แล้วหา SPE. แก้ย้อนหลัง.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 680 300" role="img">
+      <title>Extensive form solved by backward induction</title>
+      <circle cx="80" cy="140" r="16" fill="#0e3b2e"/>
+      <text x="74" y="145" fill="#fff" font-size="14" font-family="sans-serif">1</text>
+      <line x1="96" y1="140" x2="250" y2="60" stroke="#1b1814" stroke-width="2"/>
+      <line x1="96" y1="140" x2="250" y2="220" stroke="#1b1814" stroke-width="2"/>
+      <text x="150" y="80" font-size="14" font-family="sans-serif">A</text>
+      <text x="150" y="210" font-size="14" font-family="sans-serif" font-weight="700">B</text>
+      <circle cx="266" cy="60" r="16" fill="#1e4d7b"/>
+      <circle cx="266" cy="220" r="16" fill="#1e4d7b"/>
+      <text x="260" y="65" fill="#fff" font-size="14" font-family="sans-serif">2</text>
+      <text x="260" y="225" fill="#fff" font-size="14" font-family="sans-serif">2</text>
+      <line x1="282" y1="60" x2="460" y2="24" stroke="#b5b0a6" stroke-width="2"/>
+      <line x1="282" y1="60" x2="460" y2="96" stroke="#1b1814" stroke-width="2.4"/>
+      <line x1="282" y1="220" x2="460" y2="184" stroke="#1b1814" stroke-width="2.4"/>
+      <line x1="282" y1="220" x2="460" y2="256" stroke="#b5b0a6" stroke-width="2"/>
+      <text x="340" y="30" font-size="13" fill="#8a8174" font-family="sans-serif">L</text>
+      <text x="340" y="100" font-size="13" font-family="sans-serif">R</text>
+      <text x="340" y="176" font-size="13" font-family="sans-serif">L</text>
+      <text x="340" y="250" font-size="13" fill="#8a8174" font-family="sans-serif">R</text>
+      <text x="470" y="28" font-size="14" font-family="sans-serif">(3, 1)</text>
+      <text x="470" y="100" font-size="14" font-family="sans-serif">(1, 2) ←</text>
+      <text x="470" y="188" font-size="14" font-family="sans-serif">(2, 2) ←</text>
+      <text x="470" y="260" font-size="14" font-family="sans-serif">(0, 0)</text>
+    </svg>
+    <figcaption>
+      <span class="en">Player 2 moves last. After A, R pays 2 and L pays 1, so player 2 picks R and player 1 is left with 1. After B, L pays 2 and R pays 0, so player 2 picks L and player 1 gets 2. Player 1 therefore opens with B. SPE: player 1 plays B; player 2 plays R after A and L after B. Outcome (2, 2).</span>
+      <span class="th">ผู้เล่น 2 เดินทีหลัง. หลัง A, R ได้ 2 และ L ได้ 1 ดังนั้นผู้เล่น 2 เลือก R และผู้เล่น 1 เหลือ 1. หลัง B, L ได้ 2 และ R ได้ 0 ดังนั้นผู้เล่น 2 เลือก L และผู้เล่น 1 ได้ 2. ผู้เล่น 1 จึงเปิดด้วย B. SPE: ผู้เล่น 1 เล่น B; ผู้เล่น 2 เล่น R หลัง A และ L หลัง B. ผลลัพธ์ (2, 2).</span>
+    </figcaption>
+  </figure>
+
+  <h2><span class="en">Practice</span><span class="th">ข้อฝึก</span></h2>
+  <article class="q">
+    <h3>1 <span class="badge past"><span class="en">2020-style maximin plus elimination</span><span class="th">แนวปี 2020 maximin กับการตัด</span></span></h3>
+    <div class="table-wrap">
+      <table class="payoff">
+        <thead><tr><th></th><th>L</th><th>M</th><th>R</th></tr></thead>
+        <tbody>
+          <tr><th>U</th><td>(1, 2)</td><td>(2, 1)</td><td>(1, 0)</td></tr>
+          <tr><th>C</th><td>(0, 5)</td><td>(1, 2)</td><td>(7, 4)</td></tr>
+          <tr><th>D</th><td>(−1, 1)</td><td>(3, 0)</td><td>(5, 2)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="en">Which strategies are strictly dominated at the start? If player 1 uses maximin and player 2 knows it, what does player 2 do? Then solve by IESDS.</p>
+    <p class="th">กลยุทธ์ใดด้อยอย่างเข้มตั้งแต่ต้น? ถ้าผู้เล่น 1 ใช้ maximin และผู้เล่น 2 รู้ ผู้เล่น 2 จะทำอะไร? จากนั้นแก้ด้วย IESDS.</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">At the start, U strictly dominates nothing against C and D in every column: U versus C is (1&gt;0, 2&gt;1, 1&lt;7). U versus D is (1&gt;−1, 2&lt;3, 1&lt;5). C versus D is (0&gt;−1, 1&lt;3, 7&gt;5). No row is strictly dominated. For player 2, L versus M: (2&gt;1, 5&gt;2, 1&gt;0). <strong>L strictly dominates M.</strong> L versus R: (2&gt;0, 5&gt;4, 1&lt;2), not strict. R versus M is not strict either (0&lt;1 against U). So only M is strictly dominated at the start.</p>
+      <p class="th">ตอนเริ่ม ไม่มีแถวที่ด้อยอย่างเข้ม: U กับ C คือ (1&gt;0, 2&gt;1, 1&lt;7). U กับ D คือ (1&gt;−1, 2&lt;3, 1&lt;5). C กับ D คือ (0&gt;−1, 1&lt;3, 7&gt;5). ฝั่งผู้เล่น 2, L เทียบ M: (2&gt;1, 5&gt;2, 1&gt;0). <strong>L เด่นกว่า M อย่างเข้ม.</strong> L เทียบ R ไม่เข้มเพราะแถว D ได้ 1&lt;2. ดังนั้นตอนเริ่มมีแค่ M ที่ด้อยอย่างเข้ม.</p>
+      <p class="en">Maximin for player 1: worst of U is 1, worst of C is 0, worst of D is −1. Maximin is U. Player 2, knowing this, best-responds to U: L pays 2, M pays 1, R pays 0. Player 2 plays L.</p>
+      <p class="th">Maximin ของผู้เล่น 1: ค่าแย่สุดของ U คือ 1, ของ C คือ 0, ของ D คือ −1. Maximin คือ U. ผู้เล่น 2 รู้แล้วตอบสนองต่อ U: L ได้ 2, M ได้ 1, R ได้ 0. ผู้เล่น 2 เล่น L.</p>
+      <p class="en">IESDS: delete M. Remaining columns L and R. U pays (1, 1), C pays (0, 7), D pays (−1, 5). C strictly dominates both U and D? C versus U: 0&lt;1 in L, so no. D versus U: −1&lt;1. U versus D: 1&gt;−1 and 1&lt;5, no. C versus D: 0&gt;−1 and 7&gt;5, so <strong>C strictly dominates D</strong>. Delete D. Now L versus R against U and C: L pays (2, 5), R pays (0, 4). <strong>L strictly dominates R.</strong> Delete R. Only L remains. U pays 1, C pays 0. U strictly dominates C. Outcome (U, L) = (1, 2).</p>
+      <p class="th">IESDS: ตัด M. เหลือคอลัมน์ L กับ R. C เทียบ D: 0&gt;−1 และ 7&gt;5 ดังนั้น <strong>C เด่นกว่า D อย่างเข้ม</strong>. ตัด D. ตอนนี้ L เทียบ R ต่อ U และ C: L ได้ (2, 5), R ได้ (0, 4). <strong>L เด่นกว่า R อย่างเข้ม.</strong> ตัด R. เหลือ L. U ได้ 1, C ได้ 0. U เด่นกว่า C. ผลคือ (U, L) = (1, 2).</p>
+    </details>
+  </article>
+  <article class="q">
+    <h3>2 <span class="badge past"><span class="en">Prisoners’ dilemma shape</span><span class="th">โครง prisoners’ dilemma</span></span></h3>
+    <div class="table-wrap">
+      <table class="payoff">
+        <thead><tr><th></th><th><span class="en">Cooperate</span><span class="th">ร่วมมือ</span></th><th><span class="en">Cheat</span><span class="th">โกง</span></th></tr></thead>
+        <tbody>
+          <tr><th><span class="en">Cooperate</span><span class="th">ร่วมมือ</span></th><td>(10, 10)</td><td>(1, 15)</td></tr>
+          <tr><th><span class="en">Cheat</span><span class="th">โกง</span></th><td>(15, 1)</td><td>(3, 3)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="en">Find the dominant strategies and the Nash equilibrium. Why is (Cooperate, Cooperate) not Nash even though both would prefer it to the equilibrium?</p>
+    <p class="th">หากลยุทธ์เด่นและดุลยภาพ Nash. ทำไม (ร่วมมือ, ร่วมมือ) ไม่ใช่ Nash ทั้งที่ทั้งคู่ชอบมันมากกว่าจุดดุลยภาพ?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">Cheat strictly dominates Cooperate for each player (15&gt;10 and 3&gt;1). The unique Nash equilibrium is (Cheat, Cheat) = (3, 3). (Cooperate, Cooperate) pays more to both, but each gains by cheating if the other cooperates. That gap is why a cartel agreement to hold price up is not self-enforcing in a one-shot game.</p>
+      <p class="th">โกงเด่นกว่าการร่วมมืออย่างเข้มสำหรับทั้งสองฝ่าย (15&gt;10 และ 3&gt;1). Nash เดียวคือ (โกง, โกง) = (3, 3). (ร่วมมือ, ร่วมมือ) ให้ทั้งคู่ได้มากกว่า แต่แต่ละฝ่ายได้เพิ่มถ้าโกงในขณะที่อีกฝ่ายร่วมมือ. ช่องว่างนี้คือเหตุผลที่ข้อตกลงคาร์เทลให้ตรึงราคาสูง ไม่ดำรงเองในเกมเล่นครั้งเดียว.</p>
+    </details>
+  </article>
+  <div class="pager">
+    <a href="ch12.html">← <span class="en">Ch 12</span><span class="th">บท 12</span></a>
+    <a href="ch14.html"><span class="en">Ch 14 Factors</span><span class="th">บท 14 ปัจจัยการผลิต</span> →</a>
+  </div>
+</main>
+<footer class="site">
+  <p class="en">Mixed strategies are in the chapter but were not on the 2025 paper. If a matrix has no pure Nash equilibrium, set the opponent indifferent between the two rows (or columns) and solve for the probabilities.</p>
+  <p class="th">กลยุทธ์ผสมอยู่ในบท แต่ไม่อยู่ในข้อสอบปี 2025. ถ้าตารางไม่มี Nash แบบบริสุทธิ์ ให้ตั้งให้อีกฝ่ายเฉย ๆ ระหว่างสองแถว (หรือสองคอลัมน์) แล้วแก้หาความน่าจะเป็น.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Micro final summary · KU</title>
+<meta name="description" content="Bilingual study site for the Kasetsart intermediate microeconomics final: graphs, formulas, and worked calculations for chapters 10–14 and 16–18, guided by the 2025 exam.">
+<script>
+try {
+  var q = new URLSearchParams(location.search).get("lang");
+  var l = (q === "th" || q === "en") ? q : localStorage.getItem("micro-lang");
+  if (l === "th" || l === "en") {
+    document.documentElement.setAttribute("data-lang", l);
+    if (q) localStorage.setItem("micro-lang", q);
+  }
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content"><span class="en">Skip to content</span><span class="th">ข้ามไปเนื้อหา</span></a>
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">μ</span>
+    <span>
+      <span class="en">Micro final</span><span class="th">ไมโคร ไฟนอล</span>
+      <small><span class="en">KU intermediate micro</span><span class="th">จุลภาควิชา ม.เกษตร</span></small>
+    </span>
+  </a>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-set-lang="en">EN</button>
+    <button type="button" data-set-lang="th">ไทย</button>
+  </div>
+</header>
+<nav id="site-nav" aria-label="Chapters"></nav>
+<main id="content">
+  <p class="kicker"><span class="en">Intermediate microeconomics</span><span class="th">เศรษฐศาสตร์จุลภาคขั้นกลาง</span></p>
+  <h1><span class="en">Final-exam study guide</span><span class="th">โน้ตอ่านสอบไฟนอล</span></h1>
+  <p class="lede">
+    <span class="en">Chapters 10–14 and 16–18, built around graphs and calculations. The emphasis follows the 2025 final (80 points) and the question styles that also appear in the 2020–2024 papers in the same packet. Switch language with the EN / ไทย buttons; the choice is saved on this device.</span>
+    <span class="th">บทที่ 10–14 และ 16–18 เน้นกราฟกับการคำนวณ ตามน้ำหนักข้อสอบปี 2025 (80 คะแนน) และรูปแบบโจทย์ที่โผล่ในชุดปี 2020–2024 ด้วย. สลับภาษาที่ปุ่ม EN / ไทย มุมขวาบน ระบบจะจำค่าที่เลือกไว้ในเครื่องนี้.</span>
+  </p>
+  <p>
+    <span class="badge exam">2025 · 80 pts</span>
+    <span class="badge past"><span class="en">Packet also contains 2020–2024</span><span class="th">ชุดเดียวกันมีปี 2020–2024</span></span>
+    <span class="badge calm"><span class="en">English terms kept in both languages</span><span class="th">ศัพท์เศรษฐศาสตร์ภาษาอังกฤษอยู่คู่ไทย</span></span>
+  </p>
+
+  <div class="callout warn">
+    <p class="en"><strong>How to read the badges.</strong> “Exam focus / ออกสอบ 2025” means that topic was on the 2025 paper. “Past papers” means it showed up in 2020–2024 in the same packet. Neither badge is a claim about the next exam.</p>
+    <p class="th"><strong>วิธีอ่านป้าย.</strong> “ออกสอบ 2025” หมายถึงเรื่องนั้นอยู่ในข้อสอบปี 2025. “ข้อสอบเก่า” หมายถึงโผล่ในปี 2020–2024 ในชุดเดียวกัน. ไม่ได้ทายว่าครั้งหน้าจะออกอะไร.</p>
+  </div>
+
+  <h2><span class="en">What the 2025 paper actually asked</span><span class="th">ข้อสอบปี 2025 ถามอะไรบ้าง</span></h2>
+  <p class="en">Point weights below are the 2025 paper only. Open a chapter for the graph, the formula, and a full worked solution of that question.</p>
+  <p class="th">น้ำหนักด้านล่างคือข้อสอบปี 2025 เท่านั้น. แต่ละบทมีรูป สูตร และเฉลยแบบลงมือทำของข้อนั้น.</p>
+
+  <div class="card">
+    <div class="weight-row"><span><a href="ch12.html">Ch 12</a></span><div class="bar"><span style="width:17.5%"></span></div><strong>14</strong></div>
+    <div class="weight-row"><span><a href="ch11.html">Ch 11</a></span><div class="bar"><span style="width:16.25%"></span></div><strong>13</strong></div>
+    <div class="weight-row"><span><a href="ch10.html">Ch 10</a></span><div class="bar"><span style="width:12.5%"></span></div><strong>10</strong></div>
+    <div class="weight-row"><span><a href="ch13.html">Ch 13</a></span><div class="bar"><span style="width:12.5%"></span></div><strong>10</strong></div>
+    <div class="weight-row"><span><a href="ch14.html">Ch 14</a></span><div class="bar"><span style="width:12.5%"></span></div><strong>10</strong></div>
+    <div class="weight-row"><span><a href="ch16.html">Ch 16</a></span><div class="bar"><span style="width:12.5%"></span></div><strong>10</strong></div>
+    <div class="weight-row"><span><a href="ch18.html">Ch 18</a></span><div class="bar"><span style="width:11.25%"></span></div><strong>9</strong></div>
+    <div class="weight-row"><span><a href="ch17.html">Ch 17</a></span><div class="bar"><span style="width:5%"></span></div><strong>4</strong></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Q</th><th><span class="en">Pts</span><span class="th">คะแนน</span></th>
+          <th><span class="en">What to do</span><span class="th">โจทย์ให้ทำอะไร</span></th>
+          <th><span class="en">Chapter</span><span class="th">บท</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>7</td><td><span class="en">Match the pricing strategy to the case (price discrimination, peak-load, two-part tariff, bundling, …).</span><span class="th">จับคู่กลยุทธ์การตั้งราคากับสถานการณ์ (price discrimination, peak-load, two-part tariff, bundling, …)</span></td><td><a href="ch11.html">11</a></td></tr>
+        <tr><td>2</td><td>10</td><td><span class="en">3×3 game: iterated elimination of strictly dominated strategies, then maximin versus Nash.</span><span class="th">เกม 3×3: ตัดกลยุทธ์ด้อยอย่างเข้มแบบวนซ้ำ แล้วเทียบ maximin กับ Nash</span></td><td><a href="ch13.html">13</a></td></tr>
+        <tr><td>3</td><td>4</td><td><span class="en">Adverse selection versus moral hazard in health insurance.</span><span class="th">Adverse selection กับ moral hazard ในตลาดประกันสุขภาพ</span></td><td><a href="ch17.html">17</a></td></tr>
+        <tr><td>4</td><td>4</td><td><span class="en">One negative externality (firm → people) and one positive externality (person → person).</span><span class="th">ยกตัวอย่าง externality ทางลบ (บริษัท→คน) และทางบวก (คน→คน) อย่างละหนึ่ง</span></td><td><a href="ch18.html">18</a></td></tr>
+        <tr><td>5</td><td>10</td><td><span class="en">Cournot price, quantity, profit; then Bertrand. \(Q_D=100-5P\), \(MC=2\).</span><span class="th">Cournot หาราคา ปริมาณ กำไร แล้วทำ Bertrand. \(Q_D=100-5P\), \(MC=2\)</span></td><td><a href="ch12.html">12</a></td></tr>
+        <tr><td>6</td><td>5</td><td><span class="en">Optimal public good: vertical sum of two demands, \(MC=50\).</span><span class="th">ปริมาณสาธารณสินค้าที่เหมาะสม: บวกอุปสงค์ในแนวตั้ง \(MC=50\)</span></td><td><a href="ch18.html">18</a></td></tr>
+        <tr><td>7</td><td>5</td><td><span class="en">Are all points on the contract curve equally desirable?</span><span class="th">จุดบน contract curve มีประสิทธิภาพแล้ว จะพึงประสงค์เท่ากันหมดหรือไม่</span></td><td><a href="ch16.html">16</a></td></tr>
+        <tr><td>8</td><td>5</td><td><span class="en">Two MRS values versus \(P_{OJ}/P_{coffee}\): which market has excess demand?</span><span class="th">เทียบ MRS สองคนกับ \(P_{OJ}/P_{coffee}\): ตลาดไหนมี excess demand</span></td><td><a href="ch16.html">16</a></td></tr>
+        <tr><td>9</td><td>6</td><td><span class="en">Reservation-price table: optimal separate prices, then pure bundling.</span><span class="th">ตาราง reservation price: ราคาแยกที่เหมาะสม แล้ว pure bundling</span></td><td><a href="ch11.html">11</a></td></tr>
+        <tr><td>10</td><td>3</td><td><span class="en">How does Ricardian rent arise?</span><span class="th">ค่าเช่าแบบ Ricardian เกิดขึ้นได้อย่างไร</span></td><td><a href="ch14.html">14</a></td></tr>
+        <tr><td>11</td><td>7</td><td><span class="en">Monopsony: write \(ME\), then the profit-max labor and wage. \(L=100w\), \(L=1000-100\,MRP_L\).</span><span class="th">Monopsony: เขียนสมการ \(ME\) แล้วหาจำนวนแรงงานและค่าจ้าง. \(L=100w\), \(L=1000-100\,MRP_L\)</span></td><td><a href="ch14.html">14</a></td></tr>
+        <tr><td>12</td><td>10</td><td><span class="en">Monopoly versus competition, plus the Lerner index. \(C=100+2q^2\), \(P=90-2Q\).</span><span class="th">ผูกขาดเทียบกับแข่งขัน พร้อม Lerner index. \(C=100+2q^2\), \(P=90-2Q\)</span></td><td><a href="ch10.html">10</a></td></tr>
+        <tr><td>13</td><td>4</td><td><span class="en">Why monopolistic competition should not be regulated.</span><span class="th">เหตุผลที่ไม่ควรกำกับตลาดแข่งขันผูกขาด</span></td><td><a href="ch12.html">12</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><a href="exam.html"><span class="en">Walk through the whole 2025 paper with solutions →</span><span class="th">ทำข้อสอบปี 2025 ทั้งชุดพร้อมเฉลย →</span></a></p>
+
+  <h2><span class="en">Patterns in the 2020–2025 packet</span><span class="th">รูปแบบที่ซ้ำในชุดปี 2020–2025</span></h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3><span class="en">Almost every paper</span><span class="th">เกือบทุกปี</span></h3>
+      <ul>
+        <li><span class="en">Name the pricing strategy from a short story (Ch 11).</span><span class="th">บอกชื่อกลยุทธ์ราคาจากสถานการณ์สั้น ๆ (บท 11)</span></li>
+        <li><span class="en">Cournot algebra, then Bertrand as the short last part (Ch 12).</span><span class="th">คำนวณ Cournot แล้วปิดท้ายด้วย Bertrand สั้น ๆ (บท 12)</span></li>
+        <li><span class="en">A payoff matrix: delete dominated strategies; sometimes maximin or an extensive form (Ch 13).</span><span class="th">ตาราง payoff: ตัดกลยุทธ์ด้อย บางปีถาม maximin หรือ extensive form (บท 13)</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="en">Repeated, including 2025</span><span class="th">ซ้ำ และปี 2025 ก็ถาม</span></h3>
+      <ul>
+        <li><span class="en">Monopoly \(MR=MC\), elasticity, Lerner or markup (Ch 10).</span><span class="th">ผูกขาด \(MR=MC\), elasticity, Lerner หรือ markup (บท 10)</span></li>
+        <li><span class="en">Reservation prices and bundling (Ch 11).</span><span class="th">Reservation price กับการขายเป็นชุด (บท 11)</span></li>
+        <li><span class="en">Public-good vertical sum — the mosquito-control demands are copied in 2023, 2024, and 2025 (Ch 18).</span><span class="th">บวกอุปสงค์สาธารณสินค้าแนวตั้ง — โจทย์กำจัดยุงชุดเดียวกันในปี 2023, 2024 และ 2025 (บท 18)</span></li>
+        <li><span class="en">Adverse selection versus moral hazard (Ch 17).</span><span class="th">Adverse selection เทียบ moral hazard (บท 17)</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="en">In older papers, not on the 2025 paper</span><span class="th">อยู่ในข้อเก่า แต่ไม่อยู่ในปี 2025</span></h3>
+      <ul>
+        <li><span class="en">Comparative-advantage table (2020, 2021, 2023, 2024) — worked in Ch 16.</span><span class="th">ตาราง comparative advantage (2020, 2021, 2023, 2024) — ทำให้ในบท 16</span></li>
+        <li><span class="en">Extensive-form subgame perfect equilibrium (2022, 2023, 2024). 2025 asked maximin instead — both are in Ch 13.</span><span class="th">SPE จาก extensive form (2022, 2023, 2024). ปี 2025 ถาม maximin แทน — ทั้งสองแบบอยู่ในบท 13</span></li>
+        <li><span class="en">Two-part tariff with numbers (2022), third-degree prices (2022), labor-hiring table (2022, 2024).</span><span class="th">Two-part tariff แบบมีตัวเลข (2022), ราคา third-degree (2022), ตารางจ้างงาน (2022, 2024)</span></li>
+        <li><span class="en">Perpetuity \(PV=A/r\) (2022, 2023) and lump-sum versus annual payment (2024). That is capital-market material, outside chapters 10–14 and 16–18, and it was not on the 2025 paper. One line: a bond paying $500 a year is worth \(500/0.10=5000\) at 10 percent. At a price of $4,800 it is worth buying.</span><span class="th">Perpetuity \(PV=A/r\) (2022, 2023) และเงินก้อนเทียบเงินรายปี (2024) เป็นเรื่องตลาดทุน นอกบท 10–14 และ 16–18 และไม่อยู่ในปี 2025. สูตรสั้น ๆ: พันธบัตรจ่ายปีละ $500 ที่ดอกเบี้ย 10% มีค่า \(500/0.10=5000\). ถ้าราคาขาย $4,800 ควรซื้อ.</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="en">How to use this site</span><span class="th">วิธีใช้เว็บนี้</span></h3>
+      <ol>
+        <li><span class="en">For each chapter, read the graph labels before the prose.</span><span class="th">แต่ละบท ดูป้ายบนรูปก่อนอ่านคำอธิบาย</span></li>
+        <li><span class="en">Copy the formula card, then redo the worked numbers with the book closed.</span><span class="th">คัดสูตร แล้วปิดเฉลยทำตัวเลขใหม่ด้วยตัวเอง</span></li>
+        <li><span class="en">Do the practice questions. Open the solution only after an answer is on the page.</span><span class="th">ทำข้อฝึก เปิดเฉลยเมื่อเขียนคำตอบแล้วเท่านั้น</span></li>
+        <li><span class="en">Finish with the <a href="exam.html">2025 walkthrough</a> under a timer. The <a href="formulas.html">formula sheet</a> is the last-night page.</span><span class="th">ปิดด้วย <a href="exam.html">ข้อสอบปี 2025</a> จับเวลา. <a href="formulas.html">แผ่นสูตร</a> ไว้คืนสุดท้าย</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <h2><span class="en">Chapters</span><span class="th">บทเรียน</span></h2>
+  <div class="cards">
+    <a class="chapter-card" href="ch10.html"><div class="num">10</div><strong><span class="en">Monopoly and monopsony</span><span class="th">ผูกขาดและผู้ซื้อผูกขาด</span></strong><p><span class="en">\(MR=MC\), markup rule, Lerner index, deadweight loss. 2025 Q12.</span><span class="th">\(MR=MC\), markup, Lerner, deadweight loss. ข้อ 12 ปี 2025.</span></p></a>
+    <a class="chapter-card" href="ch11.html"><div class="num">11</div><strong><span class="en">Pricing with market power</span><span class="th">การตั้งราคาเมื่อมีอำนาจตลาด</span></strong><p><span class="en">Discrimination, peak-load, two-part tariff, bundling. 2025 Q1 and Q9.</span><span class="th">เลือกปฏิบัติทางราคา, peak-load, two-part tariff, bundling. ข้อ 1 และ 9 ปี 2025.</span></p></a>
+    <a class="chapter-card" href="ch12.html"><div class="num">12</div><strong><span class="en">Monopolistic competition and oligopoly</span><span class="th">แข่งขันผูกขาดและผู้ขายน้อยราย</span></strong><p><span class="en">Cournot, Stackelberg, Bertrand, why not to regulate. 2025 Q5 and Q13.</span><span class="th">Cournot, Stackelberg, Bertrand, เหตุผลที่ไม่กำกับ. ข้อ 5 และ 13 ปี 2025.</span></p></a>
+    <a class="chapter-card" href="ch13.html"><div class="num">13</div><strong><span class="en">Game theory</span><span class="th">ทฤษฎีเกม</span></strong><p><span class="en">Dominance, Nash, IESDS, maximin, extensive form. 2025 Q2.</span><span class="th">กลยุทธ์เด่น, Nash, IESDS, maximin, extensive form. ข้อ 2 ปี 2025.</span></p></a>
+    <a class="chapter-card" href="ch14.html"><div class="num">14</div><strong><span class="en">Factor markets</span><span class="th">ตลาดปัจจัยการผลิต</span></strong><p><span class="en">\(MRP_L\), monopsony \(ME\), Ricardian rent. 2025 Q10 and Q11.</span><span class="th">\(MRP_L\), monopsony \(ME\), ค่าเช่า Ricardian. ข้อ 10 และ 11 ปี 2025.</span></p></a>
+    <a class="chapter-card" href="ch16.html"><div class="num">16</div><strong><span class="en">General equilibrium</span><span class="th">ดุลยภาพทั่วไป</span></strong><p><span class="en">Edgeworth box, contract curve, MRS versus prices. 2025 Q7 and Q8.</span><span class="th">กล่อง Edgeworth, contract curve, MRS เทียบราคา. ข้อ 7 และ 8 ปี 2025.</span></p></a>
+    <a class="chapter-card" href="ch17.html"><div class="num">17</div><strong><span class="en">Asymmetric information</span><span class="th">ข้อมูลอสมมาตร</span></strong><p><span class="en">Adverse selection, moral hazard, lemons, efficiency wages. 2025 Q3.</span><span class="th">Adverse selection, moral hazard, ตลาดมะนาว, efficiency wage. ข้อ 3 ปี 2025.</span></p></a>
+    <a class="chapter-card" href="ch18.html"><div class="num">18</div><strong><span class="en">Externalities and public goods</span><span class="th">ผลกระทบภายนอกและสาธารณสินค้า</span></strong><p><span class="en">Pigouvian tax, vertical sum, free riding. 2025 Q4 and Q6.</span><span class="th">ภาษี Pigou, การบวกแนวตั้ง, free rider. ข้อ 4 และ 6 ปี 2025.</span></p></a>
+  </div>
+</main>
+<footer class="site">
+  <p class="en">Study notes for an intermediate microeconomics final. Diagrams are redrawn from the standard theory; copyrighted lecture slides are not included. Badges describe the 2025 paper and the 2020–2024 papers in that packet. They do not predict the next exam.</p>
+  <p class="th">โน้ตอ่านสอบจุลภาคขั้นกลาง. รูปวาดขึ้นใหม่จากทฤษฎีมาตรฐาน ไม่ได้ใส่สไลด์ที่มีลิขสิทธิ์. ป้ายบอกสิ่งที่อยู่ในข้อสอบปี 2025 และชุดปี 2020–2024 ไม่ได้ทายข้อสอบครั้งหน้า.</p>
+</footer>
+</body>
+</html>

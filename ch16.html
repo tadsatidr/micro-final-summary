@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch 16 · General equilibrium</title>
+<meta name="description" content="Edgeworth box, contract curve, MRS versus prices, and comparative advantage, including the 2025 efficiency questions.">
+<script>
+try {
+  var q = new URLSearchParams(location.search).get("lang");
+  var l = (q === "th" || q === "en") ? q : localStorage.getItem("micro-lang");
+  if (l === "th" || l === "en") {
+    document.documentElement.setAttribute("data-lang", l);
+    if (q) localStorage.setItem("micro-lang", q);
+  }
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content"><span class="en">Skip to content</span><span class="th">ข้ามไปเนื้อหา</span></a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">μ</span><span><span class="en">Micro final</span><span class="th">ไมโคร ไฟนอล</span><small><span class="en">Chapter 16</span><span class="th">บทที่ 16</span></small></span></a>
+  <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-set-lang="en">EN</button><button type="button" data-set-lang="th">ไทย</button></div>
+</header>
+<nav id="site-nav" aria-label="Chapters"></nav>
+<main id="content">
+  <p class="kicker"><span class="en">Chapter 16</span><span class="th">บทที่ 16</span></p>
+  <h1><span class="en">General equilibrium and economic efficiency</span><span class="th">ดุลยภาพทั่วไปและประสิทธิภาพทางเศรษฐกิจ</span></h1>
+  <p class="lede">
+    <span class="en">Partial equilibrium holds every other market still. General equilibrium lets prices in one market feed back into another. The 2025 paper asks two ideas from the exchange box: efficiency is not the same as a fair distribution, and if marginal rates of substitution differ from the price ratio there is excess demand somewhere.</span>
+    <span class="th">ดุลยภาพบางส่วนถือว่าตลาดอื่นนิ่ง. ดุลยภาพทั่วไปให้ราคาในตลาดหนึ่งสะท้อนกลับไปอีกตลาด. ข้อสอบปี 2025 ถามสองความคิดจากกล่องการแลกเปลี่ยน: ประสิทธิภาพไม่ใช่เรื่องเดียวกันกับการกระจายที่เป็นธรรม และถ้าอัตราการทดแทนส่วนเพิ่มไม่เท่ากับอัตราส่วนราคา จะมีอุปสงค์ส่วนเกินที่ไหนสักแห่ง.</span>
+  </p>
+  <p>
+    <span class="badge exam">2025 Q7 · 5 pts</span>
+    <span class="badge exam">2025 Q8 · 5 pts</span>
+    <span class="badge past"><span class="en">Edgeworth 2021 and 2023; comparative advantage 2020–21, 2023–24</span><span class="th">Edgeworth ปี 2021 และ 2023; comparative advantage ปี 2020–21, 2023–24</span></span>
+  </p>
+
+  <h2><span class="en">The Edgeworth box</span><span class="th">กล่อง Edgeworth</span></h2>
+  <figure class="fig">
+    <svg viewBox="0 0 680 420" role="img">
+      <title>Edgeworth box with contract curve and a mutually beneficial lens</title>
+      <rect x="70" y="40" width="520" height="300" fill="#fffdf8" stroke="#1b1814" stroke-width="1.8"/>
+      <path d="M70 340 C 180 300, 280 180, 420 90 C 500 50, 560 46, 590 40" fill="none" stroke="#9d341f" stroke-width="2.6"/>
+      <path d="M250 250 C 300 210, 360 200, 430 230" fill="none" stroke="#0e3b2e" stroke-width="1.8"/>
+      <path d="M250 250 C 340 250, 400 230, 430 230" fill="none" stroke="#0e3b2e" stroke-width="1.8"/>
+      <path d="M430 230 C 470 180, 520 150, 590 40" fill="none" stroke="#1e4d7b" stroke-width="1.6"/>
+      <path d="M430 230 C 500 220, 540 160, 590 40" fill="none" stroke="#1e4d7b" stroke-width="1.6"/>
+      <path d="M250 250 C 200 180, 160 120, 70 40" fill="none" stroke="#8c6a2a" stroke-width="1.6"/>
+      <path d="M250 250 C 180 230, 120 140, 70 40" fill="none" stroke="#8c6a2a" stroke-width="1.6"/>
+      <circle cx="250" cy="250" r="5" fill="#1b1814"/>
+      <circle cx="360" cy="200" r="5" fill="#9d341f"/>
+      <text x="78" y="34" font-size="14" font-family="sans-serif">A’s food</text>
+      <text x="500" y="360" font-size="14" font-family="sans-serif">A’s clothing →</text>
+      <text x="500" y="58" font-size="14" font-family="sans-serif">B’s origin</text>
+      <text x="78" y="372" font-size="14" font-family="sans-serif">A’s origin</text>
+      <text x="400" y="120" fill="#9d341f" font-size="14" font-family="sans-serif">contract curve</text>
+      <text x="255" y="270" font-size="13" font-family="sans-serif">endowment E</text>
+      <text x="300" y="188" font-size="13" font-family="sans-serif">trade into the lens</text>
+      <text x="150" y="150" fill="#8c6a2a" font-size="13" font-family="sans-serif">A’s IC</text>
+      <text x="470" y="200" fill="#1e4d7b" font-size="13" font-family="sans-serif">B’s IC</text>
+    </svg>
+    <figcaption>
+      <span class="en">Width is the total clothing; height is the total food. A’s quantities are measured from the bottom-left origin, B’s from the top-right. At the endowment E the indifference curves cross, so the MRS values differ and the lens between them is a set of trades that make both better off. The contract curve is the set of tangencies: \(MRS^A=MRS^B\). Every point on it is Pareto efficient. Points on it are not equally desirable — the two ends give almost everything to one person.</span>
+      <span class="th">ความกว้างคือเสื้อผ้าทั้งหมด ความสูงคืออาหารทั้งหมด. ปริมาณของ A วัดจากมุมล่างซ้าย ของ B วัดจากมุมบนขวา. ที่จุดทรัพย์เริ่มต้น E เส้นความเฉย ๆ ตัดกัน ดังนั้น MRS ไม่เท่ากัน และเลนส์ระหว่างเส้นคือชุดของการแลกเปลี่ยนที่ทำให้ทั้งคู่ดีขึ้น. เส้นสัญญา (contract curve) คือชุดของจุดสัมผัส: \(MRS^A=MRS^B\). ทุกจุดบนเส้นมีประสิทธิภาพแบบ Pareto. จุดบนเส้นไม่ได้พึงประสงค์เท่ากัน — ปลายทั้งสองให้ของเกือบทั้งหมดกับคนคนเดียว.</span>
+    </figcaption>
+  </figure>
+
+  <h2><span class="en">2025 question 7</span><span class="th">ข้อ 7 ปี 2025</span></h2>
+  <div class="callout ok">
+    <p class="en"><strong>Disagree.</strong> A point on the contract curve is efficient: no trade can make one person better off without hurting the other. “Equally desirable” is a judgment about distribution. One efficient point can leave A with almost all the goods and B with almost none. Moving along the contract curve helps one person and hurts the other, so Pareto efficiency itself does not rank those points. Ranking them needs something further — a social welfare function, or an explicit view about equity. Competitive markets pick one efficient point, the one consistent with the initial endowments. A different endowment would pick a different point on the same curve.</p>
+    <p class="th"><strong>ไม่เห็นด้วย.</strong> จุดบนเส้นสัญญามีประสิทธิภาพ: ไม่มีการแลกเปลี่ยนใดทำให้คนหนึ่งดีขึ้นโดยไม่ทำให้อีกคนแย่ลง. “พึงประสงค์เท่ากัน” เป็นการตัดสินเรื่องการกระจาย. จุดที่มีประสิทธิภาพจุดหนึ่งอาจให้ A ได้ของเกือบทั้งหมดและ B ไม่ได้อะไรเลย. การเคลื่อนไปตามเส้นสัญญาช่วยคนหนึ่งและทำให้อีกคนแย่ลง ดังนั้นประสิทธิภาพแบบ Pareto เองไม่ได้จัดอันดับจุดเหล่านั้น. การจัดอันดับต้องมีอะไรเพิ่ม — ฟังก์ชันสวัสดิการสังคม หรือจุดยืนเรื่องความเป็นธรรมที่พูดออกมา. ตลาดแข่งขันเลือกจุดที่มีประสิทธิภาพจุดหนึ่ง คือจุดที่สอดคล้องกับทรัพย์เริ่มต้น. ทรัพย์เริ่มต้นคนละชุดจะเลือกคนละจุดบนเส้นเดียวกัน.</p>
+  </div>
+
+  <h2><span class="en">Formulas worth writing in the margin</span><span class="th">สูตรที่ควรจดขอบกระดาษ</span></h2>
+  <div class="grid-2">
+    <div class="formula">
+      <div class="name"><span class="en">Efficiency in exchange</span><span class="th">ประสิทธิภาพในการแลกเปลี่ยน</span></div>
+      $$MRS^A_{xy}=MRS^B_{xy}$$
+      <p class="en">Inside the box this is tangency. If the rates differ, there is a lens.</p>
+      <p class="th">ในกล่อง นี่คือจุดสัมผัส. ถ้าอัตราไม่เท่ากัน จะมีเลนส์.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Competitive exchange</span><span class="th">การแลกเปลี่ยนแบบแข่งขัน</span></div>
+      $$MRS^A=MRS^B=\frac{P_x}{P_y}$$
+      <p class="en">Each person equates MRS to the price ratio. Therefore the two MRS values equal each other, and the outcome sits on the contract curve. That is the first welfare theorem for exchange, under the usual assumptions (price-taking, no externalities, complete markets).</p>
+      <p class="th">แต่ละคนตั้ง MRS ให้เท่ากับอัตราส่วนราคา. ดังนั้น MRS ของสองคนเท่ากัน และผลลัพธ์อยู่บนเส้นสัญญา. นั่นคือทฤษฎีบทสวัสดิการข้อที่หนึ่งสำหรับการแลกเปลี่ยน ภายใต้สมมติปกติ (เป็นผู้รับราคา, ไม่มี externality, ตลาดครบ).</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Which market is long or short</span><span class="th">ตลาดไหนยาวหรือสั้น</span></div>
+      $$\text{If } MRS_{xy}&gt;\frac{P_x}{P_y}, \text{ buy more } x.$$
+      <p class="en">\(MRS_{xy}\) here means units of y the person will give for one more x, which is \(MU_x/MU_y\). If that exceeds the relative price of x, x is the better deal. Both people wanting more x is excess demand for x and excess supply of y. Then \(P_x\) rises and \(P_y\) falls.</p>
+      <p class="th">\(MRS_{xy}\) ในที่นี้คือจำนวน y ที่คนยอมให้เพื่อได้ x เพิ่มหนึ่งหน่วย ซึ่งเท่ากับ \(MU_x/MU_y\). ถ้าค่านี้สูงกว่าราคาเปรียบเทียบของ x แสดงว่า x คุ้มกว่า. ถ้าทั้งสองคนอยากได้ x เพิ่ม คือ excess demand ของ x และ excess supply ของ y. จากนั้น \(P_x\) ขึ้นและ \(P_y\) ลง.</p>
+    </div>
+    <div class="formula">
+      <div class="name"><span class="en">Input and output efficiency</span><span class="th">ประสิทธิภาพด้านปัจจัยและผลผลิต</span></div>
+      $$MRTS^1_{LK}=MRTS^2_{LK}=\frac{w}{r}$$
+      $$MRS=MRT$$
+      <p class="en">The production contract curve in input space maps to the production-possibility frontier. A competitive economy with the price ratio equal to the marginal rate of transformation picks a point on that frontier which is also on the exchange contract curve.</p>
+      <p class="th">เส้นสัญญาด้านการผลิตในพื้นที่ปัจจัยสอดคล้องกับเส้นความเป็นไปได้ในการผลิต. เศรษฐกิจแข่งขันที่อัตราส่วนราคาเท่ากับอัตราการแปลงส่วนเพิ่ม จะเลือกจุดบนเส้นนั้นซึ่งอยู่บนเส้นสัญญาด้านการแลกเปลี่ยนด้วย.</p>
+    </div>
+  </div>
+
+  <h2><span class="en">Worked example — 2025 question 8</span><span class="th">ตัวอย่างทำเอง — ข้อ 8 ปี 2025</span></h2>
+  <p class="en">Jennifer’s MRS of orange juice for coffee is 1: she will give 1 coffee for 1 orange juice. Drew’s MRS is 3: he will give 3 coffees for 1 orange juice. \(P_{OJ}=2\), \(P_{coffee}=3\).</p>
+  <p class="th">MRS ของน้ำส้มต่อกาแฟของ Jennifer คือ 1: เธอยอมให้กาแฟ 1 แก้วเพื่อได้น้ำส้ม 1 แก้ว. MRS ของ Drew คือ 3: เขายอมให้กาแฟ 3 แก้วเพื่อได้น้ำส้ม 1 แก้ว. \(P_{OJ}=2\), \(P_{coffee}=3\).</p>
+  <ol class="steps">
+    <li>
+      <p class="en">The price ratio the MRS must be compared with is the price of orange juice over the price of coffee.</p>
+      <p class="th">อัตราส่วนราคาที่ต้องเอาไปเทียบกับ MRS คือราคาน้ำส้มต่อราคากาแฟ.</p>
+      $$\frac{P_{OJ}}{P_C}=\frac{2}{3}\approx 0.67$$
+    </li>
+    <li>
+      <p class="en">Jennifer: \(1&gt;2/3\). Drew: \(3&gt;2/3\). Both value one more orange juice, in units of coffee, by more than the market asks them to pay. Equivalently, \(MU_{OJ}/P_{OJ}&gt;MU_C/P_C\) for both.</p>
+      <p class="th">Jennifer: \(1&gt;2/3\). Drew: \(3&gt;2/3\). ทั้งคู่ให้ค่าน้ำส้มเพิ่มหนึ่งแก้ว เป็นหน่วยของกาแฟ สูงกว่าที่ตลาดเรียกเก็บ. หรือเขียนว่า \(MU_{OJ}/P_{OJ}&gt;MU_C/P_C\) ทั้งคู่.</p>
+    </li>
+    <li>
+      <p class="en">Both want to buy orange juice and to give up coffee. Orange juice is in excess demand. Coffee is in excess supply.</p>
+      <p class="th">ทั้งคู่อยากซื้อน้ำส้มและยอมสละกาแฟ. น้ำส้มมีอุปสงค์ส่วนเกิน. กาแฟมีอุปทานส่วนเกิน.</p>
+    </li>
+    <li>
+      <p class="en">The price of orange juice rises and the price of coffee falls, so the ratio \(P_{OJ}/P_C\) rises. Consumption also changes until each person’s MRS equals the new common price ratio. Trade can still happen between them because 1 and 3 are not equal — but the question asked which market is out of balance at these prices, and that is orange juice on the demand side.</p>
+      <p class="th">ราคาน้ำส้มสูงขึ้นและราคากาแฟลดลง ดังนั้นอัตราส่วน \(P_{OJ}/P_C\) สูงขึ้น. การบริโภคก็เปลี่ยนจน MRS ของแต่ละคนเท่ากับอัตราส่วนราคาใหม่ที่เป็นราคาร่วม. สองคนยังแลกกันได้เพราะ 1 ไม่เท่ากับ 3 — แต่โจทย์ถามว่าที่ราคานี้ตลาดไหนไม่สมดุล และคำตอบคือน้ำส้มฝั่งอุปสงค์.</p>
+    </li>
+  </ol>
+  <p class="answer"><span class="en">Excess demand for orange juice. Expect \(P_{OJ}\) up and \(P_{coffee}\) down.</span><span class="th">น้ำส้มมี excess demand. คาดว่า \(P_{OJ}\) ขึ้นและ \(P_{coffee}\) ลง.</span></p>
+
+  <h2><span class="en">Comparative advantage — not on the 2025 paper</span><span class="th">ความได้เปรียบโดยเปรียบเทียบ — ไม่อยู่ในปี 2025</span></h2>
+  <p class="en">The 2020, 2021, 2023, and 2024 papers all give a labor-hours table and ask who has the absolute advantage and who has the comparative advantage. Absolute advantage is fewer hours per unit (or more output per hour). Comparative advantage is the lower opportunity cost. A country can have an absolute advantage in both goods and still gain from trade, because trade follows opportunity cost, not absolute cost. The 2020 true/false — “if A is better at both goods, A should not trade” — is false for that reason.</p>
+  <p class="th">ข้อปี 2020, 2021, 2023 และ 2024 ให้ตารางชั่วโมงแรงงานแล้วถามว่าใครได้เปรียบโดยสัมบูรณ์และใครได้เปรียบโดยเปรียบเทียบ. Absolute advantage คือใช้ชั่วโมงต่อหน่วยน้อยกว่า (หรือผลิตได้มากกว่าต่อชั่วโมง). Comparative advantage คือต้นทุนค่าเสียโอกาสต่ำกว่า. ประเทศหนึ่งอาจได้เปรียบโดยสัมบูรณ์ในทั้งสองสินค้าแล้วยังได้ประโยชน์จากการค้า เพราะการค้าเดินตามต้นทุนค่าเสียโอกาส ไม่ใช่ต้นทุนสัมบูรณ์. ข้อถูก-ผิดปี 2020 ที่ว่า “ถ้า A เก่งกว่าทั้งสองสินค้า A ไม่ควรค้าขาย” จึงเป็นเท็จ.</p>
+  <h3><span class="en">2024 table</span><span class="th">ตารางปี 2024</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th><span class="en">Hours per unit</span><span class="th">ชั่วโมงต่อหน่วย</span></th><th><span class="en">Tomatoes (1 lb)</span><span class="th">มะเขือเทศ (1 ปอนด์)</span></th><th><span class="en">Beer (1 gal)</span><span class="th">เบียร์ (1 แกลลอน)</span></th></tr></thead>
+      <tbody>
+        <tr><td>Guatemala</td><td>6</td><td>3</td></tr>
+        <tr><td>Mexico</td><td>2</td><td>2</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ol class="steps">
+    <li>
+      <p class="en">Mexico uses fewer hours for tomatoes (2 &lt; 6) and for beer (2 &lt; 3). Mexico has the absolute advantage in both.</p>
+      <p class="th">เม็กซิโกใช้ชั่วโมงน้อยกว่าทั้งมะเขือเทศ (2 &lt; 6) และเบียร์ (2 &lt; 3). เม็กซิโกได้เปรียบโดยสัมบูรณ์ทั้งสองสินค้า.</p>
+    </li>
+    <li>
+      <p class="en">Opportunity cost. Guatemala: 1 lb tomatoes costs \(6/3=2\) gallons of beer; 1 gallon of beer costs \(3/6=0.5\) lb tomatoes. Mexico: 1 lb tomatoes costs \(2/2=1\) gallon of beer; 1 gallon of beer costs 1 lb tomatoes.</p>
+      <p class="th">ต้นทุนค่าเสียโอกาส. กัวเตมาลา: มะเขือเทศ 1 ปอนด์แลกด้วยเบียร์ \(6/3=2\) แกลลอน; เบียร์ 1 แกลลอนแลกด้วยมะเขือเทศ \(3/6=0.5\) ปอนด์. เม็กซิโก: มะเขือเทศ 1 ปอนด์แลกด้วยเบียร์ 1 แกลลอน; เบียร์ 1 แกลลอนแลกด้วยมะเขือเทศ 1 ปอนด์.</p>
+    </li>
+    <li>
+      <p class="en">Tomatoes are cheaper in Mexico (1 beer &lt; 2 beer). Beer is cheaper in Guatemala (0.5 tomato &lt; 1 tomato). Mexico has the comparative advantage in tomatoes; Guatemala has it in beer. They can both gain by Mexico exporting tomatoes and Guatemala exporting beer, at any relative price between 1 and 2 gallons of beer per pound of tomatoes.</p>
+      <p class="th">มะเขือเทศถูกกว่าในเม็กซิโก (เบียร์ 1 &lt; 2). เบียร์ถูกกว่าในกัวเตมาลา (มะเขือเทศ 0.5 &lt; 1). เม็กซิโกได้เปรียบโดยเปรียบเทียบในมะเขือเทศ กัวเตมาลาได้เปรียบในเบียร์. ทั้งคู่ได้ประโยชน์ถ้าเม็กซิโกส่งออกมะเขือเทศและกัวเตมาลาส่งออกเบียร์ ที่ราคาสัมพัทธ์ใด ๆ ระหว่างเบียร์ 1 ถึง 2 แกลลอนต่อมะเขือเทศหนึ่งปอนด์.</p>
+    </li>
+  </ol>
+
+  <h2><span class="en">Practice</span><span class="th">ข้อฝึก</span></h2>
+  <article class="q">
+    <h3>1 <span class="badge past">2021</span></h3>
+    <p class="en">Jane has 3 liters of soft drinks and 9 sandwiches. Bob has 8 liters and 4 sandwiches. Jane’s MRS of soft drinks for sandwiches is 4. Bob’s MRS is 2. Is the allocation efficient? If not, what trade helps both?</p>
+    <p class="th">Jane มีน้ำอัดลม 3 ลิตรและแซนด์วิช 9 ชิ้น. Bob มี 8 ลิตรและ 4 ชิ้น. MRS ของน้ำอัดลมต่อแซนด์วิชของ Jane คือ 4 ของ Bob คือ 2. การจัดสรรมีประสิทธิภาพหรือไม่? ถ้าไม่ การแลกเปลี่ยนแบบใดช่วยทั้งคู่?</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">Efficiency needs equal MRS. 4 ≠ 2, so the allocation is inside a lens, not on the contract curve. Jane values one more liter at 4 sandwiches; Bob values it at only 2. Jane should give Bob sandwiches in exchange for soft drinks. Any price between 2 and 4 sandwiches per liter makes both better off. Example: Jane gives Bob 3 sandwiches and receives 1 liter. Jane gives up 3 sandwiches for something she values at 4, so she gains. Bob gives up 1 liter, which he values at 2 sandwiches, and receives 3, so he gains. Totals stay 11 liters and 13 sandwiches.</p>
+      <p class="th">ประสิทธิภาพต้องการ MRS เท่ากัน. 4 ≠ 2 ดังนั้นการจัดสรรอยู่ในเลนส์ ไม่ได้อยู่บนเส้นสัญญา. Jane ให้ค่าน้ำหนึ่งลิตรเพิ่มเท่ากับแซนด์วิช 4 ชิ้น Bob ให้ค่าแค่ 2. Jane ควรให้แซนด์วิชแก่ Bob เพื่อแลกน้ำอัดลม. ราคาใด ๆ ระหว่าง 2 ถึง 4 ชิ้นต่อลิตรทำให้ทั้งคู่ดีขึ้น. ตัวอย่าง: Jane ให้ Bob แซนด์วิช 3 ชิ้นและได้รับน้ำ 1 ลิตร. Jane สละแซนด์วิช 3 เพื่อของที่เธอให้ค่า 4 จึงได้ประโยชน์. Bob สละน้ำ 1 ลิตรซึ่งเขาให้ค่าเท่ากับแซนด์วิช 2 ชิ้น แต่ได้รับ 3 จึงได้ประโยชน์. ของรวมยังเป็น 11 ลิตรและ 13 ชิ้น.</p>
+    </details>
+  </article>
+  <article class="q">
+    <h3>2 <span class="badge past">2023</span></h3>
+    <p class="en">Total endowments: 1,000 baseball cards and 5,000 Pokémon cards. Ron: \(MRS=y_R/x_R\), and he holds (800, 800). David: \(MRS=y_D/(2x_D)\), and he holds (200, 4,200). Is this efficient? If not, suggest a trade.</p>
+    <p class="th">ทรัพย์รวม: การ์ดเบสบอล 1,000 ใบและการ์ดโปเกมอน 5,000 ใบ. Ron: \(MRS=y_R/x_R\) ถือ (800, 800). David: \(MRS=y_D/(2x_D)\) ถือ (200, 4,200). มีประสิทธิภาพหรือไม่? ถ้าไม่ เสนอการแลกเปลี่ยน.</p>
+    <details class="solution">
+      <summary><span class="en">Worked solution</span><span class="th">เฉลย</span></summary>
+      <p class="en">Ron’s MRS of baseball for Pokémon is \(800/800=1\). David’s is \(4200/(2\times 200)=10.5\). They differ, so the allocation is not efficient. David values a baseball card much more, in Pokémon cards, than Ron does. A trade in which Ron gives David some baseball cards and David gives Ron some Pokémon cards, at a rate between 1 and 10.5 Pokémon per baseball card, moves both into the lens. Example: 1 baseball card for 5 Pokémon cards. Ron gives up a card he values at 1 Pokémon card and receives 5. David gives up 5 Pokémon cards for a baseball card he values at 10.5.</p>
+      <p class="th">MRS ของเบสบอลต่อโปเกมอนของ Ron คือ \(800/800=1\). ของ David คือ \(4200/(2\times 200)=10.5\). ไม่เท่ากัน ดังนั้นการจัดสรรไม่มีประสิทธิภาพ. David ให้ค่าการ์ดเบสบอล สูงกว่า Ron มากในหน่วยของการ์ดโปเกมอน. การแลกที่ Ron ให้การ์ดเบสบอลแก่ David และ David ให้การ์ดโปเกมอนแก่ Ron ในอัตราระหว่าง 1 ถึง 10.5 ใบโปเกมอนต่อการ์ดเบสบอลหนึ่งใบ จะพาทั้งคู่เข้าไปในเลนส์. ตัวอย่าง: เบสบอล 1 ใบแลกโปเกมอน 5 ใบ. Ron สละการ์ดที่เขาให้ค่าเท่ากับโปเกมอน 1 ใบแต่ได้รับ 5. David สละโปเกมอน 5 ใบเพื่อเบสบอลที่เขาให้ค่า 10.5.</p>
+    </details>
+  </article>
+  <div class="pager">
+    <a href="ch14.html">← <span class="en">Ch 14</span><span class="th">บท 14</span></a>
+    <a href="ch17.html"><span class="en">Ch 17 Information</span><span class="th">บท 17 ข้อมูลอสมมาตร</span> →</a>
+  </div>
+</main>
+<footer class="site">
+  <p class="en">Feedback effects are the general-equilibrium point of a 2024 question on a gasoline tax and the bicycle market: a higher gasoline price shifts the demand for a substitute (bicycles) out, which feeds back onto how large the gasoline-price increase is. The 2025 paper did not ask that story.</p>
+  <p class="th">ผลสะท้อนกลับคือประเด็นดุลยภาพทั่วไปของข้อปี 2024 เรื่องภาษีน้ำมันกับตลาดจักรยาน: ราคาน้ำมันที่สูงขึ้นเลื่อนอุปสงค์ของสินค้าทดแทน (จักรยาน) ออกไป ซึ่งสะท้อนกลับมาที่ว่าราคาน้ำมันจะขึ้นมากแค่ไหน. ข้อสอบปี 2025 ไม่ได้ถามเรื่องนี้.</p>
+</footer>
+</body>
+</html>
